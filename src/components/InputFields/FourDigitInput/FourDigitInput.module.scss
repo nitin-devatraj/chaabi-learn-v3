@@ -1,0 +1,26 @@
+@import "../../../global-styles/variables.scss";
+
+.fourDigitInput {
+  display: flex;
+  gap: 12px;
+  margin: 1rem auto;
+}
+
+.fourDigitInput {
+  input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    padding: 12px 16px;
+    display: inline-block;
+    border-radius: 4px;
+    background: #fff;
+    border: none;
+    color: var(--neutral20);
+  }
+
+  input:focus {
+    outline: none;
+  }
+}

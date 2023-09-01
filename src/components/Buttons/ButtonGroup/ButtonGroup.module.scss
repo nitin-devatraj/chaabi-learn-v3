@@ -1,0 +1,85 @@
+.btnGroupLightTheme {
+  display: inline-flex;
+  align-items: flex-start;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid var(--neutral90);
+
+  .btnLightTheme {
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 0.0625rem solid var(--neutral90);
+    border-right: 1px solid var(--neutral90);
+    background: var(--neutral100);
+    color: var(--neutral20);
+    font-family: "Roboto";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+    cursor: pointer;
+  }
+
+  .selectedBtnLightTheme {
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 0.0625rem solid var(--neutral90);
+    border-right: 1px solid var(--neutral90);
+    background: var(--neutral95);
+    color: var(--neutral20);
+    font-family: "Roboto";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+.btnGroupDarkTheme {
+  display: inline-flex;
+  align-items: flex-start;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid var(--neutral100);
+
+  .btnDarkTheme {
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 0.0625rem solid var(--neutral99);
+    border-right: 1px solid var(--neutral99);
+    background: var(--neutral100);
+    color: var(--neutral20);
+    font-family: "Roboto";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+    cursor: pointer;
+  }
+
+  .selectedBtnDarkTheme {
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 0.0625rem solid var(--neutral99);
+    border-right: 1px solid var(--neutral99);
+    background: var(--neutral95);
+    color: var(--neutral20);
+    font-family: "Roboto";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5rem;
+    cursor: pointer;
+  }
+}

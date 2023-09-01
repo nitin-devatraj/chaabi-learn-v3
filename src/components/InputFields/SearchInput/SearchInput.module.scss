@@ -1,0 +1,25 @@
+.searchInputContainer {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid var(--neutral90, #e2e3e6);
+  padding: 0.75rem;
+  align-items: center;
+  background: var(--neutral100, #fff);
+
+  .input {
+    background: var(--neutral100, #fff);
+    border: none;
+    color: var(--neutral50, #75777a);
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+
+  .input:focus {
+    outline: none;
+  }
+}

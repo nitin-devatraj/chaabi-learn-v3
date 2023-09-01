@@ -1,0 +1,43 @@
+.checkBoxLightTheme {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--neutral90);
+  background: var(--neutral100);
+
+  .checkBoxIcon {
+    width: 0.75rem;
+    height: 0.75rem;
+    flex-shrink: 0;
+  }
+}
+
+.checkBoxLightTheme:hover {
+  border: 1px solid var(--primary50);
+  box-shadow: 0rem 0rem 0rem 0.25rem #dbe8ff;
+}
+
+.checkBoxDarkTheme {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid var(--neutral70);
+  background: var(--neutral100);
+
+  .checkBoxIcon {
+    width: 0.75rem;
+    height: 0.75rem;
+    flex-shrink: 0;
+  }
+}
+
+.checkBoxDarkTheme:hover {
+  border: 1px solid var(--primary50);
+  box-shadow: 0px 0px 0px 4px #b4ceff;
+}

@@ -1,0 +1,69 @@
+.secondaryBtnLightTheme {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.5rem;
+  color: var(--neutral20);
+  background-color: transparent;
+  font-family: "Roboto";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-align: center;
+  border: 1px solid var(--neutral90);
+  cursor: pointer;
+}
+
+.secondaryBtnLightTheme:not(:disabled):hover {
+  border: 1px solid var(--primary50);
+}
+
+.secondaryBtnLightTheme:not(:disabled):active {
+  border: 1px solid var(--primary50);
+  background: var(--neutral99);
+  box-shadow: 0px 0px 0px 4px #dbe7ff;
+}
+
+.secondaryBtnLightTheme[disabled] {
+  color: var(--neutral100);
+  border: 0.0625rem solid var(--neutral90);
+  background: var(--neutral90);
+}
+
+//dark mode classes
+.secondaryBtnDarkTheme {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.5rem;
+  color: var(--neutral99);
+  background-color: transparent;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-align: center;
+  border: 1px solid var(--neutral90);
+  cursor: pointer;
+}
+
+.secondaryBtnDarkTheme:not(:disabled):hover {
+  border: 0.0625rem solid var(--primary50);
+}
+
+.secondaryBtnDarkTheme:not(:disabled):active {
+  color: var(--neutral20);
+  border: 0.0625rem solid var(--primary50);
+  background: var(--neutral99);
+  box-shadow: 0rem 0rem 0rem 0.25rem #b4ceff;
+}
+
+.secondaryBtnDarkTheme[disabled] {
+  color: var(--neutral100);
+  border: 0.0625rem solid var(--neutral20);
+  background: var(--neutral20);
+}

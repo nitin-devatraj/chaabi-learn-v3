@@ -1,0 +1,17 @@
+.mobileLoginContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 16px;
+
+    .title {
+      color: var(--neutral20);
+      margin: 0;
+    }
+  }
+}

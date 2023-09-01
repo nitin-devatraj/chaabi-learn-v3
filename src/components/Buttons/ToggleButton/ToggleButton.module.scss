@@ -1,0 +1,36 @@
+.toggleBtnLightTheme {
+  display: inline-flex;
+  width: 2.25rem;
+  height: 1.25rem;
+  padding: 0.125rem;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 0.75rem;
+  background: var(--neutral90);
+  transition: all 0.5s;
+
+  .toggleIcon {
+    flex-shrink: 0;
+  }
+}
+
+.toggleBtnDarkTheme {
+  display: inline-flex;
+  width: 2.25rem;
+  height: 1.25rem;
+  padding: 0.125rem;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 0.75rem;
+  background: var(--neutral70);
+  transition: all 0.5s;
+
+  .toggleIcon {
+    flex-shrink: 0;
+  }
+}
+
+.toggleBtnActive {
+  justify-content: flex-end;
+  background: var(--primary50);
+}

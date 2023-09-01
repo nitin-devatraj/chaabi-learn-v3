@@ -1,0 +1,141 @@
+@import "../../../global-styles/variables.scss";
+
+.tableItem {
+  border-bottom: 1px solid var(--neutral90, #e2e3e6);
+  background-color: var(--neutral100);
+
+  .draftBadge {
+    color: var(--warning50, #f79009);
+    background: var(--warning90, #fef0c7);
+  }
+
+  .activeBadge {
+    color: var(--success50, #12b76a);
+    background: var(--success90, #d1fadf);
+  }
+
+  .inactiveBadge {
+    color: var(--alert50, #f04438);
+    background: var(--alert90, #fee4e2);
+  }
+
+  .badge {
+    display: flex;
+    padding: 3px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border-radius: 12px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  td {
+    height: 4rem;
+    padding: 1rem 1.5rem;
+    color: var(--neutral40, #5e5f62);
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+
+  .nameColumn {
+    width: 24%;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+    }
+
+    .name {
+      input {
+        border: none;
+        color: var(--neutral40, #5e5f62);
+        font-family: "Roboto", sans-serif;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5rem;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      .requiredMessage {
+        color: var(--alert50, #f04438);
+      }
+    }
+  }
+
+  .statusColumn {
+    width: 8%;
+  }
+
+  .roleColumn {
+    width: 17%;
+  }
+
+  .emailColumn {
+    width: 20%;
+  }
+
+  .teamsColumn {
+    width: 26.5%;
+
+    .badges {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      .badgeGroup1 {
+        color: var(--badgeColorMain1, #d81b60);
+        background: var(--badgeColorBack1, #fce4ec);
+      }
+
+      .badgeGroup2 {
+        color: var(--badgeColorMain2, #8e24aa);
+        background: var(--badgeColorBack2, #f3e5f5);
+      }
+
+      .badgeGroup5 {
+        color: var(--badgeColorMain5, #00acc1);
+        background: var(--badgeColorBack5, #e0f7fa);
+      }
+
+      .remainingCount {
+        color: var(--neutral30, #46474a);
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.125rem;
+      }
+    }
+  }
+
+  .deleteColumn {
+    padding: 16px 10px;
+  }
+
+  .editColumn {
+    padding: 16px 14px;
+  }
+}

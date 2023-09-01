@@ -1,0 +1,165 @@
+.numberInputContainer {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+  width: 100%;
+
+  .labelLightTheme {
+    color: var(--neutral50);
+    font-family: "Roboto", sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.25rem;
+    cursor: pointer;
+  }
+
+  .labelDarkTheme {
+    color: var(--neutral95);
+    font-family: "Roboto", sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.25rem;
+    cursor: pointer;
+  }
+
+  .inputContainerLightTheme {
+    display: inline-flex;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: 0.25rem;
+    border: 0.0625rem solid var(--neutral90);
+    background: var(--neutral100);
+
+    .dropdownLightTheme {
+      display: flex;
+      padding: 0.625rem 0.75rem 0.625rem 1rem;
+      align-items: center;
+      gap: 0.25rem;
+      align-self: stretch;
+      color: var(--neutral20);
+      font-family: "Roboto", sans-serif;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 1.5rem;
+      cursor: pointer;
+    }
+
+    .inputLightTheme {
+      display: inline-flex;
+      padding: 12px 16px 12px 0px;
+      align-items: center;
+      gap: 8px;
+      flex: 1 0 0;
+      color: var(--neutral20);
+      font-family: Roboto;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.5rem;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .inputLightTheme:focus {
+      outline: none;
+      //   box-shadow: 0px 0px 0px 4px #f0f1f4;
+    }
+
+    // .input:invalid {
+    //   border: 1px solid var(--alert60, #f97066);
+    // }
+
+    .inputLightTheme[disabled] {
+      border: 1px solid var(--neutral90);
+      background: var(--neutral90);
+      color: var(--neutral70);
+    }
+  }
+
+  // dark theme mode
+  .inputContainerDarkTheme {
+    display: inline-flex;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: 0.25rem;
+    border: 0.0625rem solid var(--neutral70);
+    background: var(--neutral100);
+
+    .dropdownDarkTheme {
+      display: flex;
+      padding: 0.625rem 0.75rem 0.625rem 1rem;
+      align-items: center;
+      gap: 0.25rem;
+      align-self: stretch;
+      color: var(--neutral20);
+      font-family: "Roboto", sans-serif;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 1.5rem;
+      cursor: pointer;
+    }
+
+    .inputDarkTheme {
+      display: inline-flex;
+      padding: 12px 16px 12px 0px;
+      align-items: center;
+      gap: 8px;
+      flex: 1 0 0;
+      color: var(--neutral20);
+      font-family: "Roboto", sans-serif;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.5rem;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .inputDarkTheme:focus {
+      outline: none;
+      //   box-shadow: 0px 0px 0px 4px #f0f1f4;
+    }
+
+    // .input:invalid {
+    //   border: 1px solid var(--alert60, #f97066);
+    // }
+
+    .inputDarkTheme[disabled] {
+      border: 1px solid var(--neutral40);
+      background: var(--neutral40);
+      color: var(--neutral80);
+    }
+  }
+}
+
+.helperTextLightTheme {
+  color: var(--neutral20);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.25rem;
+  margin: 0rem;
+}
+
+.helperTextDarkTheme {
+  color: var(--neutral95);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.25rem;
+  margin: 0rem;
+}
+
+// @media screen and (min-width: 361px) {
+//   .phoneInputContainer {
+//     width: 50%;
+//   }
+// }

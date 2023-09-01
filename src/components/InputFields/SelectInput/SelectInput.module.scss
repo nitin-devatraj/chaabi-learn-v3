@@ -1,0 +1,101 @@
+.selectInputContainer {
+  display: inline-flex;
+  width: 20rem;
+  flex-direction: column;
+  position: relative;
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.375rem;
+    align-self: stretch;
+
+    .labelLightTheme {
+      color: var(--neutral50);
+      font-family: "Roboto", sans-serif;
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 1.25rem;
+    }
+
+    .labelDarkTheme {
+      color: var(--neutral95, #f0f1f4);
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 20px;
+    }
+
+    .input {
+      display: flex;
+      align-self: stretch;
+      padding: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex: 1 0 0;
+      border-radius: 0.25rem;
+      border: 0.0625rem solid var(--neutral90, #e2e3e6);
+      background: var(--neutral100, #fff);
+      color: var(--neutral20, #303134);
+      font-family: "Roboto";
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.5rem;
+      cursor: pointer;
+    }
+  }
+
+  .dropDownContainer {
+    position: absolute;
+    top: 4.75rem;
+    z-index: 1;
+    width: 100%;
+    display: inline-flex;
+    max-height: 13.75rem;
+    flex-shrink: 0;
+    border-radius: 0.25rem;
+    border: 0.0625rem solid var(--neutral90, #e2e3e6);
+    background: var(--neutral100, #fff);
+    padding: 0.25rem 0rem;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+    overflow-y: auto;
+
+    .dropDownItem {
+      display: flex;
+      padding: 0.75rem 1rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      align-self: stretch;
+      background-color: #fff;
+      color: var(--neutral20, #303134);
+      font-family: "Roboto";
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 1.5rem;
+      cursor: pointer;
+
+      .hoverSVG {
+        display: none;
+      }
+    }
+
+    .dropDownItem:hover {
+      background: var(--neutral99, #fbfcff);
+      color: var(--neutral20, #303134);
+      font-weight: 500;
+    }
+
+    .dropDownItem:hover .hoverSVG {
+      display: inline-block;
+    }
+  }
+}
