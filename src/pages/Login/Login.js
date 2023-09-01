@@ -3,12 +3,12 @@ import styles from "./Login.module.scss";
 import colorTheme from "../../global-styles/color-theme.module.scss";
 import logo from "../../assets/login-page-icons/logo.png";
 import Banner from "./Banner/Banner";
-import MobileLogin from "./MobileLogin/MobileLogin";
-import EmailLogin from "./EmailLogin/EmailLogin";
-import ResetPasswordForm from "./EmailLogin/ResetPasswordForm/ResetPasswordForm";
+import MobileLoginForm from "./MobileLoginForm/MobileLoginForm";
+import EmailLoginForm from "./EmailLoginForm/EmailLoginForm";
+import ResetPasswordForm from "./EmailLoginForm/ResetPasswordForm/ResetPasswordForm";
 
 function Login() {
-  const [defaultLoginMethod, setDefaultLoginMethod] = useState("mobile");
+  const [defaultLoginMethod, setDefaultLoginMethod] = useState("email");
   const [isLoginBtnClicked, setIsLoginBtnClicked] = useState(false);
   const [showResetPasswordForm, setResetPasswordForm] = useState(false);
 
@@ -23,13 +23,13 @@ function Login() {
       )}
 
       {isLoginBtnClicked === true && defaultLoginMethod === "mobile" && (
-        <MobileLogin />
+        <MobileLoginForm />
       )}
 
       {isLoginBtnClicked === true &&
         showResetPasswordForm === false &&
         defaultLoginMethod === "email" && (
-          <EmailLogin onResetPassword={setResetPasswordForm} />
+          <EmailLoginForm onResetPassword={setResetPasswordForm} />
         )}
 
       {isLoginBtnClicked === true &&

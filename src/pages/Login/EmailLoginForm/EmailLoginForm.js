@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import styles from "./EmailLogin.module.scss";
+import styles from "./EmailLoginForm.module.scss";
 import typography from "../../../global-styles/typography.module.scss";
 import TextInput from "../../../components/InputFields/TextInput/TextInput";
 import PrimaryButton from "../../../components/Buttons/PrimaryButton/PrimaryButton";
+import { useNavigate } from "react-router-dom";
 
-function EmailLogin({ onResetPassword }) {
+function EmailLoginForm({ onResetPassword }) {
   const [isForgotPasswordClicked, setisForgotPasswordClicked] = useState(false);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
+  const navigate = useNavigate();
 
   const emailChangeHandler = (event) => {
     setEmail(event.target.value);
@@ -17,7 +19,9 @@ function EmailLogin({ onResetPassword }) {
     setPassword(event.target.value);
   };
 
-  const emailLoginSubmitHandler = () => {};
+  const emailLoginSubmitHandler = () => {
+    navigate("/dashboard");
+  };
 
   const forgotPasswordHandler = () => {
     setisForgotPasswordClicked(true);
@@ -28,7 +32,7 @@ function EmailLogin({ onResetPassword }) {
   };
 
   return (
-    <div className={styles.emailLoginContainer}>
+    <div className={styles.emailLoginFormContainer}>
       <h5 className={`${typography.h5Bold} ${styles.title}`}>
         {isForgotPasswordClicked === false
           ? " Login with Email"
@@ -67,4 +71,4 @@ function EmailLogin({ onResetPassword }) {
   );
 }
 
-export default EmailLogin;
+export default EmailLoginForm;

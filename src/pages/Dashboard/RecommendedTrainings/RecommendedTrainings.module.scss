@@ -1,0 +1,11 @@
+.recommendedTrainings {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .trainingsCarousel {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

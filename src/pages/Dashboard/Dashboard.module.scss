@@ -1,0 +1,11 @@
+@import "../../global-styles/variables.scss";
+
+.dashboardContainer {
+  display: flex;
+  padding: 84px 16px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 24px;
+  width: 100vw;
+  overflow: auto;
+}

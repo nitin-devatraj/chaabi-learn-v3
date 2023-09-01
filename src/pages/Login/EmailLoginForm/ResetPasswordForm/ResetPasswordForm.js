@@ -3,10 +3,12 @@ import styles from "./ResetPasswordForm.module.scss";
 import typography from "../../../../global-styles/typography.module.scss";
 import TextInput from "../../../../components/InputFields/TextInput/TextInput";
 import PrimaryButton from "../../../../components/Buttons/PrimaryButton/PrimaryButton";
+import { useNavigate } from "react-router-dom";
 
 function ResetPasswordForm() {
   const [newPassword, setNewPassword] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState(null);
+  const navigate = useNavigate();
 
   const newPasswordChangeHandler = (event) => {
     setNewPassword(event.target.value);
@@ -16,7 +18,9 @@ function ResetPasswordForm() {
     setConfirmPassword(event.target.value);
   };
 
-  const resetPasswordSubmitHandler = () => {};
+  const resetPasswordSubmitHandler = () => {
+    navigate("/dashboard");
+  };
 
   return (
     <div className={styles.resetPasswordFormContainer}>

@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  .headerNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    .logo {
+      width: 120px;
+      height: auto;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .navButtons {
+      display: flex;
+      gap: 14px;
+    }
+  }
+
+  .title {
+    color: var(--neutral20);
+    margin: 0;
+  }
+}
