@@ -1,0 +1,84 @@
+.quizLessonContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  //   height: 493px;
+  height: 350px;
+  flex-shrink: 0;
+  gap: 26px;
+
+  .quizDetailsText {
+    margin: 0;
+    color: var(--neutral20);
+  }
+
+  .quizDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .totalQuestions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .totalQuestionsNumber {
+        display: flex;
+        padding: 4px 8px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        background: var(--badgeColorBack1);
+        color: var(--badgeColorMain1);
+      }
+    }
+
+    .timePerQuestion {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .timePerQuestionNumber {
+        display: flex;
+        padding: 4px 8px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        background: var(--badgeColorBack3);
+        color: var(--badgeColorMain3);
+      }
+    }
+
+    .attemptsAllowed {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .attemptsAllowedNumber {
+        display: flex;
+        padding: 4px 8px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        background: var(--badgeColorBack7);
+        color: var(--badgeColorMain7);
+      }
+    }
+
+    .passingScore {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .passingScoreNumber {
+        display: flex;
+        padding: 4px 8px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        background: var(--badgeColorBack5);
+        color: var(--badgeColorMain5);
+      }
+    }
+  }
+}

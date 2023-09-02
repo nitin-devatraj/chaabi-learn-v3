@@ -1,0 +1,21 @@
+@import "../../global-styles/variables.scss";
+
+.lessonCardContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 84px;
+  gap: 16px;
+  height: 100vh;
+
+  .lessonCard {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+    flex: 1;
+
+    .primaryButton {
+      align-self: flex-end;
+    }
+  }
+}

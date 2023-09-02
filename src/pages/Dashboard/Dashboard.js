@@ -16,6 +16,7 @@ function Dashboard() {
       numberOfQuizzes: 12,
       totalLessons: 10,
       currentLesson: 3,
+      progress: 30,
     },
     {
       id: 2,
@@ -24,6 +25,7 @@ function Dashboard() {
       numberOfQuizzes: 12,
       totalLessons: 10,
       currentLesson: 3,
+      progress: 20,
     },
     {
       id: 3,
@@ -32,6 +34,7 @@ function Dashboard() {
       numberOfQuizzes: 12,
       totalLessons: 10,
       currentLesson: 3,
+      progress: 30,
     },
     {
       id: 4,
@@ -40,6 +43,7 @@ function Dashboard() {
       numberOfQuizzes: 12,
       totalLessons: 10,
       currentLesson: 3,
+      progress: 20,
     },
   ];
 

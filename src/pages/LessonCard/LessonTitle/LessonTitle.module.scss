@@ -1,0 +1,16 @@
+.lessonTitleContainer {
+  display: flex;
+  flex-direction: column;
+  // padding: 16px;
+  gap: 14px;
+
+  .lessonNameContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .lessonName {
+      color: var(--neutral20);
+    }
+  }
+}

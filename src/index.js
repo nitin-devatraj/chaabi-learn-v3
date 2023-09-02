@@ -7,6 +7,7 @@ import store from "./store/store";
 import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import TrainingOverview from "./pages/TrainingOverview/TrainingOverview";
+import LessonCard from "./pages/LessonCard/LessonCard";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,6 +21,7 @@ root.render(
             path="/training-overview/:trainingId"
             element={<TrainingOverview />}
           />
+          <Route path="/lesson/:lessonId" element={<LessonCard />} />
         </Routes>
       </BrowserRouter>
     </Provider>

@@ -5,104 +5,12 @@ import Accordian from "../../../components/Accordian/Accordian";
 import typography from "../../../global-styles/typography.module.scss";
 import colorTheme from "../../../global-styles/color-theme.module.scss";
 
-function TrainingContent() {
+function TrainingContent({ chapterList }) {
   const [selectedTab, setSelectedTab] = useState(null);
 
   function handleTabSelection(tabValue) {
     setSelectedTab(tabValue);
   }
-
-  const chapterList = [
-    {
-      id: 1,
-      chapterName: "chapter 1",
-      lessonsList: [
-        { name: "Quiz lesson", access: true },
-        { name: "Assessment lesson", access: false },
-        { name: "Video lesson", access: true },
-      ],
-    },
-    {
-      id: 2,
-      chapterName: "chapter 2",
-      lessonsList: [
-        { name: "Document lesson", access: true },
-        { name: "Audio lesson", access: false },
-      ],
-    },
-
-    {
-      id: 3,
-      chapterName: "chapter 3",
-      lessonsList: [
-        { name: "Quiz lesson", access: true },
-        { name: "Assessment lesson", access: false },
-        { name: "Video lesson", access: true },
-      ],
-    },
-    {
-      id: 4,
-      chapterName: "chapter 4",
-      lessonsList: [
-        { name: "Document lesson", access: true },
-        { name: "Audio lesson", access: false },
-      ],
-    },
-
-    {
-      id: 5,
-      chapterName: "chapter 5",
-      lessonsList: [
-        { name: "Quiz lesson", access: true },
-        { name: "Assessment lesson", access: false },
-        { name: "Video lesson", access: true },
-      ],
-    },
-    {
-      id: 6,
-      chapterName: "chapter 2",
-      lessonsList: [
-        { name: "Document lesson", access: true },
-        { name: "Audio lesson", access: false },
-      ],
-    },
-
-    {
-      id: 7,
-      chapterName: "chapter 7",
-      lessonsList: [
-        { name: "Quiz lesson", access: true },
-        { name: "Assessment lesson", access: false },
-        { name: "Video lesson", access: true },
-      ],
-    },
-    {
-      id: 8,
-      chapterName: "chapter 8",
-      lessonsList: [
-        { name: "Document lesson", access: true },
-        { name: "Audio lesson", access: false },
-      ],
-    },
-
-    {
-      id: 9,
-      chapterName: "chapter 9",
-      lessonsList: [
-        { name: "Quiz lesson", access: true },
-        { name: "Assessment lesson", access: false },
-        { name: "Video lesson", access: true },
-      ],
-    },
-    {
-      id: 10,
-      chapterName: "chapter 10",
-      lessonsList: [
-        { name: "Document lesson", access: true },
-        { name: "Audio lesson", access: false },
-      ],
-    },
-  ];
 
   return (
     <div className={styles.trainingContent}>
