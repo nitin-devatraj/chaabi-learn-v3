@@ -15,6 +15,7 @@ function TrainingsToBeCompleted({ dummyTrainings }) {
             numberOFQuizzes={item.numberOfQuizzes}
             totalLessons={item.totalLessons}
             currentLesson={item.currentLesson}
+            key={item.id}
           />
         ))}
       </div>

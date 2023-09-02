@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import store from "./store/store";
 import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import TrainingOverview from "./pages/TrainingOverview/TrainingOverview";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,6 +16,10 @@ root.render(
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/training-overview/:trainingId"
+            element={<TrainingOverview />}
+          />
         </Routes>
       </BrowserRouter>
     </Provider>

@@ -5,8 +5,8 @@ import Tab from "./Tab/Tab";
 function Accordian({ tabs }) {
   return (
     <div className={styles.accordianContainer}>
-      {tabs.map((item, index) => (
-        <Tab item={item} key={index} />
+      {tabs.map((item) => (
+        <Tab item={item} key={item.id} />
       ))}
     </div>
   );

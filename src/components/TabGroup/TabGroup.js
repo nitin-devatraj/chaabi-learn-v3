@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./TabGroup.module.scss";
 
-function TabGroup({ tabs }) {
-  const [selectedTab, setSelectedTab] = useState(null);
+function TabGroup({ tabs, onTabSelect }) {
+  const [selectedTab, setSelectedTab] = useState(tabs[0]);
+
   function TabClickHandler(event) {
-    console.log(event.target.id);
     setSelectedTab(event.target.id);
+    onTabSelect(event.target.id);
   }
+
+  useEffect(() => {
+    onTabSelect(selectedTab);
+  }, []);
 
   return (
     <div className={styles.tabGroupContainer}>

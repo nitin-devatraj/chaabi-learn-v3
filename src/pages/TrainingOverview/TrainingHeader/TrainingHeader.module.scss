@@ -1,0 +1,21 @@
+.trainingHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .backButton {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .trainingName {
+    color: var(--neutral20);
+    margin: 0;
+  }
+}
