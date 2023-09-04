@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./LessonCard.module.scss";
 import LessonCardHeader from "./LessonCardHeader/LessonCardHeader";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
@@ -11,6 +11,7 @@ import QuizLesson from "../../features/QuizLesson/QuizLesson";
 import AssessmentLesson from "../../features/AssessmentLesson/AssessmentLesson";
 import DocumentLesson from "../../features/DocumentLesson/DocumentLesson";
 import AudioLesson from "../../features/AudioLesson/AudioLesson";
+import Quiz from "../../features/Quiz/Quiz";
 
 // const chapterList = [
 //   {
@@ -120,6 +121,7 @@ import AudioLesson from "../../features/AudioLesson/AudioLesson";
 // ];
 
 function LessonCard() {
+  const [isQuizStarted, setIsQuizStarted] = useState(false);
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const { lessonId } = useParams();
@@ -147,6 +149,10 @@ function LessonCard() {
   //     : null;
 
   const markCompleteHandler = () => {};
+
+  const startQuizHandler = () => {
+    setIsQuizStarted(true);
+  };
 
   const handlePrevLessonClick = () => {
     // if (prevLesson === null) {
@@ -188,14 +194,24 @@ function LessonCard() {
         {lessonType === "video" && <VideoLesson orientation="portrait" />}
         {lessonType === "assessment" && <AssessmentLesson />}
         {lessonType === "document" && <DocumentLesson />}
-        {lessonType === "quiz" && <QuizLesson />}
         {lessonType === "audio" && <AudioLesson />}
-        <PrimaryButton
-          onClick={markCompleteHandler}
-          className={styles.primaryButton}
-        >
-          Mark as Done
-        </PrimaryButton>
+        {lessonType === "quiz" && <QuizLesson />}
+        {isQuizStarted === true && <Quiz />}
+        {lessonType === "quiz" ? (
+          <PrimaryButton
+            onClick={startQuizHandler}
+            className={styles.primaryButton}
+          >
+            Start Quiz
+          </PrimaryButton>
+        ) : (
+          <PrimaryButton
+            onClick={markCompleteHandler}
+            className={styles.primaryButton}
+          >
+            Mark as Done
+          </PrimaryButton>
+        )}
       </div>
     </div>
   );

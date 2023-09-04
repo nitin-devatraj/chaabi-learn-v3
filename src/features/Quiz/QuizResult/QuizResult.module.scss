@@ -1,0 +1,79 @@
+@import "../../../global-styles/variables.scss";
+
+.quizResultContainer {
+  border-radius: 4px 4px 0px 0px;
+  background: $success99;
+  padding: 18px 0px;
+  height: 100%;
+  gap: 18px;
+  display: flex;
+  flex-direction: column;
+
+  .progressIndicatorConainter {
+    height: 323px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .quizResultText {
+      color: $neutral20;
+      margin: 0;
+    }
+  }
+
+  .quizInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 16px;
+    gap: 16px;
+
+    .totalQuestions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .totalQuestionsNumber {
+        display: flex;
+        padding: 4px 8px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        background: $badgeColorBack4;
+        color: $badgeColorMain4;
+      }
+    }
+
+    .rightAnswers {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .rightAnswersNumber {
+        display: flex;
+        padding: 4px 8px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        background: $success90;
+        color: $success40;
+      }
+    }
+
+    .wrongAnswers {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .wrongAnswersNumber {
+        display: flex;
+        padding: 4px 8px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        background: $alert90;
+        color: $alert40;
+      }
+    }
+  }
+}

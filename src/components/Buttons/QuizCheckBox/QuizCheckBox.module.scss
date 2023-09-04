@@ -1,0 +1,19 @@
+@import "../../../global-styles/variables.scss";
+
+.quizCheckBox {
+  width: 25px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2.5px solid #1878f2;
+  border-radius: 4px;
+}
+
+.valid {
+  border: 2.5px solid $success50;
+}
+
+.invalid {
+  border: 2.5px solid $alert50;
+}

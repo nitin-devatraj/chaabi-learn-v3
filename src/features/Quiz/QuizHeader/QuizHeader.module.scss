@@ -1,0 +1,38 @@
+@import "../../../global-styles/color-theme.module.scss";
+
+.quizHeader {
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+
+  .arrowIconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 4px;
+  }
+
+  .quizHeaderText {
+    margin: 0;
+    color: $neutral20;
+  }
+
+  .quizTimer {
+    display: flex;
+    padding: 4px 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: $badgeColorMain6;
+
+    .quizTimerText {
+      color: $badgeColorBack6;
+      text-align: center;
+      margin: 0;
+    }
+  }
+}

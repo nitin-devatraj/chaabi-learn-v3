@@ -1,85 +1,53 @@
 @import "./variables.scss";
 
-// color theme
-// light color theme
+@mixin lightTheme($textColor, $bgColor1, $bgColor1Percent, $bgColor2) {
+  color: $textColor;
+  background-color: mix($bgColor1, $bgColor2, $bgColor1Percent);
+}
+
+@mixin darkTheme($textColor, $bgColor1, $bgColor1Percent, $bgColor2) {
+  color: $textColor;
+  background-color: mix($bgColor1, $bgColor2, $bgColor1Percent);
+}
+
 .lightThemeLowest {
-  color: #000;
-  background: #fbfcff;
+  color: var($neutral10);
+  background: var($neutral99);
 }
 
 .lightThemeLow {
-  color: #000;
-  background: linear-gradient(
-    0deg,
-    rgba(13, 98, 255, 0.05) 0%,
-    rgba(13, 98, 255, 0.05) 100%
-  );
+  @include lightTheme($neutral0, $neutral99, 95%, $primary50);
 }
 
 .lightThemeRegular {
-  color: #000;
-  background: linear-gradient(
-    0deg,
-    rgba(13, 98, 255, 0.08) 0%,
-    rgba(13, 98, 255, 0.08) 100%
-  );
+  @include lightTheme($neutral0, $neutral99, 92%, $primary50);
 }
 .lightThemeHigh {
-  color: #000;
-  background: linear-gradient(
-    0deg,
-    rgba(13, 98, 255, 0.11) 0%,
-    rgba(13, 98, 255, 0.11) 100%
-  );
+  @include lightTheme($neutral0, $neutral99, 89%, $primary50);
 }
 
 .lightThemeHighest {
-  color: #000;
-  background: linear-gradient(
-    0deg,
-    rgba(13, 98, 255, 0.14) 0%,
-    rgba(13, 98, 255, 0.14) 100%
-  );
+  @include lightTheme($neutral0, $neutral99, 86%, $primary50);
 }
 
 // dark color theme
 .darkThemeLowest {
-  color: var(--neutral100);
+  color: var($neutral100);
   background: #1b1c1f;
 }
 
 .darkThemeLow {
-  color: var(--neutral100);
-  background: linear-gradient(
-    0deg,
-    rgba(13, 98, 255, 0.05) 0%,
-    rgba(13, 98, 255, 0.05) 100%
-  );
+  @include darkTheme($neutral100, $neutral10, 95%, $primary50);
 }
 
 .darkThemeRegular {
-  color: var(--neutral100);
-  background: linear-gradient(
-    0deg,
-    rgba(13, 98, 255, 0.08) 0%,
-    rgba(13, 98, 255, 0.08) 100%
-  );
+  @include darkTheme($neutral100, $neutral10, 92%, $primary50);
 }
 
 .darkThemeHigh {
-  color: var(--neutral100);
-  background: linear-gradient(
-    0deg,
-    rgba(13, 98, 255, 0.11) 0%,
-    rgba(13, 98, 255, 0.11) 100%
-  );
+  @include darkTheme($neutral100, $neutral10, 89%, $primary50);
 }
 
 .darkThemeHighest {
-  color: var(--neutral100);
-  background: linear-gradient(
-    0deg,
-    rgba(13, 98, 255, 0.14) 0%,
-    rgba(13, 98, 255, 0.14) 100%
-  );
+  @include darkTheme($neutral100, $neutral10, 86%, $primary50);
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./CheckBox.module.scss";
-import { ReactComponent as CheckBoxIcon } from "../../../assets/icons/button-icons/checkbox-icon.svg";
+import { ReactComponent as CheckBoxIcon } from "../../../assets/component-icons/button-icons/checkbox-icon.svg";
 import { useSelector } from "react-redux";
 
 function CheckBox() {

@@ -1,0 +1,34 @@
+@import "../../../global-styles/variables.scss";
+
+.individualQuiz {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .quizQuestion {
+    margin: 0;
+  }
+
+  .quizOption {
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 4px;
+    border: 1px solid $neutral90;
+    background: $neutral100;
+    gap: 18px;
+
+    .quizOptionText {
+      color: $neutral50;
+    }
+  }
+
+  .validOption {
+    border: 1px solid $success50;
+  }
+
+  .invalidOption {
+    border: 1px solid $alert50;
+  }
+}
