@@ -9,13 +9,16 @@ import { useNavigate } from "react-router-dom";
 function AccordianTab({ item }) {
   const navigate = useNavigate();
   const [isTabClicked, setIsTabClicked] = useState(false);
+  const chapterId = item.id;
 
   function tabClickHandler() {
     setIsTabClicked((isTabClicked) => !isTabClicked);
   }
 
-  const lessonClickHandler = (lessonId, lessonType, lessonName) => {
-    navigate(`/lesson/${lessonId}?name=${lessonName}&type=${lessonType}`);
+  const lessonClickHandler = (lessonId, lessonType, lessonName, chapterId) => {
+    navigate(
+      `/lesson/${lessonId}?name=${lessonName}&type=${lessonType}&chapterId=${chapterId}`
+    );
   };
 
   return (
@@ -28,7 +31,9 @@ function AccordianTab({ item }) {
         item.lessonsList.map((item) => (
           <div
             className={styles.tabContent}
-            onClick={() => lessonClickHandler(item.id, item.type, item.name)}
+            onClick={() =>
+              lessonClickHandler(item.id, item.type, item.name, chapterId)
+            }
           >
             {item.access === true ? <UnlockIcon /> : <LockIcon />}
             <span>{item.name}</span>

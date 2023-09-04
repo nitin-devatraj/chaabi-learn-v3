@@ -122,9 +122,10 @@ function TrainingOverview() {
     const firstLessonId = chapterList[0].lessonsList[0].id;
     const firstLessonName = chapterList[0].lessonsList[0].name;
     const firstLessonType = chapterList[0].lessonsList[0].type;
+    const firstChapterId = chapterList[0].id;
 
     navigate(
-      `/lesson/${firstLessonId}?name=${firstLessonName}&type=${firstLessonType}`
+      `/lesson/${firstLessonId}?name=${firstLessonName}&type=${firstLessonType}&chapterId=${firstChapterId}`
     );
   };
 
