@@ -5,7 +5,7 @@ import typography from "../../../global-styles/typography.module.scss";
 
 function TrainingsToBeCompleted({ dummyTrainings }) {
   return (
-    <section className={styles.trainingsToBeCompleted}>
+    <section className={styles.trainingsToBeCompletedContainer}>
       <span className={typography.t4Lite}>Complete your Trainings</span>
       <div className={styles.trainingsCarousel}>
         {dummyTrainings.map((item) => (

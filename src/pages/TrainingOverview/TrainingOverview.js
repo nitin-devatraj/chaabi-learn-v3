@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./TrainingOverview.module.scss";
 import { useNavigate, useParams } from "react-router-dom";
-import trainingBanner from "../../assets/dashboard-page-icons/course-img.jpeg";
+import trainingBanner from "../../assets/images/pages/dashboard/course-img.jpeg";
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton";
 import TrainingContent from "./TrainingContent/TrainingContent";
 import TrainingInfo from "./TrainingInfo/TrainingInfo";
@@ -116,6 +116,8 @@ const chapterList = [
 
 function TrainingOverview() {
   const { trainingId } = useParams();
+  console.log(trainingId);
+
   const navigate = useNavigate();
 
   const startTrainingBtnHandler = () => {

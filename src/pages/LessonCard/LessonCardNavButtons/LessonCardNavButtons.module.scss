@@ -1,11 +1,15 @@
-.lessonNavButtons {
+@import "../../../global-styles/variables.scss";
+@import "../../../global-styles/typography.module.scss";
+
+.lessonNavButtonsContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 0px;
+  padding: 0.3125rem 0rem;
 
   .prevLessonBtn,
   .nextLessonBtn {
-    color: var(--primary50);
+    @extend .t4Reg;
+    color: $primary50;
   }
 }

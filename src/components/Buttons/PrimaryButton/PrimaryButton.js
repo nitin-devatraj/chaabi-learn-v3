@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./PrimaryButton.module.scss";
 import { useSelector } from "react-redux";
-import typography from "../../../global-styles/typography.module.scss";
 
 function PrimaryButton({ disabled, onClick, className, children }) {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
@@ -16,7 +15,7 @@ function PrimaryButton({ disabled, onClick, className, children }) {
       disabled={disabled}
       onClick={onClick}
     >
-      <div className={`${typography.t3Bold} ${styles.text}`}>{children}</div>
+      <p className={styles.text}>{children}</p>
     </button>
   );
 }

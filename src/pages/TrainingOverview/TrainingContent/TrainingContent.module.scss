@@ -1,26 +1,20 @@
 @import "../../../global-styles/variables.scss";
+@import "../../../global-styles/color-theme.module.scss";
 
-.trainingContent {
+.trainingContentContainer {
   display: flex;
   flex-direction: column;
 
   .trainingAboutSection {
-    height: 325px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    padding: 12px;
-    overflow-y: auto;
-
-    .trainingAboutText {
-      color: var(--neutral20);
-      margin: 0;
-    }
+    @extend .lightThemeRegular;
+    height: 20.3125rem;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
   }
 
   .lessonsAccordianContainer {
-    height: 325px;
-    flex-shrink: 0;
-    border-radius: 4px;
+    height: 20.3125rem;
+    border-radius: 0.25rem;
     overflow-y: auto;
   }
 }

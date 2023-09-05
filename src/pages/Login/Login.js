@@ -1,24 +1,23 @@
 import React, { useState } from "react";
 import styles from "./Login.module.scss";
-import colorTheme from "../../global-styles/color-theme.module.scss";
-import logo from "../../assets/login-page-icons/logo.png";
-import Banner from "./Banner/Banner";
+import logo from "../../assets/icons/logo.png";
+import LandingPage from "./LandingPage/LandingPage";
 import MobileLoginForm from "./MobileLoginForm/MobileLoginForm";
 import EmailLoginForm from "./EmailLoginForm/EmailLoginForm";
 import ResetPasswordForm from "./EmailLoginForm/ResetPasswordForm/ResetPasswordForm";
 
 function Login() {
-  const [defaultLoginMethod, setDefaultLoginMethod] = useState("email");
+  const [defaultLoginMethod, setDefaultLoginMethod] = useState("mobile");
   const [isLoginBtnClicked, setIsLoginBtnClicked] = useState(false);
   const [showResetPasswordForm, setResetPasswordForm] = useState(false);
 
   return (
-    <div className={`${styles.loginContainer} ${colorTheme.lightThemeRegular}`}>
+    <div className={styles.loginContainer}>
       <img src={logo} alt="#" className={styles.logo} />
       {isLoginBtnClicked === false && (
-        <Banner
+        <LandingPage
           loginMethod={defaultLoginMethod}
-          onLoginBtnClick={setIsLoginBtnClicked}
+          isLoginBtnClick={setIsLoginBtnClicked}
         />
       )}
 
@@ -29,7 +28,7 @@ function Login() {
       {isLoginBtnClicked === true &&
         showResetPasswordForm === false &&
         defaultLoginMethod === "email" && (
-          <EmailLoginForm onResetPassword={setResetPasswordForm} />
+          <EmailLoginForm resetPassword={setResetPasswordForm} />
         )}
 
       {isLoginBtnClicked === true &&

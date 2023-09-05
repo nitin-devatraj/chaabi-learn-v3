@@ -6,9 +6,7 @@ import ProgressBar from "../../../components/ProgressBar/ProgressBar";
 function QuizProgress() {
   return (
     <section className={styles.quizProgressContainer}>
-      <p className={`${typography.t5Reg} ${styles.quizProgressText}`}>
-        Question 1 of 10
-      </p>
+      <p className={typography.t5Reg}>Question 1 of 10</p>
       <ProgressBar progress="10" />
     </section>
   );

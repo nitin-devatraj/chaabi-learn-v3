@@ -1,3 +1,4 @@
+@import "../global-styles/variables.scss";
 // typography
 
 //font family
@@ -11,6 +12,8 @@
   font-style: normal;
   font-weight: 300;
   line-height: 5.625rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h1Reg {
@@ -19,6 +22,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 5.625rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h1Med {
@@ -27,6 +32,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: 5.625rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h1Semi {
@@ -35,6 +42,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: 5.625rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h1Bold {
@@ -43,6 +52,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 5.625rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 // h2 - group
@@ -52,6 +63,8 @@
   font-style: normal;
   font-weight: 300;
   line-height: 4.5rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h2Reg {
@@ -60,6 +73,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 4.5rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h2Med {
@@ -68,6 +83,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: 4.5rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h2Semi {
@@ -76,6 +93,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: 4.5rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h2Bold {
@@ -84,6 +103,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 4.5rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 // h3 - group
@@ -93,6 +114,8 @@
   font-style: normal;
   font-weight: 300;
   line-height: 3.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h3Reg {
@@ -101,6 +124,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 3.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h3Med {
@@ -109,6 +134,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: 3.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h3Semi {
@@ -117,6 +144,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: 3.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h3Bold {
@@ -125,6 +154,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 3.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 // h4 - group
@@ -134,6 +165,8 @@
   font-style: normal;
   font-weight: 300;
   line-height: 2.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h4Reg {
@@ -142,6 +175,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 2.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h4Med {
@@ -150,6 +185,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: 2.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h4Semi {
@@ -158,6 +195,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: 2.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h4Bold {
@@ -166,6 +205,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 2.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 // h5 - group
@@ -175,6 +216,8 @@
   font-style: normal;
   font-weight: 300;
   line-height: 2.375rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h5Reg {
@@ -183,6 +226,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 2.375rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h5Med {
@@ -191,6 +236,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: 2.375rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h5Semi {
@@ -199,6 +246,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: 2.375rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h5Bold {
@@ -207,6 +256,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 2.375rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 // h6 - group
@@ -216,6 +267,8 @@
   font-style: normal;
   font-weight: 300;
   line-height: 2rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h6Reg {
@@ -224,6 +277,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 2rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h6Med {
@@ -232,6 +287,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: 2rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h6Semi {
@@ -240,6 +297,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: 2rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .h6Bold {
@@ -248,6 +307,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 2rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 // text
@@ -258,6 +319,8 @@
   font-style: normal;
   font-weight: 300;
   line-height: 1.875rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t1Reg {
@@ -266,6 +329,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.875rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t1Med {
@@ -274,6 +339,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: 1.875rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t1Semi {
@@ -282,6 +349,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: 1.875rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t1Bold {
@@ -290,6 +359,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 1.875rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 // t2 - group
@@ -299,6 +370,8 @@
   font-style: normal;
   font-weight: 300;
   line-height: 1.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t2Reg {
@@ -307,6 +380,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t2Med {
@@ -315,6 +390,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: 1.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t2Semi {
@@ -323,6 +400,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: 1.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t2Bold {
@@ -331,6 +410,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 1.75rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 // t3 - group
@@ -340,6 +421,8 @@
   font-style: normal;
   font-weight: 300;
   line-height: 1.5rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t3Reg {
@@ -348,6 +431,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.5rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t3Med {
@@ -356,6 +441,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: 1.5rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t3Semi {
@@ -364,6 +451,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: 1.5rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t3Bold {
@@ -372,6 +461,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 1.5rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 // t4 - group
@@ -381,6 +472,8 @@
   font-style: normal;
   font-weight: 300;
   line-height: 1.25rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t4Reg {
@@ -389,6 +482,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.25rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t4Med {
@@ -397,6 +492,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: 1.25rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t4Semi {
@@ -405,6 +502,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: 1.25rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t4Bold {
@@ -413,6 +512,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 1.25rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 // t5 - group
@@ -422,6 +523,8 @@
   font-style: normal;
   font-weight: 300;
   line-height: 1.125rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t5Reg {
@@ -430,6 +533,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.125rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t5Med {
@@ -438,6 +543,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: 1.125rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t5Semi {
@@ -446,6 +553,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: 1.125rem;
+  color: $neutral20;
+  margin: 0;
 }
 
 .t5Bold {
@@ -454,4 +563,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: 1.125rem;
+  color: $neutral20;
+  margin: 0;
 }

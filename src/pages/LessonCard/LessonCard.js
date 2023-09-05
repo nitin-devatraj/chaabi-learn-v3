@@ -4,7 +4,6 @@ import LessonCardHeader from "./LessonCardHeader/LessonCardHeader";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import LessonTitle from "./LessonTitle/LessonTitle";
 import LessonCardNavButtons from "./LessonCardNavButtons/LessonCardNavButtons";
-import colorTheme from "../../global-styles/color-theme.module.scss";
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton";
 import VideoLesson from "../../features/VideoLesson/VideoLesson";
 import QuizLesson from "../../features/QuizLesson/QuizLesson";
@@ -185,30 +184,25 @@ function LessonCard() {
   return (
     <div className={styles.lessonCardContainer}>
       <LessonCardHeader />
-      <div className={`${styles.lessonCard} ${colorTheme.lightThemeRegular}`}>
-        <LessonTitle lessonName={lessonName} lessonType={lessonType} />
-        <LessonCardNavButtons
-          onPrevLessonClick={handlePrevLessonClick}
-          onNextLessonClick={handleNextLessonClick}
-        />
-        {lessonType === "video" && <VideoLesson orientation="portrait" />}
-        {lessonType === "assessment" && <AssessmentLesson />}
-        {lessonType === "document" && <DocumentLesson />}
-        {lessonType === "audio" && <AudioLesson />}
-        {lessonType === "quiz" && <QuizLesson />}
-        {isQuizStarted === true && <Quiz />}
+      <div className={styles.lessonCard}>
+        <div className={styles.lesson}>
+          <LessonTitle lessonName={lessonName} lessonType={lessonType} />
+          <LessonCardNavButtons
+            onPrevLessonClick={handlePrevLessonClick}
+            onNextLessonClick={handleNextLessonClick}
+          />
+          {lessonType === "video" && <VideoLesson orientation="portrait" />}
+          {lessonType === "assessment" && <AssessmentLesson />}
+          {lessonType === "document" && <DocumentLesson />}
+          {lessonType === "audio" && <AudioLesson />}
+          {lessonType === "quiz" && <QuizLesson />}
+          {isQuizStarted === true && <Quiz />}
+        </div>
+
         {lessonType === "quiz" ? (
-          <PrimaryButton
-            onClick={startQuizHandler}
-            className={styles.primaryButton}
-          >
-            Start Quiz
-          </PrimaryButton>
+          <PrimaryButton onClick={startQuizHandler}>Start Quiz</PrimaryButton>
         ) : (
-          <PrimaryButton
-            onClick={markCompleteHandler}
-            className={styles.primaryButton}
-          >
+          <PrimaryButton onClick={markCompleteHandler}>
             Mark as Done
           </PrimaryButton>
         )}

@@ -11,8 +11,8 @@
 }
 
 .lightThemeLowest {
-  color: var($neutral10);
-  background: var($neutral99);
+  color: $neutral10;
+  background: $neutral99;
 }
 
 .lightThemeLow {
@@ -32,8 +32,8 @@
 
 // dark color theme
 .darkThemeLowest {
-  color: var($neutral100);
-  background: #1b1c1f;
+  color: $neutral100;
+  background: $neutral10;
 }
 
 .darkThemeLow {

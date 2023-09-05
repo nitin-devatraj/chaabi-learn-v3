@@ -24,21 +24,23 @@ function ResetPasswordForm() {
 
   return (
     <div className={styles.resetPasswordFormContainer}>
-      <h5 className={`${typography.h5Bold} ${styles.title}`}>Reset Password</h5>
-      <TextInput
-        type="password"
-        label="New Password"
-        placeholder="enter your new password"
-        onChange={newPasswordChangeHandler}
-        value={newPassword}
-      />
-      <TextInput
-        type="password"
-        label="Confirm Password"
-        placeholder="confirm your password"
-        onChange={confirmPasswordChangeHandler}
-        value={confirmPassword}
-      />
+      <div className={styles.form}>
+        <h5 className={typography.h5Bold}>Reset Password</h5>
+        <TextInput
+          type="password"
+          label="New Password"
+          placeholder="enter your new password"
+          onChange={newPasswordChangeHandler}
+          value={newPassword}
+        />
+        <TextInput
+          type="password"
+          label="Confirm Password"
+          placeholder="confirm your password"
+          onChange={confirmPasswordChangeHandler}
+          value={confirmPassword}
+        />
+      </div>
       <PrimaryButton onClick={resetPasswordSubmitHandler}>Submit</PrimaryButton>
     </div>
   );

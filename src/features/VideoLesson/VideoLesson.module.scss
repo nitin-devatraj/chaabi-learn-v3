@@ -3,13 +3,13 @@
 .videoLessonContainer {
   .videoPlayer {
     width: 100%;
-    height: 194px;
+    height: 12.125rem;
     flex-shrink: 0;
-    border-radius: 4px;
-    background: var(--neutral0);
+    border-radius: 0.25rem;
+    background: $neutral0;
   }
 
   .portraitMode {
-    height: 432px;
+    height: 27rem;
   }
 }

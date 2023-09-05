@@ -1,21 +1,18 @@
-.trainingHeader {
+@import "../../../global-styles/color-theme.module.scss";
+
+.trainingHeaderContainer {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
 
   .backButton {
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-    border-radius: 4px;
+    @extend .lightThemeRegular;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.25rem;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .trainingName {
-    color: var(--neutral20);
-    margin: 0;
   }
 }

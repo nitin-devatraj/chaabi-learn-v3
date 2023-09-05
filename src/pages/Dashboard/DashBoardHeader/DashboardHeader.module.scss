@@ -1,29 +1,23 @@
-.header {
+.dashboardHeaderContainer {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 1.125rem;
 
   .headerNav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 24px;
+    gap: 1.5rem;
 
     .logo {
-      width: 120px;
+      width: 7.5rem;
       height: auto;
       object-fit: cover;
-      flex-shrink: 0;
     }
 
     .navButtons {
       display: flex;
-      gap: 14px;
+      gap: 0.875rem;
     }
-  }
-
-  .title {
-    color: var(--neutral20);
-    margin: 0;
   }
 }

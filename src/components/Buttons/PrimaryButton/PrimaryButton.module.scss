@@ -1,4 +1,5 @@
 @import "../.././../global-styles/variables.scss";
+@import "../../../global-styles/typography.module.scss";
 
 .primaryBtnLightTheme {
   width: 100%;
@@ -7,35 +8,29 @@
   justify-content: center;
   border-radius: 0.25rem;
   padding: 0.75rem 1.5rem;
-  color: #fff;
-  text-align: center;
-  font-family: "Roboto";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.5rem;
-  background: var(--primary50);
-  border: 1px solid var(--primary50);
+  background: $primary50;
+  border: 0.0625rem solid $primary50;
   cursor: pointer;
 
   .text {
-    color: var(--neutral100);
+    @extend .t3Bold;
+    color: $neutral100;
   }
 }
 
 .primaryBtnLightTheme:not(:disabled):hover {
-  box-shadow: 0px 0px 0px 4px #dbe7ff;
+  box-shadow: 0rem 0rem 0rem 0.25rem #dbe7ff;
 }
 
 .primaryBtnLightTheme:not(:disabled):active {
-  box-shadow: 0px 0px 0px 4px #dbe7ff;
-  background: var(--primary40);
+  box-shadow: 0rem 0rem 0rem 0.25rem #dbe7ff;
+  background: $primary40;
 }
 
 .primaryBtnLightTheme[disabled] {
-  border: 1px solid var(--neutral90);
-  background: var(--neutral90);
-  color: #fff;
+  border: 0.0625rem solid $neutral90;
+  background: $neutral90;
+  color: $neutral100;
   cursor: not-allowed;
 }
 
@@ -47,42 +42,29 @@
   justify-content: center;
   border-radius: 0.25rem;
   padding: 0.75rem 1.5rem;
-  color: #fff;
-  text-align: center;
-  font-family: "Roboto";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.5rem;
-  background: var(--primary50);
-  border: 1px solid var(--primary50);
+  background: $primary50;
+  border: 0.0625rem solid $primary50;
   cursor: pointer;
 
   .text {
-    color: var(--neutral100);
+    @extend .t3Bold;
+    color: $neutral100;
   }
 }
 
 .primaryBtnDarkTheme:not(:disabled):hover {
-  box-shadow: 0px 0px 0px 4px #b4ceff;
+  box-shadow: 0px 0rem 0rem 0.25rem #b4ceff;
 }
 
 .primaryBtnDarkTheme:not(:disabled):active {
-  background: var(--primary60);
+  background: $primary60;
   border-color: transparent;
-  box-shadow: 0px 0px 0px 4px #b4ceff;
+  box-shadow: 0rem 0rem 0rem 0.25rem #b4ceff;
 }
 
 .primaryBtnDarkTheme[disabled] {
-  color: #fff;
-  background: var(--neutral20);
-  border: 1px solid var(--neutral20);
+  color: $neutral100;
+  background: $neutral20;
+  border: 1px solid $neutral20;
   cursor: not-allowed;
 }
-
-// @media screen and (min-width: 361px) {
-//   .primaryBtnLightTheme,
-//   .primaryBtnDarkTheme {
-//     width: 50%;
-//   }
-// }

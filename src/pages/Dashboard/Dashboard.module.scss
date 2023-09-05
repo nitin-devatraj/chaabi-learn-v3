@@ -1,11 +1,10 @@
-@import "../../global-styles/variables.scss";
+@import "../../global-styles/color-theme.module.scss";
 
 .dashboardContainer {
+  @extend .lightThemeRegular;
   display: flex;
-  padding: 84px 16px;
+  padding: 5.25rem 1rem;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: 24px;
-  width: 100vw;
+  gap: 1.5rem;
   overflow: auto;
 }

@@ -21,7 +21,7 @@ function MobileLoginForm() {
   return (
     <div className={styles.mobileLoginFormContainer}>
       <div className={styles.inputContainer}>
-        <h5 className={`${typography.h5Bold} ${styles.title}`}>
+        <h5 className={typography.h5Bold}>
           {isGenerateOtpBtnClicked === false
             ? "Login with Mobile"
             : "Enter the OTP"}

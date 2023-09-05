@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import styles from "./Tab.module.scss";
-import { ReactComponent as ArrowRightIcon } from "../../../assets/component-icons/accordian/arrow-right.svg";
-import { ReactComponent as ArrowDownIcon } from "../../../assets/component-icons/accordian/arrow-down.svg";
-import { ReactComponent as LockIcon } from "../../../assets/component-icons/accordian/lock-icon.svg";
-import { ReactComponent as UnlockIcon } from "../../../assets/component-icons/accordian/unlock-icon.svg";
+import styles from "./AccordianTab.module.scss";
+import { ReactComponent as ArrowRightIcon } from "../../../assets/icons/components/accordian/accordian-tab/arrow-right.svg";
+import { ReactComponent as ArrowDownIcon } from "../../../assets/icons/components/accordian/accordian-tab/arrow-down.svg";
+import { ReactComponent as LockIcon } from "../../../assets/icons/components/accordian/accordian-tab/lock-icon.svg";
+import { ReactComponent as UnlockIcon } from "../../../assets/icons/components/accordian/accordian-tab/unlock-icon.svg";
 import { useNavigate } from "react-router-dom";
 
 function AccordianTab({ item }) {

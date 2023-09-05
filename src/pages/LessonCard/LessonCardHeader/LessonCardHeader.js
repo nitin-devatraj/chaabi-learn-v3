@@ -2,8 +2,7 @@ import React from "react";
 import styles from "./LessonCardHeader.module.scss";
 import { useNavigate } from "react-router-dom";
 import typography from "../../../global-styles/typography.module.scss";
-import colorTheme from "../../../global-styles/color-theme.module.scss";
-import { ReactComponent as BackIcon } from "../../../assets/training-overview-icons/back-icon.svg";
+import { ReactComponent as BackIcon } from "../../../assets/icons/pages/lesson-card/lesson-card-header/back-icon.svg";
 
 function LessonCardHeader() {
   const navigate = useNavigate();
@@ -14,15 +13,10 @@ function LessonCardHeader() {
 
   return (
     <header className={styles.lessonCardHeader}>
-      <button
-        className={`${styles.backButton} ${colorTheme.lightThemeRegular}`}
-        onClick={backButtonHandler}
-      >
+      <button className={styles.backButton} onClick={backButtonHandler}>
         <BackIcon />
       </button>
-      <p className={`${typography.t3Med} ${styles.lessonName}`}>
-        Zippee Rider Training Module
-      </p>
+      <p className={typography.t3Med}>Zippee Rider Training Module</p>
     </header>
   );
 }

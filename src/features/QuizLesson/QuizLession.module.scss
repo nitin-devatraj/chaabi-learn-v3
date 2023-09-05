@@ -1,83 +1,86 @@
+@import "../../global-styles/typography.module.scss";
+@import "../../global-styles/color-theme.module.scss";
+@import "../../global-styles/variables.scss";
+
 .quizLessonContainer {
+  @extend .lightThemeHighest;
   display: flex;
   flex-direction: column;
-  padding: 16px;
-  //   height: 493px;
-  height: 350px;
+  padding: 1rem;
+  height: 21.875rem;
   flex-shrink: 0;
-  gap: 26px;
-
-  .quizDetailsText {
-    margin: 0;
-    color: var(--neutral20);
-  }
+  gap: 1.625rem;
 
   .quizDetails {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem;
 
     .totalQuestions {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0.5rem;
 
       .totalQuestionsNumber {
+        @extend .h6Med;
         display: flex;
-        padding: 4px 8px;
+        padding: 0.25rem 0.5rem;
         align-items: center;
         justify-content: center;
-        border-radius: 4px;
-        background: var(--badgeColorBack1);
-        color: var(--badgeColorMain1);
+        border-radius: 0.25rem;
+        background: $badgeColorBack1;
+        color: $badgeColorMain1;
       }
     }
 
     .timePerQuestion {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0.5rem;
 
       .timePerQuestionNumber {
+        @extend .h6Med;
         display: flex;
-        padding: 4px 8px;
+        padding: 0.25rem 0.5rem;
         align-items: center;
         justify-content: center;
-        border-radius: 4px;
-        background: var(--badgeColorBack3);
-        color: var(--badgeColorMain3);
+        border-radius: 0.25rem;
+        background: $badgeColorBack3;
+        color: $badgeColorMain3;
       }
     }
 
     .attemptsAllowed {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0.5rem;
 
       .attemptsAllowedNumber {
+        @extend .h6Med;
         display: flex;
-        padding: 4px 8px;
+        padding: 0.25rem 0.5rem;
         align-items: center;
         justify-content: center;
-        border-radius: 4px;
-        background: var(--badgeColorBack7);
-        color: var(--badgeColorMain7);
+        border-radius: 0.25rem;
+        background: $badgeColorBack7;
+        color: $badgeColorMain7;
       }
     }
 
     .passingScore {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0.5rem;
 
       .passingScoreNumber {
+        @extend .h6Med;
         display: flex;
-        padding: 4px 8px;
+        padding: 0.25rem 0.5rem;
         align-items: center;
         justify-content: center;
-        border-radius: 4px;
-        background: var(--badgeColorBack5);
-        color: var(--badgeColorMain5);
+        border-radius: 0.25rem;
+        background: $badgeColorBack5;
+        color: $badgeColorMain5;
       }
     }
   }

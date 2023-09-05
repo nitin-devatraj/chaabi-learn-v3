@@ -1,16 +1,18 @@
+@import "../../global-styles/color-theme.module.scss";
+
 .loginContainer {
+  @extend .lightThemeRegular;
   display: flex;
-  padding: 84px 16px 62px 16px;
+  padding: 5.25rem 1rem;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 24px;
+  gap: 1.5rem;
   width: 100vw;
   height: 100vh;
 
   .logo {
-    width: 120px;
+    width: 7.5rem;
     height: auto;
     object-fit: cover;
-    flex-shrink: 0;
   }
 }

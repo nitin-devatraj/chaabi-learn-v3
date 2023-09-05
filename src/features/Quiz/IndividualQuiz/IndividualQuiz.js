@@ -5,34 +5,26 @@ import typography from "../../../global-styles/typography.module.scss";
 
 function IndividualQuiz() {
   return (
-    <div className={styles.individualQuiz}>
-      <p className={`${typography.t3Reg} ${styles.quizQuestion}`}>
+    <div className={styles.individualQuizContainer}>
+      <p className={typography.t3Reg}>
         Q. Text of the question that can run into two lines and can be added in
         two lines only
       </p>
       <div className={styles.quizOption}>
         <QuizCheckBox />
-        <span className={`${typography.t3Reg} ${styles.quizOptionText}`}>
-          Option 1 text message
-        </span>
+        <span className={styles.quizOptionText}>Option 1 text message</span>
       </div>
       <div className={styles.quizOption}>
         <QuizCheckBox />
-        <span className={`${typography.t3Reg} ${styles.quizOptionText}`}>
-          Option 2 text message
-        </span>
+        <span className={styles.quizOptionText}>Option 2 text message</span>
       </div>
       <div className={styles.quizOption}>
         <QuizCheckBox />
-        <span className={`${typography.t3Reg} ${styles.quizOptionText}`}>
-          Option 3 text message
-        </span>
+        <span className={styles.quizOptionText}>Option 3 text message</span>
       </div>
       <div className={styles.quizOption}>
         <QuizCheckBox />
-        <span className={`${typography.t3Reg} ${styles.quizOptionText}`}>
-          Option 4 text message
-        </span>
+        <span className={styles.quizOptionText}>Option 4 text message</span>
       </div>
     </div>
   );

@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./CourseCard.module.scss";
-import courseImg from "../../../assets/dashboard-page-icons/course-img.jpeg";
+import courseImg from "../../../assets/images/pages/dashboard/course-img.jpeg";
 import ProgressBar from "../../../components/ProgressBar/ProgressBar";
-import typography from "../../../global-styles/typography.module.scss";
 import { useNavigate } from "react-router-dom";
 
 function CourseCard({
@@ -21,24 +20,23 @@ function CourseCard({
   };
 
   return (
-    <div className={styles.courseCard} onClick={courseCardClickHandler}>
+    <div
+      className={styles.courseCardContainer}
+      onClick={courseCardClickHandler}
+    >
       <img src={courseImg} alt="#" className={styles.courseImg} />
+
       <ProgressBar progress={progress} />
+
       <div className={styles.courseDetails}>
-        <p className={`${styles.courseHeading} ${typography.t4Med}`}>
-          {courseTitle}
-        </p>
+        <p className={styles.courseHeading}>{courseTitle}</p>
         <div className={styles.courseTextInfo}>
           <div>
-            <span className={`${styles.courseText} ${typography.t5Lite}`}>
-              {numberOFVideos} Videos
-            </span>
-            <span className={`${styles.courseText} ${typography.t5Lite}`}>
-              {numberOFQuizzes} Quizzes
-            </span>
+            <span className={styles.courseText}>{numberOFVideos} Videos</span>
+            <span className={styles.courseText}>{numberOFQuizzes} Quizzes</span>
           </div>
 
-          <span className={`${styles.courseText} ${typography.t5Lite}`}>
+          <span className={styles.courseText}>
             Lesson {currentLesson} of {totalLessons}
           </span>
         </div>
