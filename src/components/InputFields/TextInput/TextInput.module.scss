@@ -1,3 +1,6 @@
+@import "../../../global-styles/variables.scss";
+@import "../../../global-styles/typography.module.scss";
+
 .textInputContainer {
   display: inline-flex;
   flex-direction: column;
@@ -7,125 +10,88 @@
   gap: 0.25rem;
 
   .labelLightTheme {
-    color: var(--neutral50);
-    font-family: "Roboto", sans-serif;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 1.25rem;
+    @extend .t4Lite;
+    color: $neutral50;
     cursor: pointer;
   }
 
   .inputLightTheme {
+    @extend .t3Reg;
     display: flex;
-    padding: 12px 16px;
+    padding: 0.75rem 1rem;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
     align-self: stretch;
     border-radius: 0.25rem;
-    border: 0.0625rem solid var(--neutral90);
-    background: var(--neutral100);
-    color: var(--neutral20);
-    font-family: "Roboto", sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5rem;
+    border: 0.0625rem solid $neutral90;
+    background-color: $neutral100;
   }
 
   .inputLightTheme:focus {
     outline: none;
-    box-shadow: 0px 0px 0px 4px #f0f1f4;
+    box-shadow: 0rem 0rem 0rem 0.25rem #f0f1f4;
   }
 
   .inputLightTheme:invalid {
-    border: 1px solid var(--alert60);
+    border: 0.0625rem solid $alert60;
   }
 
   .inputLightTheme::placeholder {
-    color: var(--neutral70);
-    font-family: "Roboto", sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 1.5rem;
+    @extend .t3Lite;
+    color: $neutral70;
   }
 
   .inputLightTheme[disabled] {
-    border: 1px solid var(--neutral90);
-    background: var(--neutral90);
-    color: var(--neutral70);
+    border: 1px solid $neutral90;
+    background: $neutral90;
+    color: $neutral70;
   }
 
   .helperTextLightTheme {
-    color: var(--neutral20);
-    font-family: "Roboto", sans-serif;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 1.25rem;
-    margin: 0rem;
+    @extend .t4Lite;
   }
 
   // dark theme mode
   .labelDarkTheme {
-    color: var(--neutral95);
-    font-family: "Roboto", sans-serif;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 1.25rem;
+    @extend .t4Lite;
+    color: $neutral95;
     cursor: pointer;
   }
 
   .inputDarkTheme {
+    @extend .t3Reg;
     display: flex;
-    padding: 12px 16px;
+    padding: 0.75rem 1rem;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
     align-self: stretch;
     border-radius: 0.25rem;
-    border: 0.0625rem solid var(--neutral70);
-    background: var(--neutral100);
-    color: var(--neutral20);
-    font-family: "Roboto", sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5rem;
+    border: 0.0625rem solid $neutral70;
+    background-color: $neutral100;
   }
 
   .inputDarkTheme:focus {
     outline: none;
-    box-shadow: 0px 0px 0px 4px #c6c7ca;
+    box-shadow: 0rem 0rem 0rem 0.25rem #c6c7ca;
   }
 
   .inputDarkTheme:invalid {
-    border: 1px solid var(--alert60);
+    border: 0.0625rem solid $alert60;
   }
 
   .inputDarkTheme::placeholder {
-    color: var(--neutral70);
-    font-family: "Roboto", sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 1.5rem;
+    @extend .t3Lite;
+    color: $neutral70;
   }
 
   .inputDarkTheme[disabled] {
-    border: 1px solid var(--neutral40);
-    background: var(--neutral40);
-    color: var(--neutral80);
+    border: 0.0625rem solid $neutral40;
+    background: $neutral40;
+    color: $neutral80;
   }
 
   .helperTextDarkTheme {
-    color: var(--neutral95);
-    font-family: "Roboto", sans-serif;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 1.25rem;
-    margin: 0rem;
+    @extend .t4Lite;
+    color: $neutral95;
   }
 }

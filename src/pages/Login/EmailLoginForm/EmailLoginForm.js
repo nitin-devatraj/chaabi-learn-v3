@@ -7,7 +7,9 @@ import { useNavigate } from "react-router-dom";
 
 function EmailLoginForm({ resetPassword }) {
   const [isForgotPasswordClicked, setisForgotPasswordClicked] = useState(false);
+  // this state variable holds the user entered "email"
   const [email, setEmail] = useState("");
+  // this state variable holds the user entered "password"
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
@@ -19,14 +21,17 @@ function EmailLoginForm({ resetPassword }) {
     setPassword(event.target.value);
   };
 
+  // this function is triggered when the user hits submit after entering credentials
   const emailLoginSubmitHandler = () => {
     navigate("/dashboard");
   };
 
+  // this function is triggered when the user hits "forgot password?"
   const forgotPasswordHandler = () => {
     setisForgotPasswordClicked(true);
   };
 
+  // this function is triggered when the user hits submit after entering email (password forgot mode)
   const forgotPasswordSubmitHandler = () => {
     resetPassword(true);
   };

@@ -1,568 +1,749 @@
-@import "../global-styles/variables.scss";
+@import "./variables.scss";
+
+// typography variables
+$fontFamily: "Roboto", sans-serif;
+$fontStyle: normal;
+$color: $neutral20;
+$margin: 0;
+
+$h1FontSize: 4.5rem;
+$h2FontSize: 3.75rem;
+$h3FontSize: 3rem;
+$h4FontSize: 2.25rem;
+$h5FontSize: 1.875rem;
+$h6FontSize: 1.5rem;
+
+$h1LineHeight: 5.625rem;
+$h2LineHeight: 4.5rem;
+$h3LineHeight: 3.75rem;
+$h4LineHeight: 2.75rem;
+$h5LineHeight: 2.375rem;
+$h6LineHeight: 2rem;
+
+$t1FontSize: 1.25rem;
+$t2FontSize: 1.125rem;
+$t3FontSize: 1rem;
+$t4FontSize: 0.875rem;
+$t5FontSize: 0.75rem;
+
+$t1LineHeight: 1.875rem;
+$t2LineHeight: 1.75rem;
+$t3LineHeight: 1.5rem;
+$t4LineHeight: 1.25rem;
+$t5LineHeight: 1.125rem;
+
+$fontWeightLite: 300;
+$fontWeightReg: 400;
+$fontWeightMed: 500;
+$fontWeightSemi: 600;
+$fontWeightBold: 700;
+
 // typography
+// heading classes
+@mixin headings(
+  $fontFamily,
+  $fontSize,
+  $fontStyle,
+  $fontWeight,
+  $lineHeight,
+  $color,
+  $margin
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  color: $color;
+  margin: $margin;
+}
 
-//font family
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
-// headings
 // h1 - group
 .h1Lite {
-  font-family: "Roboto";
-  font-size: 4.5rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 5.625rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h1FontSize,
+    $fontStyle,
+    $fontWeightLite,
+    $h1LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h1Reg {
-  font-family: "Roboto";
-  font-size: 4.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 5.625rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h1FontSize,
+    $fontStyle,
+    $fontWeightReg,
+    $h1LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h1Med {
-  font-family: "Roboto";
-  font-size: 4.5rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 5.625rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h1FontSize,
+    $fontStyle,
+    $fontWeightMed,
+    $h1LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h1Semi {
-  font-family: "Roboto";
-  font-size: 4.5rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 5.625rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h1FontSize,
+    $fontStyle,
+    $fontWeightSemi,
+    $h1LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h1Bold {
-  font-family: "Roboto";
-  font-size: 4.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 5.625rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h1FontSize,
+    $fontStyle,
+    $fontWeightBold,
+    $h1LineHeight,
+    $color,
+    $margin
+  );
 }
 
 // h2 - group
 .h2Lite {
-  font-family: "Roboto";
-  font-size: 3.75rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 4.5rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h2FontSize,
+    $fontStyle,
+    $fontWeightLite,
+    $h2LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h2Reg {
-  font-family: "Roboto";
-  font-size: 3.75rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 4.5rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h2FontSize,
+    $fontStyle,
+    $fontWeightReg,
+    $h2LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h2Med {
-  font-family: "Roboto";
-  font-size: 3.75rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 4.5rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h2FontSize,
+    $fontStyle,
+    $fontWeightMed,
+    $h2LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h2Semi {
-  font-family: "Roboto";
-  font-size: 3.75rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 4.5rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h2FontSize,
+    $fontStyle,
+    $fontWeightSemi,
+    $h2LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h2Bold {
-  font-family: "Roboto";
-  font-size: 3.75rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 4.5rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h2FontSize,
+    $fontStyle,
+    $fontWeightBold,
+    $h2LineHeight,
+    $color,
+    $margin
+  );
 }
 
 // h3 - group
 .h3Lite {
-  font-family: "Roboto";
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 3.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h3FontSize,
+    $fontStyle,
+    $fontWeightLite,
+    $h3LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h3Reg {
-  font-family: "Roboto";
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 3.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h3FontSize,
+    $fontStyle,
+    $fontWeightReg,
+    $h3LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h3Med {
-  font-family: "Roboto";
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 3.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h3FontSize,
+    $fontStyle,
+    $fontWeightMed,
+    $h3LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h3Semi {
-  font-family: "Roboto";
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 3.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h3FontSize,
+    $fontStyle,
+    $fontWeightSemi,
+    $h3LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h3Bold {
-  font-family: "Roboto";
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 3.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h3FontSize,
+    $fontStyle,
+    $fontWeightBold,
+    $h3LineHeight,
+    $color,
+    $margin
+  );
 }
 
 // h4 - group
 .h4Lite {
-  font-family: "Roboto";
-  font-size: 2.25rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 2.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h4FontSize,
+    $fontStyle,
+    $fontWeightLite,
+    $h4LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h4Reg {
-  font-family: "Roboto";
-  font-size: 2.25rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 2.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h4FontSize,
+    $fontStyle,
+    $fontWeightReg,
+    $h4LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h4Med {
-  font-family: "Roboto";
-  font-size: 2.25rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 2.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h4FontSize,
+    $fontStyle,
+    $fontWeightMed,
+    $h4LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h4Semi {
-  font-family: "Roboto";
-  font-size: 2.25rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 2.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h4FontSize,
+    $fontStyle,
+    $fontWeightSemi,
+    $h4LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h4Bold {
-  font-family: "Roboto";
-  font-size: 2.25rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 2.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h4FontSize,
+    $fontStyle,
+    $fontWeightBold,
+    $h4LineHeight,
+    $color,
+    $margin
+  );
 }
 
 // h5 - group
 .h5Lite {
-  font-family: "Roboto";
-  font-size: 1.875rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 2.375rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h5FontSize,
+    $fontStyle,
+    $fontWeightLite,
+    $h5LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h5Reg {
-  font-family: "Roboto";
-  font-size: 1.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 2.375rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h5FontSize,
+    $fontStyle,
+    $fontWeightReg,
+    $h5LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h5Med {
-  font-family: "Roboto";
-  font-size: 1.875rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 2.375rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h5FontSize,
+    $fontStyle,
+    $fontWeightMed,
+    $h5LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h5Semi {
-  font-family: "Roboto";
-  font-size: 1.875rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 2.375rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h5FontSize,
+    $fontStyle,
+    $fontWeightSemi,
+    $h5LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h5Bold {
-  font-family: "Roboto";
-  font-size: 1.875rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 2.375rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h5FontSize,
+    $fontStyle,
+    $fontWeightBold,
+    $h5LineHeight,
+    $color,
+    $margin
+  );
 }
 
 // h6 - group
 .h6Lite {
-  font-family: "Roboto";
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 2rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h6FontSize,
+    $fontStyle,
+    $fontWeightLite,
+    $h6LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h6Reg {
-  font-family: "Roboto";
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 2rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h6FontSize,
+    $fontStyle,
+    $fontWeightReg,
+    $h6LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h6Med {
-  font-family: "Roboto";
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 2rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h6FontSize,
+    $fontStyle,
+    $fontWeightMed,
+    $h6LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h6Semi {
-  font-family: "Roboto";
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 2rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h6FontSize,
+    $fontStyle,
+    $fontWeightSemi,
+    $h6LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .h6Bold {
-  font-family: "Roboto";
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 2rem;
-  color: $neutral20;
-  margin: 0;
+  @include headings(
+    $fontFamily,
+    $h6FontSize,
+    $fontStyle,
+    $fontWeightBold,
+    $h6LineHeight,
+    $color,
+    $margin
+  );
 }
 
-// text
+// text classes
+@mixin text(
+  $fontFamily,
+  $fontSize,
+  $fontStyle,
+  $fontWeight,
+  $lineHeight,
+  $color,
+  $margin
+) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  color: $color;
+  margin: $margin;
+}
+
 // t1 - group
 .t1Lite {
-  font-family: "Roboto";
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 1.875rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t1FontSize,
+    $fontStyle,
+    $fontWeightLite,
+    $t1LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t1Reg {
-  font-family: "Roboto";
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.875rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t1FontSize,
+    $fontStyle,
+    $fontWeightReg,
+    $t1LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t1Med {
-  font-family: "Roboto";
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.875rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t1FontSize,
+    $fontStyle,
+    $fontWeightMed,
+    $t1LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t1Semi {
-  font-family: "Roboto";
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.875rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t1FontSize,
+    $fontStyle,
+    $fontWeightSemi,
+    $t1LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t1Bold {
-  font-family: "Roboto";
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.875rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t1FontSize,
+    $fontStyle,
+    $fontWeightBold,
+    $t1LineHeight,
+    $color,
+    $margin
+  );
 }
 
 // t2 - group
 .t2Lite {
-  font-family: "Roboto";
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 1.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t2FontSize,
+    $fontStyle,
+    $fontWeightLite,
+    $t2LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t2Reg {
-  font-family: "Roboto";
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t2FontSize,
+    $fontStyle,
+    $fontWeightReg,
+    $t2LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t2Med {
-  font-family: "Roboto";
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t2FontSize,
+    $fontStyle,
+    $fontWeightMed,
+    $t2LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t2Semi {
-  font-family: "Roboto";
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t2FontSize,
+    $fontStyle,
+    $fontWeightSemi,
+    $t2LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t2Bold {
-  font-family: "Roboto";
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.75rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t2FontSize,
+    $fontStyle,
+    $fontWeightBold,
+    $t2LineHeight,
+    $color,
+    $margin
+  );
 }
 
 // t3 - group
 .t3Lite {
-  font-family: "Roboto";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 1.5rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t3FontSize,
+    $fontStyle,
+    $fontWeightLite,
+    $t3LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t3Reg {
-  font-family: "Roboto";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t3FontSize,
+    $fontStyle,
+    $fontWeightReg,
+    $t3LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t3Med {
-  font-family: "Roboto";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.5rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t3FontSize,
+    $fontStyle,
+    $fontWeightMed,
+    $t3LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t3Semi {
-  font-family: "Roboto";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.5rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t3FontSize,
+    $fontStyle,
+    $fontWeightSemi,
+    $t3LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t3Bold {
-  font-family: "Roboto";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.5rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t3FontSize,
+    $fontStyle,
+    $fontWeightBold,
+    $t3LineHeight,
+    $color,
+    $margin
+  );
 }
 
 // t4 - group
 .t4Lite {
-  font-family: "Roboto";
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 1.25rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t4FontSize,
+    $fontStyle,
+    $fontWeightLite,
+    $t4LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t4Reg {
-  font-family: "Roboto";
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.25rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t4FontSize,
+    $fontStyle,
+    $fontWeightReg,
+    $t4LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t4Med {
-  font-family: "Roboto";
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.25rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t4FontSize,
+    $fontStyle,
+    $fontWeightMed,
+    $t4LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t4Semi {
-  font-family: "Roboto";
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.25rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t4FontSize,
+    $fontStyle,
+    $fontWeightSemi,
+    $t4LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t4Bold {
-  font-family: "Roboto";
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.25rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t4FontSize,
+    $fontStyle,
+    $fontWeightBold,
+    $t4LineHeight,
+    $color,
+    $margin
+  );
 }
 
 // t5 - group
 .t5Lite {
-  font-family: "Roboto";
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 1.125rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t5FontSize,
+    $fontStyle,
+    $fontWeightLite,
+    $t5LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t5Reg {
-  font-family: "Roboto";
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.125rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t5FontSize,
+    $fontStyle,
+    $fontWeightReg,
+    $t5LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t5Med {
-  font-family: "Roboto";
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.125rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t5FontSize,
+    $fontStyle,
+    $fontWeightMed,
+    $t5LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t5Semi {
-  font-family: "Roboto";
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.125rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t5FontSize,
+    $fontStyle,
+    $fontWeightSemi,
+    $t5LineHeight,
+    $color,
+    $margin
+  );
 }
 
 .t5Bold {
-  font-family: "Roboto";
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.125rem;
-  color: $neutral20;
-  margin: 0;
+  @include text(
+    $fontFamily,
+    $t5FontSize,
+    $fontStyle,
+    $fontWeightBold,
+    $t5LineHeight,
+    $color,
+    $margin
+  );
 }

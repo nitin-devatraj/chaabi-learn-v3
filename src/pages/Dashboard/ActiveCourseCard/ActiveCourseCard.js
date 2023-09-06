@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ActiveCourseCard.module.scss";
 import ProgressBar from "../../../components/ProgressBar/ProgressBar";
-import activeCourseImg from "../../../assets/images/pages/dashboard/course-img.jpeg";
+import activeCourseImg from "../../../assets/images/pages/dashboard/active-course-card/course-img.jpeg";
 import typography from "../../../global-styles/typography.module.scss";
 import { useNavigate } from "react-router-dom";
 

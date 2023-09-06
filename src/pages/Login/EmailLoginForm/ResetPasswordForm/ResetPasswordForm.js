@@ -6,8 +6,10 @@ import PrimaryButton from "../../../../components/Buttons/PrimaryButton/PrimaryB
 import { useNavigate } from "react-router-dom";
 
 function ResetPasswordForm() {
-  const [newPassword, setNewPassword] = useState(null);
-  const [confirmPassword, setConfirmPassword] = useState(null);
+  // this state variable holds the user entered "password"
+  const [newPassword, setNewPassword] = useState("");
+  // this state variable holds the user entered "confirmed password"
+  const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
 
   const newPasswordChangeHandler = (event) => {
@@ -18,6 +20,7 @@ function ResetPasswordForm() {
     setConfirmPassword(event.target.value);
   };
 
+  // this function is triggered when the user hits submit after entering new password
   const resetPasswordSubmitHandler = () => {
     navigate("/dashboard");
   };

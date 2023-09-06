@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./SearchInput.module.scss";
-import { ReactComponent as SearchIcon } from "../../../assets/component-icons/search-input/search-icon.svg";
+import { ReactComponent as SearchIcon } from "../../../assets/icons/components/input-field/search-input/search-icon.svg";
 
 function SearchInput({ placeholder, required, disabled }) {
   return (

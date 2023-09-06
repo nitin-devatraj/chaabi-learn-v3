@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import styles from "./NumberInput.module.scss";
-import { ReactComponent as DownArrow } from "../../../assets/component-icons/phone-input/chevron-down.svg";
+import { ReactComponent as DownArrow } from "../../../assets/icons/components/input-field/number-input/chevron-down.svg";
 import { useSelector } from "react-redux";
 
 function NumberInput(props) {

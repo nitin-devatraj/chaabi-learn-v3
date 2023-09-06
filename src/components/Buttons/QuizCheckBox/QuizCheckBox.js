@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./QuizCheckBox.module.scss";
-import { ReactComponent as CheckIcon } from "../../../assets/component-icons/button-icons/checkbox-icon.svg";
+import { ReactComponent as CheckIcon } from "../../../assets/icons/components/buttons/quiz-check-box/checkbox-icon.svg";
 
 function QuizCheckBox({ valid, invalid }) {
   const [isCheckBoxClicked, setIsCheckBoxClicked] = useState(false);

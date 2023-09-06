@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./CourseCard.module.scss";
-import courseImg from "../../../assets/images/pages/dashboard/course-img.jpeg";
+import courseImg from "../../../assets/images/pages/dashboard/course-card/course-img.jpeg";
 import ProgressBar from "../../../components/ProgressBar/ProgressBar";
 import { useNavigate } from "react-router-dom";
 

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./FourDigitInput.module.scss";
-import typography from "../../../global-styles/typography.module.scss";
+import typography from "../../../../global-styles/typography.module.scss";
 
 function FourDigitInput() {
   // this digits array will hold the user input digits
@@ -9,6 +9,7 @@ function FourDigitInput() {
 
   useEffect(() => {
     inputRefs[0].current.focus();
+    // eslint-disable-next-line
   }, []);
 
   const handleChange = (index, event) => {

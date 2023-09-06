@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import typography from "../../../global-styles/typography.module.scss";
 import styles from "./MobileLoginForm.module.scss";
 import PhoneInput from "../../../components/InputFields/NumberInput/NumberInput";
-import FourDigitInput from "../../../components/InputFields/FourDigitInput/FourDigitInput";
+import FourDigitInput from "./FourDigitInput/FourDigitInput";
 import PrimaryButton from "../../../components/Buttons/PrimaryButton/PrimaryButton";
 import { useNavigate } from "react-router-dom";
 
