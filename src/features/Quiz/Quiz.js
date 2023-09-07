@@ -13,11 +13,13 @@ function Quiz() {
   return (
     <>
       <div className={styles.quizContainer}>
-        <QuizHeader />
+        <div className={styles.quizDetails}>
+          <QuizHeader />
 
-        <QuizProgress />
+          <QuizProgress />
 
-        <IndividualQuiz />
+          <IndividualQuiz />
+        </div>
 
         <PrimaryButton>Check Answer</PrimaryButton>
 
