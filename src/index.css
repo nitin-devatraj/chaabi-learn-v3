@@ -2,11 +2,9 @@ html,
 body {
   margin: 0;
   width: 100dvw;
-  /* height: 100vh; */
   height: 100dvh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: bisque;
 }
 
 * {
