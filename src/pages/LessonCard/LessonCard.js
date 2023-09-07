@@ -11,6 +11,7 @@ import AssessmentLesson from "../../features/AssessmentLesson/AssessmentLesson";
 import DocumentLesson from "../../features/DocumentLesson/DocumentLesson";
 import AudioLesson from "../../features/AudioLesson/AudioLesson";
 import Quiz from "../../features/Quiz/Quiz";
+import MinimizedQuizPopup from "./MinimizedQuizPopup/MinimizedQuizPopup";
 
 // const chapterList = [
 //   {
@@ -121,6 +122,7 @@ import Quiz from "../../features/Quiz/Quiz";
 
 function LessonCard() {
   const [isQuizStarted, setIsQuizStarted] = useState(false);
+  const [isQuizMinimized, setIsQuizMinimized] = useState(false);
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const { lessonId } = useParams();
@@ -151,6 +153,16 @@ function LessonCard() {
 
   const startQuizHandler = () => {
     setIsQuizStarted(true);
+  };
+
+  const quizMinimizeHandler = () => {
+    setIsQuizStarted(false);
+    setIsQuizMinimized(true);
+  };
+
+  const quizMaximizeHandler = () => {
+    setIsQuizStarted(true);
+    setIsQuizMinimized(false);
   };
 
   const handlePrevLessonClick = () => {
@@ -196,7 +208,9 @@ function LessonCard() {
           {lessonType === "document" && <DocumentLesson />}
           {lessonType === "audio" && <AudioLesson />}
           {lessonType === "quiz" && <QuizLesson />}
-          {isQuizStarted === true && <Quiz />}
+          {isQuizStarted === true && (
+            <Quiz onQuizMinimize={quizMinimizeHandler} />
+          )}
         </div>
 
         {lessonType === "quiz" ? (
@@ -205,6 +219,10 @@ function LessonCard() {
           <PrimaryButton onClick={markCompleteHandler}>
             Mark as Done
           </PrimaryButton>
+        )}
+
+        {isQuizMinimized === true && (
+          <MinimizedQuizPopup onQuizMaximizise={quizMaximizeHandler} />
         )}
       </div>
     </div>

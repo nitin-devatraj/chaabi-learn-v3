@@ -3,11 +3,13 @@ import styles from "./QuizHeader.module.scss";
 import { ReactComponent as ArrowDownIcon } from "../../../assets/icons/features/quiz/quiz-header/arrow-down.svg";
 import typography from "../../../global-styles/typography.module.scss";
 
-function QuizHeader() {
+function QuizHeader({ onQuizMinimize }) {
   return (
     <section className={styles.quizHeader}>
       <div className={styles.arrowIconContainer}>
-        <ArrowDownIcon />
+        <span onClick={onQuizMinimize}>
+          <ArrowDownIcon />
+        </span>
       </div>
       <p className={typography.t3Med}>Take Your Quiz</p>
       <div className={styles.quizTimer}>

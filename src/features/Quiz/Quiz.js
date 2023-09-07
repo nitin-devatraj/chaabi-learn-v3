@@ -9,12 +9,12 @@ import QuizResult from "./QuizResult/QuizResult";
 import ValidAnswerPopup from "./ValidAnswerPopup/ValidAnswerPopup";
 import InvalidAnswerPopup from "./InvalidAnswerPopup/InvalidAnswerPopup";
 
-function Quiz() {
+function Quiz({ onQuizMinimize }) {
   return (
     <>
       <div className={styles.quizContainer}>
         <div className={styles.quizDetails}>
-          <QuizHeader />
+          <QuizHeader onQuizMinimize={onQuizMinimize} />
 
           <QuizProgress />
 
