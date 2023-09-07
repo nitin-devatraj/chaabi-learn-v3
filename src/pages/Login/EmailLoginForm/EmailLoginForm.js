@@ -36,8 +36,15 @@ function EmailLoginForm({ resetPassword }) {
     resetPassword(true);
   };
 
+  const formSubmitHandler = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <div className={styles.emailLoginFormContainer}>
+    <form
+      className={styles.emailLoginFormContainer}
+      onSubmit={formSubmitHandler}
+    >
       <div className={styles.form}>
         <h5 className={typography.h5Bold}>
           {isForgotPasswordClicked === false
@@ -73,13 +80,15 @@ function EmailLoginForm({ resetPassword }) {
       </div>
 
       {isForgotPasswordClicked === false ? (
-        <PrimaryButton onClick={emailLoginSubmitHandler}>Submit</PrimaryButton>
+        <PrimaryButton onClick={emailLoginSubmitHandler} type="submit">
+          Submit
+        </PrimaryButton>
       ) : (
-        <PrimaryButton onClick={forgotPasswordSubmitHandler}>
+        <PrimaryButton onClick={forgotPasswordSubmitHandler} type="submit">
           Submit
         </PrimaryButton>
       )}
-    </div>
+    </form>
   );
 }
 

@@ -20,7 +20,11 @@ function LandingPage({ loginMethod, isLoginBtnClick }) {
         </div>
         <img src={bannerImage} alt="#" className={styles.bannerImage} />
       </div>
-      <PrimaryButton onClick={loginBtnHandler} className={styles.loginBtn}>
+      <PrimaryButton
+        onClick={loginBtnHandler}
+        className={styles.loginBtn}
+        type="submit"
+      >
         {loginMethod === "mobile"
           ? "Login with Mobile Number"
           : "Login with Email"}

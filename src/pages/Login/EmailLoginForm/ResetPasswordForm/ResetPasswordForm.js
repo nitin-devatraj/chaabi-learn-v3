@@ -25,8 +25,15 @@ function ResetPasswordForm() {
     navigate("/dashboard");
   };
 
+  const formSubmitHandler = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <div className={styles.resetPasswordFormContainer}>
+    <form
+      className={styles.resetPasswordFormContainer}
+      onSubmit={formSubmitHandler}
+    >
       <div className={styles.form}>
         <h5 className={typography.h5Bold}>Reset Password</h5>
         <TextInput
@@ -44,8 +51,10 @@ function ResetPasswordForm() {
           value={confirmPassword}
         />
       </div>
-      <PrimaryButton onClick={resetPasswordSubmitHandler}>Submit</PrimaryButton>
-    </div>
+      <PrimaryButton onClick={resetPasswordSubmitHandler} type="submit">
+        Submit
+      </PrimaryButton>
+    </form>
   );
 }
 

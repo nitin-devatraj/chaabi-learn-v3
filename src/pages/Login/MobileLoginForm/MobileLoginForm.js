@@ -18,8 +18,15 @@ function MobileLoginForm() {
     navigate("/dashboard");
   };
 
+  const formSubmitHandler = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <div className={styles.mobileLoginFormContainer}>
+    <form
+      className={styles.mobileLoginFormContainer}
+      onSubmit={formSubmitHandler}
+    >
       <div className={styles.inputContainer}>
         <h5 className={typography.h5Bold}>
           {isGenerateOtpBtnClicked === false
@@ -33,11 +40,15 @@ function MobileLoginForm() {
         )}
       </div>
       {isGenerateOtpBtnClicked === false ? (
-        <PrimaryButton onClick={generateOtpHandler}>Generate OTP</PrimaryButton>
+        <PrimaryButton onClick={generateOtpHandler} type="submit">
+          Generate OTP
+        </PrimaryButton>
       ) : (
-        <PrimaryButton onClick={submitOtpHandler}>Submit</PrimaryButton>
+        <PrimaryButton onClick={submitOtpHandler} type="submit">
+          Submit
+        </PrimaryButton>
       )}
-    </div>
+    </form>
   );
 }
 
