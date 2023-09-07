@@ -133,13 +133,15 @@ function TrainingOverview() {
 
   return (
     <div className={styles.trainingOverviewContainer}>
-      <TrainingHeader />
+      <div className={styles.trainingOverview}>
+        <TrainingHeader />
 
-      <img src={trainingBanner} alt="#" className={styles.trainingBanner} />
+        <img src={trainingBanner} alt="#" className={styles.trainingBanner} />
 
-      <TrainingInfo />
+        <TrainingInfo />
 
-      <TrainingContent chapterList={chapterList} />
+        <TrainingContent chapterList={chapterList} />
+      </div>
 
       <PrimaryButton onClick={startTrainingBtnHandler}>
         Start Your Training

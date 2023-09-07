@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./TrainingContent.module.scss";
 import TabGroup from "../../../components/TabGroup/TabGroup";
-import Accordian from "../../../components/Accordian/Accordian";
+import Accordion from "../../../components/Accordion/Accordion";
 import typography from "../../../global-styles/typography.module.scss";
 
 function TrainingContent({ chapterList }) {
@@ -29,7 +29,7 @@ function TrainingContent({ chapterList }) {
         </section>
       ) : (
         <div className={styles.lessonsAccordianContainer}>
-          <Accordian tabs={chapterList} />
+          <Accordion tabs={chapterList} />
         </div>
       )}
     </div>

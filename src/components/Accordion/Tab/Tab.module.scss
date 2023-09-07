@@ -23,10 +23,12 @@
   .tabContent {
     @extend .t4Reg;
     display: flex;
-    padding: 0.8rem 1.5rem;
+    padding: 1rem;
+    padding-left: 3rem;
     align-items: center;
-    gap: 0.625rem;
+    gap: 0.25rem;
     align-self: stretch;
     background: $neutral95;
+    color: $neutral30;
   }
 }
