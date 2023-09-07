@@ -24,7 +24,7 @@ function Quiz() {
         {/* <ValidAnswerPopup /> */}
 
         {/* <InvalidAnswerPopup /> */}
-        <QuizResult />
+        {/* <QuizResult /> */}
       </div>
     </>
   );
