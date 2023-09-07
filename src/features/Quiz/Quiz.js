@@ -21,7 +21,7 @@ function Quiz() {
 
         <PrimaryButton>Check Answer</PrimaryButton>
 
-        <ValidAnswerPopup />
+        {/* <ValidAnswerPopup /> */}
 
         {/* <InvalidAnswerPopup /> */}
         <QuizResult />
