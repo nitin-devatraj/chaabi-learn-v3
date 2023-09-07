@@ -20,6 +20,8 @@
     text-align: center;
     border-bottom: 0.0938rem solid $primary50;
     cursor: pointer;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
   }
 
   .tab {
@@ -34,5 +36,7 @@
     text-align: center;
     border-bottom: 0.0938rem solid #d7d8db;
     cursor: pointer;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
   }
 }
