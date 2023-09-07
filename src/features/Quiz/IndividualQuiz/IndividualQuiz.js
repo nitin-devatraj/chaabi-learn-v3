@@ -6,7 +6,7 @@ import typography from "../../../global-styles/typography.module.scss";
 function IndividualQuiz() {
   return (
     <div className={styles.individualQuizContainer}>
-      <p className={typography.t3Reg}>
+      <p className={typography.t2Semi}>
         Q. Text of the question that can run into two lines and can be added in
         two lines only
       </p>

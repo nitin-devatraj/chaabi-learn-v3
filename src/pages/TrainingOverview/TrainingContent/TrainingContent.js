@@ -20,7 +20,8 @@ function TrainingContent({ chapterList }) {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
             auctor quam nec enim tempor, vel pretium justo luctus. Ut eu
             efficitur nibh, a facilisis justo. Mauris dictum velit porta
-            pharetra rhoncus.
+            pharetra rhoncus.Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Phasellus auctor quam nec enim tempor,
           </p>
         </section>
       ) : (
