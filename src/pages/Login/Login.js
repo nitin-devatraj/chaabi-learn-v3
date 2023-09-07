@@ -9,7 +9,7 @@ import ResetPasswordForm from "./EmailLoginForm/ResetPasswordForm/ResetPasswordF
 function Login() {
   //this state variable holds the default login method, set the default login method here, can be mobile or email
   // eslint-disable-next-line
-  const [defaultLoginMethod, setDefaultLoginMethod] = useState("mobile"); //
+  const [defaultLoginMethod, setDefaultLoginMethod] = useState("email"); //
 
   const [isLoginBtnClicked, setIsLoginBtnClicked] = useState(false);
   const [showResetPasswordForm, setResetPasswordForm] = useState(false);
