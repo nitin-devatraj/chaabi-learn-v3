@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ModalActionButtons.module.scss";
 import { useSelector } from "react-redux";
 
-function ModalActionButtons(props) {
+function ModalActionButtons({ secondaryButtonText, primaryButtonText }) {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
 
   return (
@@ -20,14 +20,14 @@ function ModalActionButtons(props) {
             : styles.secondaryBtnLightTheme
         }
       >
-        {props.secondaryButtonText}
+        {secondaryButtonText}
       </button>
       <button
         className={
           isDarkMode ? styles.primaryBtnDarkTheme : styles.primaryBtnLightTheme
         }
       >
-        {props.primaryButtonText}
+        {primaryButtonText}
       </button>
     </div>
   );

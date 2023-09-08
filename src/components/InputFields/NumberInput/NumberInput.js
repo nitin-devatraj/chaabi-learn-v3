@@ -3,7 +3,7 @@ import styles from "./NumberInput.module.scss";
 import { ReactComponent as DownArrow } from "../../../assets/icons/components/input-field/number-input/chevron-down.svg";
 import { useSelector } from "react-redux";
 
-function NumberInput(props) {
+function NumberInput({ label, disabled, required, placeholder, helperText }) {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
   const inputRef = useRef(null);
 
@@ -17,7 +17,7 @@ function NumberInput(props) {
         htmlFor="phone-input"
         className={isDarkMode ? styles.labelDarkTheme : styles.labelLightTheme}
       >
-        {props.label}
+        {label}
       </label>
 
       <div
@@ -42,9 +42,9 @@ function NumberInput(props) {
           ref={inputRef}
           name="phone-input"
           id="phone-input"
-          disabled={props.disabled}
-          required={props.required}
-          placeholder={props.placeholder}
+          disabled={disabled}
+          required={required}
+          placeholder={placeholder}
         />
       </div>
       <p
@@ -52,7 +52,7 @@ function NumberInput(props) {
           isDarkMode ? styles.helperTextDarkTheme : styles.helperTextLightTheme
         }
       >
-        {props.helperText}
+        {helperText}
       </p>
     </div>
   );

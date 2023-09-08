@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ButtonWithRightIcon.module.scss";
 import { useSelector } from "react-redux";
 
-function ButtonWithRightIcon(props) {
+function ButtonWithRightIcon({ onClick, children, disabled }) {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
 
   return (
@@ -12,10 +12,10 @@ function ButtonWithRightIcon(props) {
           ? styles.btnWithRightIconDarkTheme
           : styles.btnWithRightIconLightTheme
       }
-      onClick={props.onClick}
-      disabled={props.disabled}
+      onClick={onClick}
+      disabled={disabled}
     >
-      {props.children}
+      {children}
     </button>
   );
 }
