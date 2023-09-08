@@ -19,11 +19,11 @@
 }
 
 .primaryBtnLightTheme:not(:disabled):hover {
-  box-shadow: 0rem 0rem 0rem 0.25rem #dbe7ff;
+  box-shadow: 0rem 0rem 0rem 0.25rem $primary90;
 }
 
 .primaryBtnLightTheme:not(:disabled):active {
-  box-shadow: 0rem 0rem 0rem 0.25rem #dbe7ff;
+  box-shadow: 0rem 0rem 0rem 0.25rem $primary90;
   background: $primary40;
 }
 
@@ -53,18 +53,18 @@
 }
 
 .primaryBtnDarkTheme:not(:disabled):hover {
-  box-shadow: 0px 0rem 0rem 0.25rem #b4ceff;
+  box-shadow: 0px 0rem 0rem 0.25rem $primary80;
 }
 
 .primaryBtnDarkTheme:not(:disabled):active {
   background: $primary60;
   border-color: transparent;
-  box-shadow: 0rem 0rem 0rem 0.25rem #b4ceff;
+  box-shadow: 0rem 0rem 0rem 0.25rem $primary80;
 }
 
 .primaryBtnDarkTheme[disabled] {
   color: $neutral100;
   background: $neutral20;
-  border: 1px solid $neutral20;
+  border: 0.0625rem solid $neutral20;
   cursor: not-allowed;
 }

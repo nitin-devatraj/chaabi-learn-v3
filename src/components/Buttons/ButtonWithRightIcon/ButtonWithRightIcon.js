@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ButtonWithLeftIcon.module.scss";
+import styles from "./ButtonWithRightIcon.module.scss";
 import { useSelector } from "react-redux";
 
 function ButtonWithRightIcon(props) {

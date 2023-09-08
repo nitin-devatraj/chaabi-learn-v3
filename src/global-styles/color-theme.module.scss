@@ -22,6 +22,7 @@
 .lightThemeRegular {
   @include lightTheme($neutral0, $neutral99, 92%, $primary50);
 }
+
 .lightThemeHigh {
   @include lightTheme($neutral0, $neutral99, 89%, $primary50);
 }

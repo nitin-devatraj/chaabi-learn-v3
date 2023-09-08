@@ -1,3 +1,6 @@
+@import "../../../global-styles/variables.scss";
+@import "../../../global-styles/typography.module.scss";
+
 .modalActionBtnsLightTheme {
   display: inline-flex;
   width: auto;
@@ -5,6 +8,7 @@
   gap: 0.75rem;
 
   .secondaryBtnLightTheme {
+    @extend .t3Reg;
     cursor: pointer;
     display: flex;
     padding: 0.75rem 3rem;
@@ -13,17 +17,12 @@
     gap: 0.5rem;
     flex: 1 0 0;
     border-radius: 0.25rem;
-    border: 0.0625rem solid var(--neutral90, #e2e3e6);
-    background: var(--neutral100, #fff);
-    color: var(--neutral20, #303134);
-    font-family: "Roboto";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5rem;
+    border: 0.0625rem solid $neutral90;
+    background: $neutral100;
   }
 
   .primaryBtnLightTheme {
+    @extend .t3Bold;
     cursor: pointer;
     display: flex;
     padding: 0.75rem 3rem;
@@ -32,14 +31,8 @@
     gap: 0.5rem;
     flex: 1 0 0;
     border-radius: 0.25rem;
-    border: 0.0625rem solid var(--primary50, #0d62ff);
-    background: var(--primary50, #0d62ff);
-    color: var(--neutral100, #fff);
-    font-family: "Roboto";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.5rem;
+    border: 0.0625rem solid $primary50;
+    background: $primary50;
   }
 }
 
@@ -50,6 +43,7 @@
   gap: 0.75rem;
 
   .secondaryBtnDarkTheme {
+    @extend .t3Reg;
     cursor: pointer;
     display: flex;
     padding: 0.75rem 3rem;
@@ -58,17 +52,13 @@
     gap: 0.5rem;
     flex: 1 0 0;
     border-radius: 0.25rem;
-    border: 0.0625rem solid var(--neutral99);
+    border: 0.0625rem solid $neutral99;
     background: transparent;
-    color: var(--neutral99, #fbfcff);
-    font-family: "Roboto";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5rem;
+    color: $neutral99;
   }
 
   .primaryBtnDarkTheme {
+    @extend .t3Bold;
     cursor: pointer;
     display: flex;
     padding: 0.75rem 3rem;
@@ -77,13 +67,8 @@
     gap: 0.5rem;
     flex: 1 0 0;
     border-radius: 0.25rem;
-    border: 0.0625rem solid var(--primary50, #0d62ff);
-    background: var(--primary50, #0d62ff);
-    color: var(--neutral100, #fff);
-    font-family: "Roboto";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.5rem;
+    border: 0.0625rem solid $primary50;
+    background: $primary50;
+    color: $neutral100;
   }
 }

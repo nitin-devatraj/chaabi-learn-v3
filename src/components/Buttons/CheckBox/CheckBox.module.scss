@@ -1,3 +1,6 @@
+@import "../../../global-styles/variables.scss";
+@import "../../../global-styles/color-theme.module.scss";
+
 .checkBoxLightTheme {
   display: inline-flex;
   justify-content: center;
@@ -5,8 +8,8 @@
   width: 1rem;
   height: 1rem;
   border-radius: 0.25rem;
-  border: 1px solid var(--neutral90);
-  background: var(--neutral100);
+  border: 0.0625rem solid $neutral90;
+  background: $neutral100;
 
   .checkBoxIcon {
     width: 0.75rem;
@@ -16,8 +19,8 @@
 }
 
 .checkBoxLightTheme:hover {
-  border: 1px solid var(--primary50);
-  box-shadow: 0rem 0rem 0rem 0.25rem #dbe8ff;
+  border: 0.0625rem solid $primary50;
+  box-shadow: 0rem 0rem 0rem 0.25rem $primary99;
 }
 
 .checkBoxDarkTheme {
@@ -27,8 +30,8 @@
   width: 1rem;
   height: 1rem;
   border-radius: 0.25rem;
-  border: 0.0625rem solid var(--neutral70);
-  background: var(--neutral100);
+  border: 0.0625rem solid $neutral70;
+  background: $neutral100;
 
   .checkBoxIcon {
     width: 0.75rem;
@@ -38,6 +41,6 @@
 }
 
 .checkBoxDarkTheme:hover {
-  border: 1px solid var(--primary50);
-  box-shadow: 0px 0px 0px 4px #b4ceff;
+  border: 0.0625rem solid $primary50;
+  box-shadow: 0rem 0rem 0rem 0.25rem $primary80;
 }

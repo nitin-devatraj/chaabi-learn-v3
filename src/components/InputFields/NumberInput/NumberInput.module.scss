@@ -17,7 +17,7 @@
 
   .labelDarkTheme {
     @extend .t4Lite;
-    color: var(--neutral95);
+    color: $neutral95;
     cursor: pointer;
   }
 
@@ -55,11 +55,11 @@
     }
 
     // .input:invalid {
-    //   border: 1px solid var(--alert60, #f97066);
+    //   border: 1px solid $alert60, #f97066);
     // }
 
     .inputLightTheme[disabled] {
-      border: 1px solid $neutral90;
+      border: 0.0625rem solid $neutral90;
       background: $neutral90;
       color: $neutral70;
     }
@@ -100,11 +100,11 @@
     }
 
     // .input:invalid {
-    //   border: 1px solid var(--alert60, #f97066);
+    //   border: 1px solid $alert60, #f97066);
     // }
 
     .inputDarkTheme[disabled] {
-      border: 1px solid $neutral40;
+      border: 0.0625rem solid $neutral40;
       background: $neutral40;
       color: $neutral80;
     }

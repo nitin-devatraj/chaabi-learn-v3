@@ -1,3 +1,6 @@
+@import "../../../global-styles/variables.scss";
+@import "../../../global-styles/typography.module.scss";
+
 .togglePairButtonsContainer {
   display: inline-flex;
   flex-direction: column;
@@ -7,30 +10,23 @@
   flex-shrink: 0;
 
   .labelLightTheme {
-    color: var(--neutral50);
-    font-family: "Roboto", sans-serif;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 1.25rem;
+    @extend .t4Lite;
+    color: $neutral50;
   }
 
   .labelDarkTheme {
-    color: var(--neutral95);
-    font-family: "Roboto", sans-serif;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 1.25rem;
+    @extend .t4Lite;
+    color: $neutral95;
   }
 
   .buttonGroup {
     display: inline-flex;
     align-items: flex-start;
     border-radius: 0.25rem;
-    border: 0.0625rem solid var(--neutral90, #e2e3e6);
+    border: 0.0625rem solid $neutral90;
 
     .selectedBtn {
+      @extend .t3Bold;
       display: flex;
       width: 10rem;
       padding: 0.75rem 1rem;
@@ -38,18 +34,13 @@
       align-items: center;
       gap: 0.5rem;
       border: none;
-      border-right: 0.0625rem solid var(--neutral95, #f0f1f4);
-      background: var(--neutral95, #f0f1f4);
-      color: var(--neutral20, #303134);
-      font-family: "Roboto", sans-serif;
-      font-size: 1rem;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 1.5rem;
+      border-right: 0.0625rem solid $neutral95;
+      background: $neutral95;
       cursor: pointer;
     }
 
     .btn {
+      @extend .t3Reg;
       display: flex;
       width: 10rem;
       padding: 0.75rem 1rem;
@@ -57,14 +48,8 @@
       align-items: center;
       gap: 0.5rem;
       border: none;
-      border-right: 0.0625rem solid var(--neutral95, #f0f1f4);
-      background: var(--neutral100, #fff);
-      color: var(--neutral-neutral-20, #303134);
-      font-family: "Roboto", sans-serif;
-      font-size: 1rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 1.5rem;
+      border-right: 0.0625rem solid $neutral95;
+      background: $neutral100;
       cursor: pointer;
     }
   }

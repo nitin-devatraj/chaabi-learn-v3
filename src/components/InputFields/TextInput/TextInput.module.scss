@@ -29,7 +29,7 @@
 
   .inputLightTheme:focus {
     outline: none;
-    box-shadow: 0rem 0rem 0rem 0.25rem #f0f1f4;
+    box-shadow: 0rem 0rem 0rem 0.25rem $neutral99;
   }
 
   .inputLightTheme:invalid {
@@ -72,7 +72,7 @@
 
   .inputDarkTheme:focus {
     outline: none;
-    box-shadow: 0rem 0rem 0rem 0.25rem #c6c7ca;
+    box-shadow: 0rem 0rem 0rem 0.25rem $neutral80;
   }
 
   .inputDarkTheme:invalid {

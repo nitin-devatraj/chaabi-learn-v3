@@ -1,4 +1,5 @@
 .btnWithRightIconLightTheme {
+  @extend .t3Med;
   display: inline-flex;
   padding: 0.75rem 1.5rem;
   flex-direction: row-reverse;
@@ -6,18 +7,13 @@
   align-items: center;
   gap: 0.5rem;
   border-radius: 0.25rem;
-  border: 1px solid var(--neutral90);
-  background: var(--neutral100);
-  color: var(--neutral20);
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.5rem;
+  border: 0.0625rem solid $neutral90;
+  background: $neutral100;
   cursor: pointer;
 }
 
 .btnWithRightIconDarkTheme {
+  @extend .t3Med;
   display: inline-flex;
   padding: 0.75rem 1.5rem;
   flex-direction: row-reverse;
@@ -25,13 +21,7 @@
   align-items: center;
   gap: 0.5rem;
   border-radius: 0.25rem;
-  border: 1px solid var(--neutral99);
-  background: var(--neutral100);
-  color: var(--neutral20);
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.5rem;
+  border: 0.0625rem solid $neutral99;
+  background: $neutral100;
   cursor: pointer;
 }

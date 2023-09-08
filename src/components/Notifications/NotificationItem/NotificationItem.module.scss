@@ -1,3 +1,5 @@
+@import "../../../global-styles/typography.module.scss";
+
 .notificationItem {
   display: flex;
   padding: 0.625rem 1.125rem;
@@ -14,13 +16,8 @@
     gap: 1rem;
 
     .notificationTitle {
+      @extend .t1Semi;
       flex: 1;
-      color: var(--neutral20, #303134);
-      font-family: "Roboto", sans-serif;
-      font-size: 1.25rem;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 1.875rem;
     }
 
     .cancelIconContainer {
@@ -29,33 +26,28 @@
   }
 
   .notificationContent {
+    @extend .t3Reg;
     padding: 0rem 2.5rem;
     align-self: stretch;
-    color: var(--neutral20, #303134);
-    font-family: "Roboto", sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5rem;
   }
 }
 
 .alert {
-  border: 0.0625rem solid var(--alert50, #f04438);
-  background: var(--alert80, #fecdca);
+  border: 0.0625rem solid $alert50;
+  background: $alert80;
 }
 
 .success {
-  border: 0.0625rem solid var(--success50, #12b76a);
-  background: var(--success90, #d1fadf);
+  border: 0.0625rem solid $success50;
+  background: $success90;
 }
 
 .warning {
-  border: 0.0625rem solid var(--warning50, #f79009);
-  background: var(--warning90, #fef0c7);
+  border: 0.0625rem solid $warning50;
+  background: $warning90;
 }
 
 .info {
-  border: 0.0625rem solid var(--primary50, #0d62ff);
-  background: var(--primary90, #dbe8ff);
+  border: 0.0625rem solid $primary50;
+  background: $primary90;
 }

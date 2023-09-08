@@ -1,3 +1,5 @@
+@import "../../../global-styles/variables.scss";
+
 .radioBtnLightTheme {
   display: inline-flex;
   justify-content: center;
@@ -5,8 +7,8 @@
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  border: 0.0625rem solid var(--neutral90);
-  background: var(--neutral100);
+  border: 0.0625rem solid $neutral90;
+  background: $neutral100;
 
   .radioBtnIcon {
     // width: 0.75rem;
@@ -16,8 +18,8 @@
 }
 
 .radioBtnLightTheme:hover {
-  border: 0.0625rem solid var(--primary50);
-  box-shadow: 0rem 0rem 0rem 0.25rem #dbe8ff;
+  border: 0.0625rem solid $primary50;
+  box-shadow: 0rem 0rem 0rem 0.25rem $primary90;
 }
 
 // dark theme mode
@@ -28,8 +30,8 @@
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background: var(--neutral100);
-  border: 0.0625rem solid var(--neutral70);
+  background: $neutral100;
+  border: 0.0625rem solid $neutral70;
 
   .radioBtnIcon {
     // width: 0.75rem;
@@ -39,6 +41,6 @@
 }
 
 .radioBtnDarkTheme:hover {
-  border: 1px solid var(--primary50);
-  box-shadow: 0px 0px 0px 4px #b4ceff;
+  border: 0.0625rem solid $primary50;
+  box-shadow: 0rem 0rem 0rem 0.25rem $primary80;
 }
