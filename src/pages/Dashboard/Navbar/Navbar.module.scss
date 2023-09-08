@@ -1,0 +1,37 @@
+@import "../../../global-styles/variables.scss";
+@import "../../../global-styles/shadows.module.scss";
+@import "../../../global-styles/typography.module.scss";
+
+.navBarContainer {
+  @extend .shadowSmLightTheme;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  border-radius: 0.25rem;
+  background: $neutral100;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+
+  .navItem {
+    @extend .t4Reg;
+    color: $neutral50;
+    background: $neutral100;
+    text-align: center;
+    display: flex;
+    padding: 0.75rem 1.25rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+
+  .selected {
+    @extend .t4Bold;
+    color: $neutral10;
+    background: $primary90;
+  }
+}

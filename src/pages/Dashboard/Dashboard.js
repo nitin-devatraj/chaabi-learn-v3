@@ -5,6 +5,7 @@ import RecommendedTrainings from "./RecommendedTrainings/RecommendedTrainings";
 import TrainingsToBeCompleted from "./TrainingsToBeCompleted/TrainingsToBeCompleted";
 import ActiveCourseCard from "./ActiveCourseCard/ActiveCourseCard";
 import DashboardHeader from "./DashBoardHeader/DashboardHeader";
+import NavBar from "./Navbar/Navbar";
 
 const dummyTrainings = [
   {
@@ -57,6 +58,8 @@ function Dashboard() {
       <RecommendedTrainings dummyTrainings={dummyTrainings} />
 
       <TrainingsToBeCompleted dummyTrainings={dummyTrainings} />
+
+      <NavBar />
     </div>
   );
 }
