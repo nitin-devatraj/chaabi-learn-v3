@@ -6,9 +6,12 @@ import { ReactComponent as UpIcon } from "../../../assets/icons/arrow-up.svg";
 
 function MinimizedQuizPopup({ onQuizMaximizise }) {
   return (
-    <div className={styles.minimizedQuizPopupContainer}>
+    <div
+      className={styles.minimizedQuizPopupContainer}
+      onClick={onQuizMaximizise}
+    >
       <div className={styles.cta}>
-        <span onClick={onQuizMaximizise}>
+        <span>
           <UpIcon />
         </span>
         <p className={typography.t3Med}>Continue Your Quiz</p>

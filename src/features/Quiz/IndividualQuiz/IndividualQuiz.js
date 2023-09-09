@@ -31,34 +31,34 @@ function IndividualQuiz() {
         Q. Text of the question that can run into two lines and can be added in
         two lines only
       </p>
-      <div className={styles.quizOption} onClick={option1ClickHandler}>
+      <button className={styles.quizOptionBtn} onClick={option1ClickHandler}>
         <QuizCheckBox
           isSelected={isOption1Selected}
           onToggle={option1ClickHandler}
         />
         <span className={styles.quizOptionText}>Option 1 text message</span>
-      </div>
-      <div className={styles.quizOption} onClick={option2ClickHandler}>
+      </button>
+      <button className={styles.quizOptionBtn} onClick={option2ClickHandler}>
         <QuizCheckBox
           isSelected={isOption2Selected}
           onToggle={option2ClickHandler}
         />
         <span className={styles.quizOptionText}>Option 2 text message</span>
-      </div>
-      <div className={styles.quizOption} onClick={option3ClickHandler}>
+      </button>
+      <button className={styles.quizOptionBtn} onClick={option3ClickHandler}>
         <QuizCheckBox
           isSelected={isOption3Selected}
           onToggle={option3ClickHandler}
         />
         <span className={styles.quizOptionText}>Option 3 text message</span>
-      </div>
-      <div className={styles.quizOption} onClick={option4ClickHandler}>
+      </button>
+      <button className={styles.quizOptionBtn} onClick={option4ClickHandler}>
         <QuizCheckBox
           isSelected={isOption4Selected}
           onToggle={option4ClickHandler}
         />
         <span className={styles.quizOptionText}>Option 4 text message</span>
-      </div>
+      </button>
     </div>
   );
 }

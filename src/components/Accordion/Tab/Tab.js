@@ -30,6 +30,7 @@ function Tab({ item }) {
       {isTabClicked &&
         item.lessonsList.map((item) => (
           <div
+            key={item.id}
             className={styles.tabContent}
             onClick={() =>
               lessonClickHandler(item.id, item.type, item.name, chapterId)
