@@ -7,17 +7,16 @@ function CheckBox() {
   const [isCheckboxClicked, setIsCheckboxClicked] = useState(false);
   const isDarkMode = useSelector((state) => state.theme.darkMode);
 
-  function checkboxHandler() {
+  const checkboxHandler = () => {
     setIsCheckboxClicked((prevState) => !prevState);
-  }
+  };
+
+  const checkBoxStyles = isDarkMode
+    ? styles.checkBoxDarkTheme
+    : styles.checkBoxLightTheme;
 
   return (
-    <div
-      className={
-        isDarkMode ? styles.checkBoxDarkTheme : styles.checkBoxLightTheme
-      }
-      onClick={checkboxHandler}
-    >
+    <div className={checkBoxStyles} onClick={checkboxHandler}>
       {isCheckboxClicked && <CheckBoxIcon className={styles.checkBoxIcon} />}
     </div>
   );

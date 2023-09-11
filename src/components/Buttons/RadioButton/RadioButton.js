@@ -7,16 +7,16 @@ function RadioButton() {
   const [isRadioBtnClicked, setIsRadioBtnClicked] = useState(false);
   const isDarkMode = useSelector((state) => state.theme.darkMode);
 
-  function radioBtnHandler() {
+  const radioBtnHandler = () => {
     setIsRadioBtnClicked((prevState) => !prevState);
-  }
+  };
+
+  const radioBtnStyles = isDarkMode
+    ? styles.radioBtnDarkTheme
+    : styles.radioBtnLightTheme;
+
   return (
-    <div
-      className={
-        isDarkMode ? styles.radioBtnDarkTheme : styles.radioBtnLightTheme
-      }
-      onClick={radioBtnHandler}
-    >
+    <div className={radioBtnStyles} onClick={radioBtnHandler}>
       {isRadioBtnClicked && <RadioButtonIcon className={styles.radioBtnIcon} />}
     </div>
   );

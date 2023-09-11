@@ -5,7 +5,6 @@ import { ReactComponent as InactiveIcon } from "../../../assets/icons/table-icon
 import { ReactComponent as DraftIcon } from "../../../assets/icons/table-icons/draft-dot-icon.svg";
 import { ReactComponent as DeleteIcon } from "../../../assets/icons/table-icons/delete-icon.svg";
 import { ReactComponent as EditIcon } from "../../../assets/icons/table-icons/edit-icon.svg";
-import globalStyles from "../../../global-styles/styles.module.scss";
 import ToggleButton from "../../Buttons/ToggleButton/ToggleButton";
 
 function TableItem({ item, onDelete }) {
@@ -15,25 +14,25 @@ function TableItem({ item, onDelete }) {
   const [editedName, setEditedName] = useState(item.name);
   const [isNameEmpty, setIsNameEmpty] = useState(false);
 
-  function rowDeleteHandler() {
+  const rowDeleteHandler = () => {
     onDelete(item.id);
-  }
+  };
 
-  function rowEditHandler() {
+  const rowEditHandler = () => {
     setIsEditing(true);
-  }
+  };
 
-  function handleNameChange(event) {
+  const handleNameChange = (event) => {
     setEditedName(event.target.value);
-  }
+  };
 
-  function handleInputKeyDown(event) {
+  const handleInputKeyDown = (event) => {
     if (event.key === "Enter") {
       event.target.blur();
     }
-  }
+  };
 
-  function handleNameBlur() {
+  const handleNameBlur = () => {
     if (editedName.trim() === "") {
       setIsNameEmpty(true);
       return;
@@ -41,12 +40,28 @@ function TableItem({ item, onDelete }) {
 
     setIsEditing(false);
     setIsNameEmpty(false);
-  }
+  };
+
+  const badgeTypeStyles =
+    item.status === "active"
+      ? styles.activeBadge
+      : item.status === "inactive"
+      ? styles.inactiveBadge
+      : styles.draftBadge;
+
+  const badgeIcon =
+    item.status === "active" ? (
+      <ActiveIcon />
+    ) : item.status === "inactive" ? (
+      <InactiveIcon />
+    ) : (
+      <DraftIcon />
+    );
 
   return (
     <tr className={styles.tableItem}>
       <td className={styles.nameColumn}>
-        <div>
+        <div className={styles.nameColumnContainer}>
           <ToggleButton />
           {isEditing ? (
             <div className={styles.name}>
@@ -56,13 +71,10 @@ function TableItem({ item, onDelete }) {
                 onChange={handleNameChange}
                 onBlur={handleNameBlur}
                 onKeyDown={handleInputKeyDown}
+                className={styles.input}
               />
               {isNameEmpty && (
-                <div
-                  className={`${styles.requiredMessage} ${globalStyles.t5Lite}`}
-                >
-                  required
-                </div>
+                <div className={styles.requiredMessage}>required</div>
               )}
             </div>
           ) : (
@@ -71,23 +83,8 @@ function TableItem({ item, onDelete }) {
         </div>
       </td>
       <td className={styles.statusColumn}>
-        <div
-          className={`${styles.badge}  ${
-            item.status === "active"
-              ? styles.activeBadge
-              : item.status === "inactive"
-              ? styles.inactiveBadge
-              : styles.draftBadge
-          }`}
-        >
-          {item.status === "active" ? (
-            <ActiveIcon />
-          ) : item.status === "inactive" ? (
-            <InactiveIcon />
-          ) : (
-            <DraftIcon />
-          )}
-
+        <div className={`${styles.badge}  ${badgeTypeStyles}`}>
+          {badgeIcon}
           {item.status}
         </div>
       </td>
@@ -95,20 +92,22 @@ function TableItem({ item, onDelete }) {
       <td className={styles.emailColumn}>{item.email}</td>
       <td className={styles.teamsColumn}>
         <div className={styles.badges}>
-          {firstThreeBadges.map((item, index) => (
-            <div
-              key={index}
-              className={`${styles.badge} ${
-                index === 0
-                  ? styles.badgeGroup1
-                  : index === 1
-                  ? styles.badgeGroup2
-                  : styles.badgeGroup5
-              }`}
-            >
-              {item}
-            </div>
-          ))}
+          {firstThreeBadges.map((item, index) => {
+            const badgeGroupStyles =
+              index === 0
+                ? styles.badgeGroup1
+                : index === 1
+                ? styles.badgeGroup2
+                : styles.badgeGroup5;
+            return (
+              <div
+                key={index}
+                className={`${styles.badge} ${badgeGroupStyles}`}
+              >
+                {item}
+              </div>
+            );
+          })}
           {remainingCount > 0 && (
             <div className={styles.remainingCount}>+{remainingCount}</div>
           )}

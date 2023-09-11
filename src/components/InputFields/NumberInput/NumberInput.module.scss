@@ -1,5 +1,4 @@
-@import "../../../global-styles/variables.scss";
-@import "../../../global-styles/typography.module.scss";
+@import "../../../global-styles/global-styles.scss";
 
 .numberInputContainer {
   display: inline-flex;
@@ -48,21 +47,21 @@
       flex: 1 0 0;
       border: none;
       border-radius: 0.25rem;
-    }
 
-    .inputLightTheme:focus {
-      outline: none;
+      &:focus {
+        outline: none;
+      }
+
+      &:disabled {
+        border: 0.0625rem solid $neutral90;
+        background: $neutral90;
+        color: $neutral70;
+      }
     }
 
     // .input:invalid {
     //   border: 1px solid $alert60, #f97066);
     // }
-
-    .inputLightTheme[disabled] {
-      border: 0.0625rem solid $neutral90;
-      background: $neutral90;
-      color: $neutral70;
-    }
   }
 
   // dark theme mode
@@ -93,21 +92,21 @@
       flex: 1 0 0;
       border: none;
       border-radius: 0.25rem;
-    }
 
-    .inputDarkTheme:focus {
-      outline: none;
+      &:focus {
+        outline: none;
+      }
+
+      &:disabled {
+        border: 0.0625rem solid $neutral40;
+        background: $neutral40;
+        color: $neutral80;
+      }
     }
 
     // .input:invalid {
     //   border: 1px solid $alert60, #f97066);
     // }
-
-    .inputDarkTheme[disabled] {
-      border: 0.0625rem solid $neutral40;
-      background: $neutral40;
-      color: $neutral80;
-    }
   }
 }
 

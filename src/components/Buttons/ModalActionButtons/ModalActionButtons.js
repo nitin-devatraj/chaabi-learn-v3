@@ -5,30 +5,22 @@ import { useSelector } from "react-redux";
 function ModalActionButtons({ secondaryButtonText, primaryButtonText }) {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
 
+  const modalActionBtnStyles = isDarkMode
+    ? styles.modalActionBtnsDarkTheme
+    : styles.modalActionBtnsLightTheme;
+
+  const secondaryBtnStyles = isDarkMode
+    ? styles.secondaryBtnDarkTheme
+    : styles.secondaryBtnLightTheme;
+
+  const primaryBtnStyles = isDarkMode
+    ? styles.primaryBtnDarkTheme
+    : styles.primaryBtnLightTheme;
+
   return (
-    <div
-      className={
-        isDarkMode
-          ? styles.modalActionBtnsDarkTheme
-          : styles.modalActionBtnsLightTheme
-      }
-    >
-      <button
-        className={
-          isDarkMode
-            ? styles.secondaryBtnDarkTheme
-            : styles.secondaryBtnLightTheme
-        }
-      >
-        {secondaryButtonText}
-      </button>
-      <button
-        className={
-          isDarkMode ? styles.primaryBtnDarkTheme : styles.primaryBtnLightTheme
-        }
-      >
-        {primaryButtonText}
-      </button>
+    <div className={modalActionBtnStyles}>
+      <button className={secondaryBtnStyles}>{secondaryButtonText}</button>
+      <button className={primaryBtnStyles}>{primaryButtonText}</button>
     </div>
   );
 }

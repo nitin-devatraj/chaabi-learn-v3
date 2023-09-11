@@ -5,13 +5,13 @@ import { useSelector } from "react-redux";
 function ButtonWithRightIcon({ onClick, children, disabled }) {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
 
+  const btnWithRightIconStyles = isDarkMode
+    ? styles.btnWithRightIconDarkTheme
+    : styles.btnWithRightIconLightTheme;
+
   return (
     <button
-      className={
-        isDarkMode
-          ? styles.btnWithRightIconDarkTheme
-          : styles.btnWithRightIconLightTheme
-      }
+      className={btnWithRightIconStyles}
       onClick={onClick}
       disabled={disabled}
     >

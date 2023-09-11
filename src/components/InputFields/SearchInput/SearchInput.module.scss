@@ -1,5 +1,4 @@
-@import "../../../global-styles/variables.scss";
-@import "../../../global-styles/typography.module.scss";
+@import "../../../global-styles/global-styles.scss";
 
 .searchInputContainer {
   display: inline-flex;
@@ -16,9 +15,9 @@
     color: $neutral50;
     background: $neutral100;
     border: none;
-  }
 
-  .input:focus {
-    outline: none;
+    &:focus {
+      outline: none;
+    }
   }
 }

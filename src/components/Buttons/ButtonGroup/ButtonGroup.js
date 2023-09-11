@@ -10,25 +10,26 @@ function ButtonGroup({ buttons }) {
     setSelectedButton(event.target.id);
   }
 
+  const btnGroupStyles = isDarkMode
+    ? styles.btnGroupDarkTheme
+    : styles.btnGroupLightTheme;
+
+  const btnStyles =
+    isDarkMode === false
+      ? selectedButton === item
+        ? styles.selectedBtnLightTheme
+        : styles.btnLightTheme
+      : isDarkMode === true
+      ? selectedButton === item
+        ? styles.selectedBtnDarkTheme
+        : styles.btnDarkTheme
+      : null;
+
   return (
-    <div
-      className={
-        isDarkMode ? styles.btnGroupDarkTheme : styles.btnGroupLightTheme
-      }
-    >
+    <div className={btnGroupStyles}>
       {buttons.map((item) => (
         <button
-          className={`${
-            isDarkMode === false
-              ? selectedButton === item
-                ? styles.selectedBtnLightTheme
-                : styles.btnLightTheme
-              : isDarkMode === true
-              ? selectedButton === item
-                ? styles.selectedBtnDarkTheme
-                : styles.btnDarkTheme
-              : null
-          }`}
+          className={btnStyles}
           key={item}
           id={item}
           onClick={buttonClickHandler}

@@ -5,14 +5,12 @@ import { useSelector } from "react-redux";
 function TertiaryButton({ disabled, onClick, children }) {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
 
+  const tertiaryBtnStyles = isDarkMode
+    ? styles.tertiaryBtnDarkTheme
+    : styles.tertiaryBtnLightTheme;
+
   return (
-    <button
-      className={
-        isDarkMode ? styles.tertiaryBtnDarkTheme : styles.tertiaryBtnLightTheme
-      }
-      disabled={disabled}
-      onClick={onClick}
-    >
+    <button className={tertiaryBtnStyles} disabled={disabled} onClick={onClick}>
       {children}
     </button>
   );

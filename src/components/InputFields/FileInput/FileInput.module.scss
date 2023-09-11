@@ -1,5 +1,4 @@
-@import "../../../global-styles/variables.scss";
-@import "../../../global-styles/typography.module.scss";
+@import "../../../global-styles/global-styles.scss";
 
 .fileInputContainer {
   display: inline-flex;
@@ -48,7 +47,7 @@
         gap: 0.25rem;
         align-self: stretch;
 
-        span {
+        .highlightedText {
           color: $primary50;
         }
       }

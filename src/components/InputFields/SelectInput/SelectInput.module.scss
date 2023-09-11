@@ -1,5 +1,4 @@
-@import "../../../global-styles/variables.scss";
-@import "../../../global-styles/typography.module.scss";
+@import "../../../global-styles/global-styles.scss";
 
 .selectInputContainer {
   display: inline-flex;
@@ -68,19 +67,19 @@
       background-color: $neutral100;
       cursor: pointer;
 
+      &:hover {
+        background: $neutral99;
+        color: $neutral20;
+        font-weight: 500;
+      }
+
+      &:hover .hoverSVG {
+        display: inline-block;
+      }
+
       .hoverSVG {
         display: none;
       }
-    }
-
-    .dropDownItem:hover {
-      background: $neutral99;
-      color: $neutral20;
-      font-weight: 500;
-    }
-
-    .dropDownItem:hover .hoverSVG {
-      display: inline-block;
     }
   }
 }

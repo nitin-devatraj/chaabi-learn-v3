@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./QuizCheckBox.module.scss";
 import { ReactComponent as CheckIcon } from "../../../assets/icons/components/buttons/quiz-check-box/checkbox-icon.svg";
 

@@ -15,16 +15,20 @@ function TabGroup({ tabs, onTabSelect }) {
 
   return (
     <div className={styles.tabGroupContainer}>
-      {tabs.map((item) => (
-        <button
-          className={selectedTab === item ? styles.selectedTab : styles.tab}
-          key={item}
-          id={item}
-          onClick={TabClickHandler}
-        >
-          {item}
-        </button>
-      ))}
+      {tabs.map((item) => {
+        const btnStyles =
+          selectedTab === item ? styles.selectedTab : styles.tab;
+        return (
+          <button
+            className={btnStyles}
+            key={item}
+            id={item}
+            onClick={TabClickHandler}
+          >
+            {item}
+          </button>
+        );
+      })}
     </div>
   );
 }

@@ -1,5 +1,4 @@
-@import "../.././../global-styles/variables.scss";
-@import "../../../global-styles/typography.module.scss";
+@import "../.././../global-styles/global-styles.scss";
 
 .primaryBtnLightTheme {
   width: 100%;
@@ -12,26 +11,26 @@
   border: 0.0625rem solid $primary50;
   cursor: pointer;
 
+  &:not(:disabled):hover {
+    box-shadow: 0rem 0rem 0rem 0.25rem $primary90;
+  }
+
+  &:not(:disabled):active {
+    box-shadow: 0rem 0rem 0rem 0.25rem $primary90;
+    background: $primary40;
+  }
+
+  &:disabled {
+    border: 0.0625rem solid $neutral90;
+    background: $neutral90;
+    color: $neutral100;
+    cursor: not-allowed;
+  }
+
   .text {
     @extend .t3Bold;
     color: $neutral100;
   }
-}
-
-.primaryBtnLightTheme:not(:disabled):hover {
-  box-shadow: 0rem 0rem 0rem 0.25rem $primary90;
-}
-
-.primaryBtnLightTheme:not(:disabled):active {
-  box-shadow: 0rem 0rem 0rem 0.25rem $primary90;
-  background: $primary40;
-}
-
-.primaryBtnLightTheme[disabled] {
-  border: 0.0625rem solid $neutral90;
-  background: $neutral90;
-  color: $neutral100;
-  cursor: not-allowed;
 }
 
 // dark mode classes
@@ -46,25 +45,25 @@
   border: 0.0625rem solid $primary50;
   cursor: pointer;
 
+  &:not(:disabled):hover {
+    box-shadow: 0px 0rem 0rem 0.25rem $primary80;
+  }
+
+  &:not(:disabled):active {
+    background: $primary60;
+    border-color: transparent;
+    box-shadow: 0rem 0rem 0rem 0.25rem $primary80;
+  }
+
+  &:disabled {
+    color: $neutral100;
+    background: $neutral20;
+    border: 0.0625rem solid $neutral20;
+    cursor: not-allowed;
+  }
+
   .text {
     @extend .t3Bold;
     color: $neutral100;
   }
-}
-
-.primaryBtnDarkTheme:not(:disabled):hover {
-  box-shadow: 0px 0rem 0rem 0.25rem $primary80;
-}
-
-.primaryBtnDarkTheme:not(:disabled):active {
-  background: $primary60;
-  border-color: transparent;
-  box-shadow: 0rem 0rem 0rem 0.25rem $primary80;
-}
-
-.primaryBtnDarkTheme[disabled] {
-  color: $neutral100;
-  background: $neutral20;
-  border: 0.0625rem solid $neutral20;
-  cursor: not-allowed;
 }

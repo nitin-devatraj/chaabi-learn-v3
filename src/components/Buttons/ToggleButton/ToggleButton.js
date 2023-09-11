@@ -7,16 +7,20 @@ function ToggleButton({ onClick }) {
   const [isToggleActive, setIsToggleActive] = useState(false);
   const isDarkMode = useSelector((state) => state.theme.darkMode);
 
-  function toggleBtnHandler() {
+  const toggleBtnHandler = () => {
     setIsToggleActive((prevState) => !prevState);
     onClick();
-  }
+  };
+
+  const toggleBtnStyles = isDarkMode
+    ? styles.toggleBtnDarkTheme
+    : styles.toggleBtnLightTheme;
+
+  const toggleActiveStyles = isToggleActive ? styles.toggleBtnActive : null;
 
   return (
     <div
-      className={`${
-        isDarkMode ? styles.toggleBtnDarkTheme : styles.toggleBtnLightTheme
-      } ${isToggleActive ? styles.toggleBtnActive : null}`}
+      className={`${toggleBtnStyles} ${toggleActiveStyles}`}
       onClick={toggleBtnHandler}
     >
       <ToggleButtonIcon className={styles.toggleIcon} />

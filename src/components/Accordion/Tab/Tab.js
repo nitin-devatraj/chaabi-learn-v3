@@ -4,22 +4,16 @@ import { ReactComponent as ArrowRightIcon } from "../../../assets/icons/arrow-ri
 import { ReactComponent as ArrowDownIcon } from "../../../assets/icons/arrow-down.svg";
 import { ReactComponent as LockIcon } from "../../../assets/icons/lock-icon.svg";
 import { ReactComponent as UnlockIcon } from "../../../assets/icons/unlock-icon.svg";
-import { useNavigate } from "react-router-dom";
 
 function Tab({ item }) {
-  const navigate = useNavigate();
   const [isTabClicked, setIsTabClicked] = useState(false);
   const chapterId = item.id;
 
-  function tabClickHandler() {
+  const tabClickHandler = () => {
     setIsTabClicked((isTabClicked) => !isTabClicked);
-  }
-
-  const lessonClickHandler = (lessonId, lessonType, lessonName, chapterId) => {
-    navigate(
-      `/lesson/${lessonId}?name=${lessonName}&type=${lessonType}&chapterId=${chapterId}`
-    );
   };
+
+  const emptyFunc = () => {};
 
   return (
     <div className={styles.tabContainer}>
@@ -32,9 +26,7 @@ function Tab({ item }) {
           <div
             key={item.id}
             className={styles.tabContent}
-            onClick={() =>
-              lessonClickHandler(item.id, item.type, item.name, chapterId)
-            }
+            onClick={item.onClick ?? emptyFunc}
           >
             {item.access === true ? <UnlockIcon /> : <LockIcon />}
             <span>{item.name}</span>

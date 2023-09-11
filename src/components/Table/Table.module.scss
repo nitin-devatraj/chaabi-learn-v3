@@ -1,5 +1,4 @@
-@import "../../global-styles/typography.module.scss";
-@import "../../global-styles/variables.scss";
+@import "../../global-styles/global-styles.scss";
 
 .tableContainer {
   display: inline-flex;
@@ -37,6 +36,7 @@
       border-radius: 0.25rem;
 
       .paginationBtn {
+        @extend .t3Reg;
         display: flex;
         padding: 0.5rem 1.25rem;
         justify-content: center;
@@ -45,13 +45,12 @@
         border-radius: 0.25rem;
         border: 0.0625rem solid $neutral90;
         background: $neutral100;
-        @extend .t3Reg;
         color: $neutral30;
-      }
 
-      .paginationBtn[disabled] {
-        color: $neutral100;
-        background: $neutral90;
+        &:disabled {
+          color: $neutral100;
+          background: $neutral90;
+        }
       }
     }
   }

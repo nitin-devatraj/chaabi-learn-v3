@@ -1,11 +1,16 @@
-@import "../../../global-styles/typography.module.scss";
-@import "../../../global-styles/variables.scss";
+@import "../../../global-styles/global-styles.scss";
 
 .tableRowHeader {
   border-bottom: 0.0625rem solid $neutral80;
   background: $neutral95;
 
-  th {
+  .nameColumnHeader,
+  .statusColumnHeader,
+  .roleColumnHeader,
+  .emailColumnHeader,
+  .teamsColumnHeader,
+  .deleteColumnHeader,
+  .editColumnHeader {
     @extend .t4Med;
     color: $neutral30;
     height: 3rem;

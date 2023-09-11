@@ -1,5 +1,4 @@
-@import "../../../global-styles/variables.scss";
-@import "../../../global-styles/typography.module.scss";
+@import "../../../global-styles/global-styles.scss";
 
 .tertiaryBtnLightTheme {
   @extend .t3Reg;
@@ -11,21 +10,21 @@
   border: 0.0625rem solid transparent;
   background-color: transparent;
   cursor: pointer;
-}
 
-.tertiaryBtnLightTheme:not(:disabled):hover {
-  border: 0.0625rem solid $neutral80;
-}
+  &:not(:disabled):hover {
+    border: 0.0625rem solid $neutral80;
+  }
 
-.tertiaryBtnLightTheme:not(:disabled):active {
-  color: $primary50;
-  border: 0.0625rem solid $neutral80;
-  background-color: $neutral90;
-}
+  &:not(:disabled):active {
+    color: $primary50;
+    border: 0.0625rem solid $neutral80;
+    background-color: $neutral90;
+  }
 
-.tertiaryBtnLightTheme[disabled] {
-  color: $neutral70;
-  cursor: not-allowed;
+  &:disabled {
+    color: $neutral70;
+    cursor: not-allowed;
+  }
 }
 
 .tertiaryBtnDarkTheme {
@@ -38,20 +37,20 @@
   border: 0.0625rem solid transparent;
   background-color: transparent;
   cursor: pointer;
-}
 
-.tertiaryBtnDarkTheme:not(:disabled):hover {
-  border: 0.0625rem solid $primary99;
-}
+  &:not(:disabled):hover {
+    border: 0.0625rem solid $primary99;
+  }
 
-.tertiaryBtnDarkTheme:not(:disabled):active {
-  color: $primary50;
-  border: 0.0625rem solid $primary99;
-  background-color: $primary99;
-}
+  &:not(:disabled):active {
+    color: $primary50;
+    border: 0.0625rem solid $primary99;
+    background-color: $primary99;
+  }
 
-.tertiaryBtnDarkTheme[disabled] {
-  color: $neutral90;
-  background: $neutral20;
-  cursor: not-allowed;
+  &:disabled {
+    color: $neutral90;
+    background: $neutral20;
+    cursor: not-allowed;
+  }
 }

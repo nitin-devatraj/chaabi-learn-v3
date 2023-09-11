@@ -1,6 +1,7 @@
-@import "../../global-styles/variables.scss";
+@import "../../global-styles/global-styles.scss";
 
 .progressBarContainer {
+  @extend .lightThemeLowest;
   width: 100%;
   height: 0.25rem;
   padding: 0;

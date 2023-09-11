@@ -25,24 +25,23 @@ function SelectInput({ options }) {
   //     };
   //   }, []);
 
-  function inputClickHandler() {
+  const inputClickHandler = () => {
     setIsDropDownOpen((isDropDownOpen) => !isDropDownOpen);
-  }
+  };
 
-  function handleOptionClick(option) {
+  const handleOptionClick = (option) => {
     setSelectedOption(option);
     setIsDropDownOpen(false);
-  }
+  };
+
+  const labelStyles = isDarkMode
+    ? styles.labelDarkTheme
+    : styles.labelLightTheme;
 
   return (
     <div className={styles.selectInputContainer}>
       <div className={styles.inputContainer}>
-        <label
-          htmlFor="select-input"
-          className={
-            isDarkMode ? styles.labelDarkTheme : styles.labelLightTheme
-          }
-        >
+        <label htmlFor="select-input" className={labelStyles}>
           city
         </label>
         <div

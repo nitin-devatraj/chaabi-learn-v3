@@ -7,28 +7,30 @@ import { ReactComponent as InfoIcon } from "../../../assets/icons/notification-i
 import { ReactComponent as WarningIcon } from "../../../assets/icons/notification-icons/warning-icon.svg";
 
 function NotificationItem({ item }) {
+  const notificationItemTypeStyles =
+    item.type === "alert"
+      ? styles.alert
+      : item.type === "success"
+      ? styles.success
+      : item.type === "warning"
+      ? styles.warning
+      : styles.info;
+
+  const notificationItemIcon =
+    item.type === "alert" ? (
+      <AlertIcon />
+    ) : item.type === "success" ? (
+      <SuccessIcon />
+    ) : item.type === "warning" ? (
+      <WarningIcon />
+    ) : (
+      <InfoIcon />
+    );
+
   return (
-    <div
-      className={`${styles.notificationItem} ${
-        item.type === "alert"
-          ? styles.alert
-          : item.type === "success"
-          ? styles.success
-          : item.type === "warning"
-          ? styles.warning
-          : styles.info
-      }`}
-    >
+    <div className={`${styles.notificationItem} ${notificationItemTypeStyles}`}>
       <div className={styles.notificationHeader}>
-        {item.type === "alert" ? (
-          <AlertIcon />
-        ) : item.type === "success" ? (
-          <SuccessIcon />
-        ) : item.type === "warning" ? (
-          <WarningIcon />
-        ) : (
-          <InfoIcon />
-        )}
+        {notificationItemIcon}
         <div className={styles.notificationTitle}>{item.title}</div>
         <div className={styles.cancelIconContainer}>
           <CancelIcon />

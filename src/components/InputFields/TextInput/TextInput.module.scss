@@ -1,5 +1,4 @@
-@import "../../../global-styles/variables.scss";
-@import "../../../global-styles/typography.module.scss";
+@import "../../../global-styles/global-styles.scss";
 
 .textInputContainer {
   display: inline-flex;
@@ -25,26 +24,26 @@
     border-radius: 0.25rem;
     border: 0.0625rem solid $neutral90;
     background-color: $neutral100;
-  }
 
-  .inputLightTheme:focus {
-    outline: none;
-    box-shadow: 0rem 0rem 0rem 0.25rem $neutral99;
-  }
+    &:focus {
+      outline: none;
+      box-shadow: 0rem 0rem 0rem 0.25rem $neutral99;
+    }
 
-  .inputLightTheme:invalid {
-    border: 0.0625rem solid $alert60;
-  }
+    &:invalid {
+      border: 0.0625rem solid $alert60;
+    }
 
-  .inputLightTheme::placeholder {
-    @extend .t3Lite;
-    color: $neutral70;
-  }
+    &::placeholder {
+      @extend .t3Lite;
+      color: $neutral70;
+    }
 
-  .inputLightTheme[disabled] {
-    border: 1px solid $neutral90;
-    background: $neutral90;
-    color: $neutral70;
+    &:disabled {
+      border: 0.0625rem solid $neutral90;
+      background: $neutral90;
+      color: $neutral70;
+    }
   }
 
   .helperTextLightTheme {
@@ -68,30 +67,34 @@
     border-radius: 0.25rem;
     border: 0.0625rem solid $neutral70;
     background-color: $neutral100;
-  }
 
-  .inputDarkTheme:focus {
-    outline: none;
-    box-shadow: 0rem 0rem 0rem 0.25rem $neutral80;
-  }
+    &:focus {
+      outline: none;
+      box-shadow: 0rem 0rem 0rem 0.25rem $neutral80;
+    }
 
-  .inputDarkTheme:invalid {
-    border: 0.0625rem solid $alert60;
-  }
+    &:invalid {
+      border: 0.0625rem solid $alert60;
+    }
 
-  .inputDarkTheme::placeholder {
-    @extend .t3Lite;
-    color: $neutral70;
-  }
+    &::placeholder {
+      @extend .t3Lite;
+      color: $neutral70;
+    }
 
-  .inputDarkTheme[disabled] {
-    border: 0.0625rem solid $neutral40;
-    background: $neutral40;
-    color: $neutral80;
+    &:disabled {
+      border: 0.0625rem solid $neutral40;
+      background: $neutral40;
+      color: $neutral80;
+    }
   }
 
   .helperTextDarkTheme {
     @extend .t4Lite;
     color: $neutral95;
   }
+}
+
+.helperTextInactive {
+  display: none;
 }

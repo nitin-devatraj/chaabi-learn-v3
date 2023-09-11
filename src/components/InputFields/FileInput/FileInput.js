@@ -36,11 +36,11 @@ const FileInput = ({ accept, supportingText, iconSource }) => {
     fileInputRef.current.click();
   };
 
+  const isDraggingOverStyles = isDraggingOver ? styles.dragging : "";
+
   return (
     <div
-      className={`${styles.fileInputContainer} ${
-        isDraggingOver ? styles.dragging : ""
-      }`}
+      className={`${styles.fileInputContainer} ${isDraggingOverStyles}`}
       onClick={openFileInput}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
@@ -53,10 +53,11 @@ const FileInput = ({ accept, supportingText, iconSource }) => {
         <div className={styles.textContainer}>
           <div className={styles.text}>
             {selectedFileName ? (
-              <span>{selectedFileName}</span>
+              <span className={styles.highlightedText}>{selectedFileName}</span>
             ) : (
               <>
-                <span>Click to upload</span> or drag and drop
+                <span className={styles.highlightedText}>Click to upload</span>{" "}
+                or drag and drop
               </>
             )}
           </div>

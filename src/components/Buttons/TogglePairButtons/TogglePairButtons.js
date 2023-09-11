@@ -6,31 +6,33 @@ function TogglePairButtons({ label, firstButton, secondButton }) {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
   const [selectedBtn, setSelectedBtn] = useState("first-button");
 
-  function buttonClickHandler(event) {
+  const buttonClickHandler = (event) => {
     setSelectedBtn(event.target.id);
-  }
+  };
+
+  const labelStyles = isDarkMode
+    ? styles.labelDarkTheme
+    : styles.labelLightTheme;
+
+  const firstBtnStyles =
+    selectedBtn === "first-button" ? styles.selectedBtn : styles.btn;
+
+  const secondBtnStyles =
+    selectedBtn === "second-button" ? styles.selectedBtn : styles.btn;
 
   return (
     <div className={styles.togglePairButtonsContainer}>
-      <label
-        className={isDarkMode ? styles.labelDarkTheme : styles.labelLightTheme}
-      >
-        {label}
-      </label>
+      <label className={labelStyles}>{label}</label>
       <div className={styles.buttonGroup}>
         <button
-          className={
-            selectedBtn === "first-button" ? styles.selectedBtn : styles.btn
-          }
+          className={firstBtnStyles}
           id="first-button"
           onClick={buttonClickHandler}
         >
           {firstButton}
         </button>
         <button
-          className={
-            selectedBtn === "second-button" ? styles.selectedBtn : styles.btn
-          }
+          className={secondBtnStyles}
           id="second-button"
           onClick={buttonClickHandler}
         >
