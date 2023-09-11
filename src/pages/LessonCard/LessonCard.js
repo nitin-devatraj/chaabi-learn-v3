@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./LessonCard.module.scss";
 import LessonCardHeader from "./LessonCardHeader/LessonCardHeader";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import LessonTitle from "./LessonTitle/LessonTitle";
 import LessonCardNavButtons from "./LessonCardNavButtons/LessonCardNavButtons";
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton";
@@ -124,11 +124,10 @@ function LessonCard() {
   const [isQuizStarted, setIsQuizStarted] = useState(false);
   const [isQuizMinimized, setIsQuizMinimized] = useState(false);
   const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const { lessonId } = useParams();
-  const lessonName = searchParams.get("name");
-  const lessonType = searchParams.get("type");
-  const chapterId = searchParams.get("chapterId");
+  const { lessonId, lessonName, lessonType, chapterId } = useParams();
+  // const lessonName = searchParams.get("name");
+  // const lessonType = searchParams.get("type");
+  // const chapterId = searchParams.get("chapterId");
 
   // const currentLessonId = lessonId;
   // const currentChapterId = chapterId;

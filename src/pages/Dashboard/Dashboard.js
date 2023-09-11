@@ -12,7 +12,7 @@ function Dashboard() {
   const navigate = useNavigate();
 
   const activeCourseDetails = {
-    id: 4,
+    id: 0,
     title: "Zippee Rider Onboarding Training that works amazingly well",
     numberOfVideos: 10,
     numberOfQuizzes: 12,
@@ -20,7 +20,7 @@ function Dashboard() {
     currentLesson: 3,
     progress: 40,
     onClick: () => {
-      navigate(`/training-overview/${4}`);
+      navigate(`/training-overview/${0}`);
     },
   };
 

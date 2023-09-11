@@ -21,7 +21,10 @@ root.render(
             path="/training-overview/:trainingId"
             element={<TrainingOverview />}
           />
-          <Route path="/lesson/:lessonId" element={<LessonCard />} />
+          <Route
+            path="/lesson-id/:lessonId/lesson-name/:lessonName/lesson-type/:lessonType/chapter-id/:chapterId"
+            element={<LessonCard />}
+          />
         </Routes>
       </BrowserRouter>
     </Provider>

@@ -18,9 +18,11 @@ function TrainingOverview() {
     const firstChapterId = chapterList[0].id;
 
     navigate(
-      `/lesson/${firstLessonId}?name=${firstLessonName}&type=${firstLessonType}&chapterId=${firstChapterId}`
+      `/lesson-id/${firstLessonId}/lesson-name/${firstLessonName}/lesson-type/${firstLessonType}/chapter-id/${firstChapterId}`
     );
   };
+
+  // `/lesson-id/${}/lesson-name/${}/lesson-type/${}/chapter-id/${}`
 
   const chapterList = [
     {
@@ -34,7 +36,7 @@ function TrainingOverview() {
           type: "quiz",
           onClick: () => {
             navigate(
-              `/lesson/${1}?name=${"Quiz lesson"}&type=${"quiz"}&chapterId=${1}`
+              `/lesson-id/${1}/lesson-name/${"Quiz lesson"}/lesson-type/${"quiz"}/chapter-id/${1}`
             );
           },
         },
@@ -45,7 +47,7 @@ function TrainingOverview() {
           type: "assessment",
           onClick: () => {
             navigate(
-              `/lesson/${2}?name=${"Assessment lesson"}&type=${"assessment"}&chapterId=${1}`
+              `/lesson-id/${2}/lesson-name/${"Assessment lesson"}/lesson-type/${"assessment"}/chapter-id/${1}`
             );
           },
         },
@@ -56,7 +58,7 @@ function TrainingOverview() {
           type: "video",
           onClick: () => {
             navigate(
-              `/lesson/${3}?name=${"Video lesson"}&type=${"video"}&chapterId=${1}`
+              `/lesson-id/${3}/lesson-name/${"Video lesson"}/lesson-type/${"video"}/chapter-id/${1}`
             );
           },
         },
@@ -73,7 +75,7 @@ function TrainingOverview() {
           type: "document",
           onClick: () => {
             navigate(
-              `/lesson/${4}?name=${"Document lesson"}&type=${"document"}&chapterId=${2}`
+              `/lesson-id/${4}/lesson-name/${"Document lesson"}/lesson-type/${"document"}/chapter-id/${2}`
             );
           },
         },
@@ -84,7 +86,7 @@ function TrainingOverview() {
           type: "audio",
           onClick: () => {
             navigate(
-              `/lesson/${5}?name=${"Audio lesson"}&type=${"audio"}&chapterId=${2}`
+              `/lesson-id/${5}/lesson-name/${"Audio lesson"}/lesson-type/${"audio"}/chapter-id/${2}`
             );
           },
         },
@@ -102,7 +104,7 @@ function TrainingOverview() {
           type: "quiz",
           onClick: () => {
             navigate(
-              `/lesson/${6}?name=${"Quiz lesson"}&type=${"quiz"}&chapterId=${3}`
+              `/lesson-id/${6}/lesson-name/${"Quiz lesson"}/lesson-type/${"quiz"}/chapter-id/${3}`
             );
           },
         },
@@ -113,7 +115,7 @@ function TrainingOverview() {
           type: "assessment",
           onClick: () => {
             navigate(
-              `/lesson/${7}?name=${"Assessment lesson"}&type=${"assessment"}&chapterId=${3}`
+              `/lesson-id/${7}/lesson-name/${"Assessment lesson"}/lesson-type/${"assessment"}/chapter-id/${3}`
             );
           },
         },
@@ -124,7 +126,7 @@ function TrainingOverview() {
           type: "video",
           onClick: () => {
             navigate(
-              `/lesson/${8}?name=${"Video lesson"}&type=${"video"}&chapterId=${3}`
+              `/lesson-id/${8}/lesson-name/${"Video lesson"}/lesson-type/${"video"}/chapter-id/${3}`
             );
           },
         },
@@ -141,7 +143,7 @@ function TrainingOverview() {
           type: "document",
           onClick: () => {
             navigate(
-              `/lesson/${9}?name=${"Document lesson"}&type=${"document"}&chapterId=${4}`
+              `/lesson-id/${9}/lesson-name/${"Document lesson"}/lesson-type/${"document"}/chapter-id/${4}`
             );
           },
         },
@@ -152,7 +154,7 @@ function TrainingOverview() {
           type: "audio",
           onClick: () => {
             navigate(
-              `/lesson/${10}?name=${"Audio lesson"}&type=${"audio"}&chapterId=${4}`
+              `/lesson-id/${10}/lesson-name/${"Audio lesson"}/lesson-type/${"audio"}/chapter-id/${4}`
             );
           },
         },
@@ -170,7 +172,7 @@ function TrainingOverview() {
           type: "quiz",
           onClick: () => {
             navigate(
-              `/lesson/${11}?name=${"Quiz lesson"}&type=${"quiz"}&chapterId=${5}`
+              `/lesson-id/${11}/lesson-name/${"Quiz lesson"}/lesson-type/${"quiz"}/chapter-id/${5}`
             );
           },
         },
@@ -181,7 +183,7 @@ function TrainingOverview() {
           type: "assessment",
           onClick: () => {
             navigate(
-              `/lesson/${12}?name=${"Assessment lesson"}&type=${"assessment"}&chapterId=${5}`
+              `/lesson-id/${12}/lesson-name/${"Assessment lesson"}/lesson-type/${"assessment"}/chapter-id/${5}`
             );
           },
         },
@@ -192,7 +194,7 @@ function TrainingOverview() {
           type: "video",
           onClick: () => {
             navigate(
-              `/lesson/${13}?name=${"Video lesson"}&type=${"video"}&chapterId=${5}`
+              `/lesson-id/${13}/lesson-name/${"Video lesson"}/lesson-type/${"video"}/chapter-id/${5}`
             );
           },
         },
@@ -209,7 +211,7 @@ function TrainingOverview() {
           type: "document",
           onClick: () => {
             navigate(
-              `/lesson/${14}?name=${"Document lesson"}&type=${"document"}&chapterId=${6}`
+              `/lesson-id/${14}/lesson-name/${"Document lesson"}/lesson-type/${"document"}/chapter-id/${6}`
             );
           },
         },
@@ -220,7 +222,7 @@ function TrainingOverview() {
           type: "audio",
           onClick: () => {
             navigate(
-              `/lesson/${15}?name=${"Audio lesson"}&type=${"audio"}&chapterId=${6}`
+              `/lesson-id/${15}/lesson-name/${"Audio lesson"}/lesson-type/${"audio"}/chapter-id/${6}`
             );
           },
         },
@@ -238,7 +240,7 @@ function TrainingOverview() {
           type: "quiz",
           onClick: () => {
             navigate(
-              `/lesson/${16}?name=${"Quiz lesson"}&type=${"quiz"}&chapterId=${7}`
+              `/lesson-id/${16}/lesson-name/${"Quiz lesson"}/lesson-type/${"quiz"}/chapter-id/${7}`
             );
           },
         },
@@ -249,7 +251,7 @@ function TrainingOverview() {
           type: "assessment",
           onClick: () => {
             navigate(
-              `/lesson/${17}?name=${"Assessment lesson"}&type=${"assessment"}&chapterId=${7}`
+              `/lesson-id/${17}/lesson-name/${"Assessment lesson"}/lesson-type/${"assessment"}/chapter-id/${7}`
             );
           },
         },
@@ -260,7 +262,7 @@ function TrainingOverview() {
           type: "video",
           onClick: () => {
             navigate(
-              `/lesson/${18}?name=${"Video lesson"}&type=${"video"}&chapterId=${7}`
+              `/lesson-id/${18}/lesson-name/${"Video lesson"}/lesson-type/${"video"}/chapter-id/${7}`
             );
           },
         },
@@ -277,7 +279,7 @@ function TrainingOverview() {
           type: "document",
           onClick: () => {
             navigate(
-              `/lesson/${19}?name=${"Document lesson"}&type=${"document"}&chapterId=${8}`
+              `/lesson-id/${19}/lesson-name/${"Document lesson"}/lesson-type/${"document"}/chapter-id/${8}`
             );
           },
         },
@@ -288,7 +290,7 @@ function TrainingOverview() {
           type: "audio",
           onClick: () => {
             navigate(
-              `/lesson/${20}?name=${"Audio lesson"}&type=${"audio"}&chapterId=${8}`
+              `/lesson-id/${20}/lesson-name/${"Audio lesson"}/lesson-type/${"audio"}/chapter-id/${8}`
             );
           },
         },
@@ -306,7 +308,7 @@ function TrainingOverview() {
           type: "quiz",
           onClick: () => {
             navigate(
-              `/lesson/${21}?name=${"Quiz lesson"}&type=${"quiz"}&chapterId=${9}`
+              `/lesson-id/${21}/lesson-name/${"Quiz lesson"}/lesson-type/${"quiz"}/chapter-id/${9}`
             );
           },
         },
@@ -317,7 +319,7 @@ function TrainingOverview() {
           type: "assessment",
           onClick: () => {
             navigate(
-              `/lesson/${22}?name=${"Assessment lesson"}&type=${"assessment"}&chapterId=${9}`
+              `/lesson-id/${22}/lesson-name/${"Assessment lesson"}/lesson-type/${"assessment"}/chapter-id/${9}`
             );
           },
         },
@@ -328,7 +330,7 @@ function TrainingOverview() {
           type: "video",
           onClick: () => {
             navigate(
-              `/lesson/${23}?name=${"Video lesson"}&type=${"video"}&chapterId=${9}`
+              `/lesson-id/${23}/lesson-name/${"Video lesson"}/lesson-type/${"video"}/chapter-id/${9}`
             );
           },
         },
@@ -345,7 +347,7 @@ function TrainingOverview() {
           type: "document",
           onClick: () => {
             navigate(
-              `/lesson/${24}?name=${"Document lesson"}&type=${"document"}&chapterId=${10}`
+              `/lesson-id/${24}/lesson-name/${"Document lesson"}/lesson-type/${"document"}/chapter-id/${10}`
             );
           },
         },
@@ -356,7 +358,7 @@ function TrainingOverview() {
           type: "audio",
           onClick: () => {
             navigate(
-              `/lesson/${25}?name=${"Audio lesson"}&type=${"audio"}&chapterId=${10}`
+              `/lesson-id/${25}/lesson-name/${"Audio lesson"}/lesson-type/${"audio"}/chapter-id/${10}`
             );
           },
         },
