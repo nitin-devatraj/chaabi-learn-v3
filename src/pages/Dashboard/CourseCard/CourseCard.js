@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./CourseCard.module.scss";
 import courseImg from "../../../assets/images/pages/dashboard/course-card/course-img.jpeg";
 import ProgressBar from "../../../components/ProgressBar/ProgressBar";
-import { useNavigate } from "react-router-dom";
 
 function CourseCard({
   courseTitle,
@@ -11,19 +10,10 @@ function CourseCard({
   totalLessons,
   currentLesson,
   progress,
-  trainingId,
+  onClick,
 }) {
-  const navigate = useNavigate();
-
-  const courseCardClickHandler = () => {
-    navigate(`/training-overview/${trainingId}`);
-  };
-
   return (
-    <div
-      className={styles.courseCardContainer}
-      onClick={courseCardClickHandler}
-    >
+    <div className={styles.courseCardContainer} onClick={onClick}>
       <img src={courseImg} alt="#" className={styles.courseImg} />
 
       <ProgressBar progress={progress} />

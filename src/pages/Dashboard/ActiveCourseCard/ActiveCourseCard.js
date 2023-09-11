@@ -3,50 +3,36 @@ import styles from "./ActiveCourseCard.module.scss";
 import ProgressBar from "../../../components/ProgressBar/ProgressBar";
 import activeCourseImg from "../../../assets/images/pages/dashboard/active-course-card/course-img.jpeg";
 import typography from "../../../global-styles/typography.module.scss";
-import { useNavigate } from "react-router-dom";
 
-const courseDetails = {
-  id: 4,
-  title: "Zippee Rider Onboarding Training that works amazingly well",
-  numberOfVideos: 10,
-  numberOfQuizzes: 12,
-  totalLessons: 10,
-  currentLesson: 3,
-  progress: 40,
-};
-
-function ActiveCourseCard() {
-  const navigate = useNavigate();
-
-  const courseCardClickHandler = () => {
-    navigate(`/training-overview/${courseDetails.id}`);
-  };
-
+function ActiveCourseCard({ activeCourseDetails }) {
   return (
     <section className={styles.activeCourseContainer}>
       <p className={typography.t4Lite}>Continue Your Training</p>
 
-      <div className={styles.activeCourseCard} onClick={courseCardClickHandler}>
+      <div
+        className={styles.activeCourseCard}
+        onClick={activeCourseDetails.onCLick}
+      >
         <img src={activeCourseImg} alt="#" className={styles.activeCourseImg} />
-        <ProgressBar progress={courseDetails.progress} />
+        <ProgressBar progress={activeCourseDetails.progress} />
 
         <div className={styles.activeCourseDetails}>
-          <p className={typography.t3Med}>{courseDetails.title}</p>
+          <p className={typography.t3Med}>{activeCourseDetails.title}</p>
 
           <div className={styles.activeCourseTextInfo}>
             <div>
               <span className={styles.activeCourseText}>
-                {courseDetails.numberOfVideos} Videos
+                {activeCourseDetails.numberOfVideos} Videos
               </span>
 
               <span className={styles.activeCourseText}>
-                {courseDetails.numberOfQuizzes} Quizzes
+                {activeCourseDetails.numberOfQuizzes} Quizzes
               </span>
             </div>
 
             <span className={styles.activeCourseText}>
-              Lesson {courseDetails.currentLesson} of{" "}
-              {courseDetails.totalLessons}
+              Lesson {activeCourseDetails.currentLesson} of{" "}
+              {activeCourseDetails.totalLessons}
             </span>
           </div>
         </div>

@@ -15,9 +15,9 @@ function RecommendedTrainings({ dummyTrainings }) {
             numberOFQuizzes={item.numberOfQuizzes}
             totalLessons={item.totalLessons}
             currentLesson={item.currentLesson}
-            trainingId={item.id}
             progress={item.progress}
             key={item.id}
+            onClick={item.onClick}
           />
         ))}
       </div>
