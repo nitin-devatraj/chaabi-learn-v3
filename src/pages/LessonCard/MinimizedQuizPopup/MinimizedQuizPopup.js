@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./MinimizedQuizPopup.module.scss";
-import typography from "../../../global-styles/typography.module.scss";
+import typography from "../../../global-styles/global-styles.module.scss";
 import { ReactComponent as QuizIcon } from "../../../assets/icons/pages/lesson-card/lesson-title/quiz-lesson.svg";
 import { ReactComponent as UpIcon } from "../../../assets/icons/arrow-up.svg";
 

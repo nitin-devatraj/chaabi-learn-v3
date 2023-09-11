@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./LessonCardHeader.module.scss";
 import { useNavigate } from "react-router-dom";
-import typography from "../../../global-styles/typography.module.scss";
+import typography from "../../../global-styles/global-styles.module.scss";
 import { ReactComponent as BackIcon } from "../../../assets/icons/pages/lesson-card/lesson-card-header/back-icon.svg";
 
 function LessonCardHeader() {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./TrainingContent.module.scss";
 import TabGroup from "../../../components/TabGroup/TabGroup";
 import Accordion from "../../../components/Accordion/Accordion";
-import typography from "../../../global-styles/typography.module.scss";
+import typography from "../../../global-styles/global-styles.module.scss";
 
 function TrainingContent({ chapterList }) {
   const [selectedTab, setSelectedTab] = useState(null);

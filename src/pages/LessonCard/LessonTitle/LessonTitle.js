@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./LessonTitle.module.scss";
 import { ReactComponent as VideoIcon } from "../../../assets/icons/pages/lesson-card/lesson-title/video-lesson.svg";
 import { ReactComponent as QuizIcon } from "../../../assets/icons/pages/lesson-card/lesson-title/quiz-lesson.svg";
-import typography from "../../../global-styles/typography.module.scss";
+import typography from "../../../global-styles/global-styles.module.scss";
 
 function LessonTitle({ lessonName, lessonType }) {
   return (

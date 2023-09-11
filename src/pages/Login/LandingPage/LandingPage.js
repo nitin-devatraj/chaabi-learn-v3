@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./LandingPage.module.scss";
-import typography from "../../../global-styles/typography.module.scss";
+import typography from "../../../global-styles/global-styles.module.scss";
 import bannerImage from "../../../assets/images/pages/login/landing-page/bannerImage.png";
 import PrimaryButton from "../../../components/Buttons/PrimaryButton/PrimaryButton";
 

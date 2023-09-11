@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./RecommendedTrainings.module.scss";
 import CourseCard from "../CourseCard/CourseCard";
-import typography from "../../../global-styles/typography.module.scss";
+import typography from "../../../global-styles/global-styles.module.scss";
 
 function RecommendedTrainings({ dummyTrainings }) {
   return (

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Quiz.module.scss";
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton";
-
 import QuizHeader from "./QuizHeader/QuizHeader";
 import QuizProgress from "./QuizProgress/QuizProgress";
 import IndividualQuiz from "./IndividualQuiz/IndividualQuiz";

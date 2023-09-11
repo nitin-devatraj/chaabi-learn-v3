@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./TrainingsToBeCompleted.module.scss";
 import CourseCard from "../CourseCard/CourseCard";
-import typography from "../../../global-styles/typography.module.scss";
+import typography from "../../../global-styles/global-styles.module.scss";
 
 function TrainingsToBeCompleted({ dummyTrainings }) {
   return (
@@ -15,7 +15,7 @@ function TrainingsToBeCompleted({ dummyTrainings }) {
             numberOFQuizzes={item.numberOfQuizzes}
             totalLessons={item.totalLessons}
             currentLesson={item.currentLesson}
-            trainingId={item.id}
+            onClick={item.onClick}
             progress={item.progress}
             key={item.id}
           />

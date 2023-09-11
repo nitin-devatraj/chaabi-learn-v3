@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./IndividualQuiz.module.scss";
 import QuizCheckBox from "../../../components/Buttons/QuizCheckBox/QuizCheckBox";
-import typography from "../../../global-styles/typography.module.scss";
+import typography from "../../../global-styles/global-styles.module.scss";
 
 function IndividualQuiz() {
   const [isOption1Selected, setIsOption1Selected] = useState(false);

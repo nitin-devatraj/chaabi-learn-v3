@@ -1,6 +1,4 @@
-@import "../../global-styles/typography.module.scss";
-@import "../../global-styles/color-theme.module.scss";
-@import "../../global-styles/variables.scss";
+@import "../../global-styles/global-styles.module.scss";
 
 .quizLessonContainer {
   @extend .lightThemeHighest;

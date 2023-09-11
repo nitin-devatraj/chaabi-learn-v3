@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./TrainingHeader.module.scss";
-import typography from "../../../global-styles/typography.module.scss";
+import typography from "../../../global-styles/global-styles.module.scss";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as BackIcon } from "../../../assets/icons/pages/training-overview/training-header/back-icon.svg";
 

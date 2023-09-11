@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./FourDigitInput.module.scss";
-import typography from "../../../../global-styles/typography.module.scss";
+import typography from "../../../../global-styles/global-styles.module.scss";
 
 function FourDigitInput() {
   // this digits array will hold the user input digits

@@ -1,5 +1,4 @@
-@import "../../../global-styles/variables.scss";
-@import "../../../global-styles/color-theme.module.scss";
+@import "../../../global-styles/global-styles.module.scss";
 
 .trainingContentContainer {
   display: flex;
@@ -7,14 +6,14 @@
 
   .trainingAboutSection {
     @extend .lightThemeRegular;
-    height: 13.125rem;
+    height: 245px;
     border-radius: 0.25rem;
     padding: 0.75rem;
-    overflow: auto;
+    overflow: hidden;
   }
 
   .lessonsAccordianContainer {
-    height: 13.125rem;
+    height: 245px;
     border-radius: 0.25rem;
     overflow-y: auto;
   }

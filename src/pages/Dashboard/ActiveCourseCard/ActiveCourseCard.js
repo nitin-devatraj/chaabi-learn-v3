@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ActiveCourseCard.module.scss";
 import ProgressBar from "../../../components/ProgressBar/ProgressBar";
 import activeCourseImg from "../../../assets/images/pages/dashboard/active-course-card/course-img.jpeg";
-import typography from "../../../global-styles/typography.module.scss";
+import typography from "../../../global-styles/global-styles.module.scss";
 
 function ActiveCourseCard({ activeCourseDetails }) {
   return (
@@ -11,7 +11,7 @@ function ActiveCourseCard({ activeCourseDetails }) {
 
       <div
         className={styles.activeCourseCard}
-        onClick={activeCourseDetails.onCLick}
+        onClick={activeCourseDetails.onClick}
       >
         <img src={activeCourseImg} alt="#" className={styles.activeCourseImg} />
         <ProgressBar progress={activeCourseDetails.progress} />

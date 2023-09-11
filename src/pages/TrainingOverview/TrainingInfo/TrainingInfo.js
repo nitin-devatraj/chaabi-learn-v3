@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./TrainingInfo.module.scss";
-import typography from "../../../global-styles/typography.module.scss";
+import typography from "../../../global-styles/global-styles.module.scss";
 import { ReactComponent as ClockIcon } from "../../../assets/icons/pages/training-overview/training-info/clock-icon.svg";
 
 function TrainingInfo() {

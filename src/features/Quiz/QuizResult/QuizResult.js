@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./QuizResult.module.scss";
-import typography from "../../../global-styles/typography.module.scss";
+import typography from "../../../global-styles/global-styles.module.scss";
 import PrimaryButton from "../../../components/Buttons/PrimaryButton/PrimaryButton";
 import SemiCircleGauge from "./SemiCircleGauge/SemiCircleGauge";
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./ResetPasswordForm.module.scss";
-import typography from "../../../../global-styles/typography.module.scss";
+import typography from "../../../../global-styles/global-styles.module.scss";
 import TextInput from "../../../../components/InputFields/TextInput/TextInput";
 import PrimaryButton from "../../../../components/Buttons/PrimaryButton/PrimaryButton";
 import { useNavigate } from "react-router-dom";

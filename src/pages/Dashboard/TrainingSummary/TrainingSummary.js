@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./TrainingSummary.module.scss";
-import typography from "../../../global-styles/typography.module.scss";
+import typography from "../../../global-styles/global-styles.module.scss";
 
 function TrainingSummary() {
   return (
