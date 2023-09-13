@@ -11,9 +11,7 @@ function QuizResult({ onNextLesson }) {
         <div className={styles.progressChartContainer}>
           <SemiCircleGauge />
         </div>
-        <h3 className={`${typography.h3Semi} ${styles.quizResultText}`}>
-          You Passed
-        </h3>
+        <h3 className={typography.h3Semi}>You Passed</h3>
       </div>
 
       <section className={styles.quizInfo}>

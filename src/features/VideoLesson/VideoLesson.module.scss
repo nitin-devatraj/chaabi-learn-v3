@@ -3,6 +3,7 @@
 .videoLessonContainer {
   display: flex;
   justify-content: center;
+  flex: 1;
 
   .videoPlayer {
     width: 100%;
@@ -10,10 +11,12 @@
     flex-shrink: 0;
     border-radius: 0.25rem;
     background: $neutral0;
+    border: none;
+    outline: none;
   }
 
   .portraitMode {
-    height: 20rem;
-    width: 82%;
+    height: 100%;
+    width: 100%;
   }
 }
