@@ -39,7 +39,7 @@ function EmailLoginForm({ resetPassword }) {
   };
 
   const isEnteredPasswordValid = (password) => {
-    return password.trim() !== "" && password.length > 8;
+    return password.trim() !== "" && password.length >= 8;
   };
 
   // const emailLoginSubmitHandler = () => {
@@ -101,12 +101,12 @@ function EmailLoginForm({ resetPassword }) {
         </h5>
 
         <TextInput
-          type="email"
+          type="text"
           label="Email"
           placeholder="enter your email address"
           onChange={emailChangeHandler}
           value={email}
-          helperText="email is required"
+          helperText="email is required - should include @ and ."
           showHelperText={showEmailHelperText}
           isValid={isEmailValid}
         />

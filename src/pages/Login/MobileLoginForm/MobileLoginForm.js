@@ -38,22 +38,23 @@ function MobileLoginForm() {
   };
 
   const isEnteredMobileNumberValid = (mobileNumber) => {
-    return mobileNumber.trim() !== "" && mobileNumber.length > 8;
+    return mobileNumber.trim() !== "" && mobileNumber.length >= 10;
   };
 
   const generateOtpHandler = () => {
-    if (!isEnteredMobileNumberValid(mobileNumber)) {
-      setShowHelperText(true);
-      setIsMobileNumberValid(false);
-      return;
+    const isMobileNumberValid = isEnteredMobileNumberValid(mobileNumber);
+    if (isMobileNumberValid === false) {
+      setShowHelperText(!isMobileNumberValid);
+      setIsMobileNumberValid(isMobileNumberValid);
+    } else {
+      setIsGenerateOtpBtnClicked(true);
     }
-    setIsGenerateOtpBtnClicked(true);
   };
 
   const submitOtpHandler = () => {
-    if (digits.some((digit) => digit === "")) {
-      setShowRequiredText(true);
-      return;
+    const areAnyDigitsOmitted = digits.some((digit) => digit === "");
+    if (areAnyDigitsOmitted === true) {
+      setShowRequiredText(areAnyDigitsOmitted);
     } else {
       navigate("/dashboard");
     }

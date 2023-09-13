@@ -31,11 +31,11 @@ function ResetPasswordForm() {
   };
 
   const isEnteredPasswordValid = (password) => {
-    return password.trim() !== "" && password.length > 8;
+    return password.trim() !== "" && password.length >= 8;
   };
 
   const isConfirmedPasswordValid = (password) => {
-    return password.trim() !== "" && password.length > 8;
+    return password.trim() !== "" && password.length >= 8;
   };
 
   // this function is triggered when the user hits submit after entering new password
