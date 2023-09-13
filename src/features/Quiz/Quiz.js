@@ -11,52 +11,52 @@ import InvalidAnswerPopup from "./InvalidAnswerPopup/InvalidAnswerPopup";
 const quizzes = [
   {
     id: 1,
-    name: "what is the capital of india ?",
+    name: "what is the capital of india",
     options: ["delhi", "bombay", "calcutta", "hyd"],
   },
   {
     id: 2,
-    name: "what is the capital of india ?",
+    name: "what is the capital of india",
     options: ["delhi", "bombay", "calcutta", "hyd"],
   },
   {
     id: 3,
-    name: "what is the capital of india ?",
+    name: "what is the capital of india",
     options: ["delhi", "bombay", "calcutta", "hyd"],
   },
   {
     id: 4,
-    name: "what is the capital of india ?",
+    name: "what is the capital of india",
     options: ["delhi", "bombay", "calcutta", "hyd"],
   },
   {
     id: 5,
-    name: "what is the capital of india ?",
+    name: "what is the capital of india",
     options: ["delhi", "bombay", "calcutta", "hyd"],
   },
   {
     id: 6,
-    name: "what is the capital of india ?",
+    name: "what is the capital of india",
     options: ["delhi", "bombay", "calcutta", "hyd"],
   },
   {
     id: 7,
-    name: "what is the capital of india ?",
+    name: "what is the capital of india",
     options: ["delhi", "bombay", "calcutta", "hyd"],
   },
   {
     id: 8,
-    name: "what is the capital of india ?",
+    name: "what is the capital of india",
     options: ["delhi", "bombay", "calcutta", "hyd"],
   },
   {
     id: 9,
-    name: "what is the capital of india ?",
+    name: "what is the capital of india",
     options: ["delhi", "bombay", "calcutta", "hyd"],
   },
   {
     id: 10,
-    name: "what is the capital of india ?",
+    name: "what is the capital of india",
     options: ["delhi", "bombay", "calcutta", "hyd"],
   },
 ];
@@ -78,7 +78,10 @@ function Quiz({ onQuizMinimize }) {
 
         <QuizProgress />
 
-        <IndividualQuiz />
+        <IndividualQuiz
+          quizName={quizzes[0].name}
+          quizOptions={quizzes[0].options}
+        />
 
         {isQuizComplete === true && (
           <QuizResult onNextLesson={quizCompleteHandler} />
