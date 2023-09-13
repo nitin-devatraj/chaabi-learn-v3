@@ -1,0 +1,16 @@
+@import "../../../../global-styles/global-styles.module.scss";
+
+.quizTimer {
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  background: $badgeColorMain6;
+
+  .quizTimerText {
+    @extend .h6Med;
+    color: $badgeColorBack6;
+    text-align: center;
+  }
+}

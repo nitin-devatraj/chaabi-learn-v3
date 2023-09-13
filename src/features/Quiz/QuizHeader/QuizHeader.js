@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./QuizHeader.module.scss";
 import { ReactComponent as ArrowDownIcon } from "../../../assets/icons/features/quiz/quiz-header/arrow-down.svg";
+import QuizTimer from "./QuizTimer/QuizTimer";
 
 function QuizHeader({ onQuizMinimize, isQuizComplete }) {
   return (
@@ -13,11 +14,7 @@ function QuizHeader({ onQuizMinimize, isQuizComplete }) {
 
       <p className={styles.quizHeaderText}>Take Your Quiz</p>
 
-      {isQuizComplete === false && (
-        <div className={styles.quizTimer}>
-          <h6 className={styles.quizTimerText}>00:30</h6>
-        </div>
-      )}
+      {isQuizComplete === false && <QuizTimer />}
     </section>
   );
 }
