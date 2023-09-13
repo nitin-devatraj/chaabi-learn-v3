@@ -1,29 +1,41 @@
 @import "../../../../global-styles/global-styles.module.scss";
 
-.fourDigitInput {
+.fourDigitInputContainer {
   display: flex;
+  flex-direction: column;
   gap: 1.25rem;
   margin: 1rem auto;
-}
 
-.fourDigitInput {
-  input {
-    width: 3.5rem;
-    height: 3.5rem;
+  .fourDigitInput {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1rem;
-    padding: 0.625rem 0.875rem;
-    display: inline-block;
-    border-radius: 0.25rem;
-    background: $neutral100;
-    border: none;
-    color: $neutral20;
+    gap: 1.25rem;
   }
 
-  input:focus {
-    outline: none;
+  .fourDigitInput {
+    input {
+      width: 3.5rem;
+      height: 3.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 1rem;
+      padding: 0.625rem 0.875rem;
+      display: inline-block;
+      border-radius: 0.25rem;
+      background: $neutral100;
+      border: none;
+      color: $neutral20;
+    }
+
+    input:focus {
+      outline: none;
+    }
+  }
+
+  .requiredText {
+    @extend .t4Lite;
+    text-align: center;
+    color: $alert60;
   }
 }

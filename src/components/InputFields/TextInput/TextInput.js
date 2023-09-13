@@ -9,9 +9,10 @@ function TextInput({
   required,
   type,
   placeholder,
-  helperTextDisplay,
+  showHelperText,
   onChange,
   value,
+  isValid,
 }) {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
 
@@ -24,31 +25,31 @@ function TextInput({
     : styles.inputLightTheme;
 
   const helperTextStyles = isDarkMode
-    ? styles.helperTextDarkTheme
-    : styles.helperTextLightTheme;
-
-  const helperTextInactiveStyles = helperTextDisplay
-    ? styles.helperTextInactive
-    : "";
+    ? `${styles.helperTextDarkTheme} ${
+        isValid === false && styles.helperTextInvalid
+      }`
+    : `${styles.helperTextLightTheme} ${
+        isValid === false && styles.helperTextInvalid
+      }`;
 
   return (
     <div className={styles.textInputContainer}>
-      <label htmlFor="text-input" className={labelStyles}>
+      <label htmlFor={Math.random().toFixed(3)} className={labelStyles}>
         {label}
       </label>
       <input
         className={inputStyles}
         type={type}
-        id="text-input"
+        id={Math.random().toFixed(3)}
         disabled={disabled}
         required={required}
         placeholder={placeholder}
         onChange={onChange}
         value={value}
       />
-      <p className={`${helperTextStyles} ${helperTextInactiveStyles}}`}>
-        {helperText}
-      </p>
+      {showHelperText === true && (
+        <p className={helperTextStyles}>{helperText}</p>
+      )}
     </div>
   );
 }

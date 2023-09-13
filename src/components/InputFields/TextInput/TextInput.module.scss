@@ -27,12 +27,12 @@
 
     &:focus {
       outline: none;
-      box-shadow: 0rem 0rem 0rem 0.25rem $neutral99;
+      box-shadow: 0rem 0rem 0rem 0.25rem $neutral95;
     }
 
-    &:invalid {
-      border: 0.0625rem solid $alert60;
-    }
+    // &:invalid {
+    //   border: 0.0625rem solid $alert60;
+    // }
 
     &::placeholder {
       @extend .t3Lite;
@@ -48,6 +48,10 @@
 
   .helperTextLightTheme {
     @extend .t4Lite;
+  }
+
+  .helperTextInvalid {
+    color: $alert60;
   }
 
   // dark theme mode
@@ -73,9 +77,9 @@
       box-shadow: 0rem 0rem 0rem 0.25rem $neutral80;
     }
 
-    &:invalid {
-      border: 0.0625rem solid $alert60;
-    }
+    // &:invalid {
+    //   border: 0.0625rem solid $alert60;
+    // }
 
     &::placeholder {
       @extend .t3Lite;
@@ -93,8 +97,8 @@
     @extend .t4Lite;
     color: $neutral95;
   }
-}
 
-.helperTextInactive {
-  display: none;
+  .helperTextInvalid {
+    color: $alert60;
+  }
 }

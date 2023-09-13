@@ -1,21 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import typography from "../../../global-styles/global-styles.module.scss";
 import styles from "./MobileLoginForm.module.scss";
-import PhoneInput from "../../../components/InputFields/NumberInput/NumberInput";
+import NumberInput from "../../../components/InputFields/NumberInput/NumberInput";
 import FourDigitInput from "./FourDigitInput/FourDigitInput";
 import PrimaryButton from "../../../components/Buttons/PrimaryButton/PrimaryButton";
 import { useNavigate } from "react-router-dom";
 
 function MobileLoginForm() {
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [isMobileNumberValid, setIsMobileNumberValid] = useState(true);
+  const [showHelperText, setShowHelperText] = useState(false);
   const [isGenerateOtpBtnClicked, setIsGenerateOtpBtnClicked] = useState(false);
+  const [showRequiredText, setShowRequiredText] = useState(false);
+
+  // this digits array will hold the user input digits
+  const [digits, setDigits] = useState(["", "", "", ""]);
+  const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
+
+  const handleChange = (index, event) => {
+    setShowRequiredText(false);
+
+    const newDigits = [...digits];
+    newDigits[index] = event.target.value;
+    setDigits(newDigits);
+
+    if (index < inputRefs.length - 1 && event.target.value !== "") {
+      inputRefs[index + 1].current.focus();
+    }
+  };
+
   const navigate = useNavigate();
 
+  const mobileNumberChangeHandler = (value) => {
+    setShowHelperText(false);
+    setIsMobileNumberValid(true);
+    setMobileNumber(value);
+  };
+
+  const isEnteredMobileNumberValid = (mobileNumber) => {
+    return mobileNumber.trim() !== "" && mobileNumber.length > 8;
+  };
+
   const generateOtpHandler = () => {
+    if (!isEnteredMobileNumberValid(mobileNumber)) {
+      setShowHelperText(true);
+      setIsMobileNumberValid(false);
+      return;
+    }
     setIsGenerateOtpBtnClicked(true);
   };
 
   const submitOtpHandler = () => {
-    navigate("/dashboard");
+    if (digits.some((digit) => digit === "")) {
+      setShowRequiredText(true);
+      return;
+    } else {
+      navigate("/dashboard");
+    }
   };
 
   const formSubmitHandler = (event) => {
@@ -34,9 +75,21 @@ function MobileLoginForm() {
             : "Enter the OTP"}
         </h5>
         {isGenerateOtpBtnClicked === false ? (
-          <PhoneInput label="Phone number" />
+          <NumberInput
+            label="Phone number"
+            value={mobileNumber}
+            setValue={mobileNumberChangeHandler}
+            showHelperText={showHelperText}
+            helperText="mobile number is required - min 10 digits"
+            isValid={isMobileNumberValid}
+          />
         ) : (
-          <FourDigitInput />
+          <FourDigitInput
+            handleChange={handleChange}
+            digits={digits}
+            inputRefs={inputRefs}
+            showRequiredText={showRequiredText}
+          />
         )}
       </div>
       {isGenerateOtpBtnClicked === false ? (

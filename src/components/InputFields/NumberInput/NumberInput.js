@@ -3,7 +3,17 @@ import styles from "./NumberInput.module.scss";
 import { ReactComponent as DownArrow } from "../../../assets/icons/components/input-field/number-input/chevron-down.svg";
 import { useSelector } from "react-redux";
 
-function NumberInput({ label, disabled, required, placeholder, helperText }) {
+function NumberInput({
+  label,
+  disabled,
+  required,
+  placeholder,
+  value,
+  setValue,
+  isValid,
+  helperText,
+  showHelperText,
+}) {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
   const inputRef = useRef(null);
 
@@ -12,8 +22,12 @@ function NumberInput({ label, disabled, required, placeholder, helperText }) {
     : styles.labelLightTheme;
 
   const inputContainerStyles = isDarkMode
-    ? styles.inputContainerDarkTheme
-    : styles.inputContainerLightTheme;
+    ? `${styles.inputContainerDarkTheme} ${
+        isValid === false && styles.inputContainerInvalid
+      }`
+    : `${styles.inputContainerLightTheme} ${
+        isValid === false && styles.inputContainerInvalid
+      }`;
 
   const dropDownStyles = isDarkMode
     ? styles.dropdownDarkTheme
@@ -24,15 +38,23 @@ function NumberInput({ label, disabled, required, placeholder, helperText }) {
     : styles.inputLightTheme;
 
   const helperTextStyles = isDarkMode
-    ? styles.helperTextDarkTheme
-    : styles.helperTextLightTheme;
+    ? `${styles.helperTextDarkTheme} ${
+        isValid === false && styles.helperTextInvalid
+      }`
+    : `${styles.helperTextLightTheme} ${
+        isValid === false && styles.helperTextInvalid
+      }`;
+
+  const inputChangeHandler = (event) => {
+    setValue(event.target.value);
+  };
 
   useEffect(() => {
     inputRef.current.focus();
   }, []);
 
   return (
-    <div className={styles.numberInputContainer}>
+    <div className={styles.numberInputContainer} tabIndex="0">
       <label htmlFor="phone-input" className={labelStyles}>
         {label}
       </label>
@@ -43,16 +65,20 @@ function NumberInput({ label, disabled, required, placeholder, helperText }) {
         </div>
         <input
           className={inputStyles}
-          type="tel"
+          type="number"
           ref={inputRef}
           name="phone-input"
           id="phone-input"
           disabled={disabled}
           required={required}
+          value={value}
+          onChange={inputChangeHandler}
           placeholder={placeholder}
         />
       </div>
-      <p className={helperTextStyles}>{helperText}</p>
+      {showHelperText === true && (
+        <p className={helperTextStyles}>{helperText}</p>
+      )}
     </div>
   );
 }

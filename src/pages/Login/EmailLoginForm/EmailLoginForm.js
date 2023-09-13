@@ -9,21 +9,64 @@ function EmailLoginForm({ resetPassword }) {
   const [isForgotPasswordClicked, setisForgotPasswordClicked] = useState(false);
   // this state variable holds the user entered "email"
   const [email, setEmail] = useState("");
+  const [isEmailValid, setIsEmailValid] = useState(true);
+  const [showEmailHelperText, setShowEmailHelperText] = useState(false);
+
   // this state variable holds the user entered "password"
   const [password, setPassword] = useState("");
+  const [isPasswordValid, setIsPasswordValid] = useState(true);
+  const [showPasswordHelperText, setShowPasswordHelperText] = useState(false);
   const navigate = useNavigate();
 
   const emailChangeHandler = (event) => {
+    setIsEmailValid(true);
+    setShowEmailHelperText(false);
     setEmail(event.target.value);
   };
 
   const passwordChangeHandler = (event) => {
+    setIsPasswordValid(true);
+    setShowPasswordHelperText(false);
     setPassword(event.target.value);
   };
 
+  const isEnteredEmailValid = (email) => {
+    return (
+      email.trim() !== "" &&
+      email.indexOf("@") !== -1 &&
+      email.indexOf(".") !== -1
+    );
+  };
+
+  const isEnteredPasswordValid = (password) => {
+    return password.trim() !== "" && password.length > 8;
+  };
+
+  // const emailLoginSubmitHandler = () => {
+  //   if (!isEnteredEmailValid(email)) {
+  //     setIsEmailValid(false);
+  //     setShowEmailHelperText(true);
+  //   } else if (!isEnteredPasswordValid(password)) {
+  //     setIsPasswordValid(false);
+  //     setShowPasswordHelperText(true);
+  //   } else {
+  //     navigate("/dashboard");
+  //   }
+  // };
+
   // this function is triggered when the user hits submit after entering credentials
   const emailLoginSubmitHandler = () => {
-    navigate("/dashboard");
+    const isEmailValid = isEnteredEmailValid(email);
+    const isPasswordValid = isEnteredPasswordValid(password);
+
+    setIsEmailValid(isEmailValid);
+    setShowEmailHelperText(!isEmailValid);
+    setIsPasswordValid(isPasswordValid);
+    setShowPasswordHelperText(!isPasswordValid);
+
+    if (isEmailValid && isPasswordValid) {
+      navigate("/dashboard");
+    }
   };
 
   // this function is triggered when the user hits "forgot password?"
@@ -33,7 +76,12 @@ function EmailLoginForm({ resetPassword }) {
 
   // this function is triggered when the user hits submit after entering email (password forgot mode)
   const forgotPasswordSubmitHandler = () => {
-    resetPassword(true);
+    if (!isEnteredEmailValid(email)) {
+      setIsEmailValid(false);
+      setShowEmailHelperText(true);
+    } else {
+      resetPassword(true);
+    }
   };
 
   const formSubmitHandler = (event) => {
@@ -58,6 +106,9 @@ function EmailLoginForm({ resetPassword }) {
           placeholder="enter your email address"
           onChange={emailChangeHandler}
           value={email}
+          helperText="email is required"
+          showHelperText={showEmailHelperText}
+          isValid={isEmailValid}
         />
 
         {isForgotPasswordClicked === false && (
@@ -68,6 +119,9 @@ function EmailLoginForm({ resetPassword }) {
               placeholder="enter your password"
               onChange={passwordChangeHandler}
               value={password}
+              helperText="password is required - min 8 digits"
+              showHelperText={showPasswordHelperText}
+              isValid={isPasswordValid}
             />
             <span
               className={styles.forgotPassword}

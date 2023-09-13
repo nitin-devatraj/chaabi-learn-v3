@@ -28,6 +28,10 @@
     border: 0.0625rem solid $neutral90;
     background: $neutral100;
 
+    &:focus-within {
+      box-shadow: 0rem 0rem 0rem 0.25rem $neutral95;
+    }
+
     .dropdownLightTheme {
       @extend .t3Lite;
       display: flex;
@@ -58,10 +62,10 @@
         color: $neutral70;
       }
     }
+  }
 
-    // .input:invalid {
-    //   border: 1px solid $alert60, #f97066);
-    // }
+  .inputContainerInvalid {
+    border: 1px solid $alert60;
   }
 
   // dark theme mode
@@ -103,11 +107,11 @@
         color: $neutral80;
       }
     }
-
-    // .input:invalid {
-    //   border: 1px solid $alert60, #f97066);
-    // }
   }
+}
+
+.inputContainerInvalid {
+  border: 1px solid $alert60;
 }
 
 .helperTextLightTheme {
@@ -117,4 +121,8 @@
 .helperTextDarkTheme {
   @extend .t4Lite;
   color: $neutral95;
+}
+
+.helperTextInvalid {
+  color: $alert60;
 }

@@ -22,8 +22,6 @@ function TrainingOverview() {
     );
   };
 
-  // `/lesson-id/${}/lesson-name/${}/lesson-type/${}/chapter-id/${}`
-
   const chapterList = [
     {
       id: 1,
