@@ -3,11 +3,21 @@ import styles from "./QuizHeader.module.scss";
 import { ReactComponent as ArrowDownIcon } from "../../../assets/icons/features/quiz/quiz-header/arrow-down.svg";
 import QuizTimer from "./QuizTimer/QuizTimer";
 
-function QuizHeader({ onQuizMinimize, isQuizComplete, timeLeft }) {
+function QuizHeader({
+  onQuizMinimize,
+  isQuizComplete,
+  timeLeft,
+  setIsTimerRunning,
+}) {
+  const quizMinimizeHandler = () => {
+    onQuizMinimize();
+    setIsTimerRunning(false);
+  };
+
   return (
     <section className={styles.quizHeader}>
       <div className={styles.arrowIconContainer}>
-        <span onClick={onQuizMinimize}>
+        <span onClick={quizMinimizeHandler}>
           <ArrowDownIcon />
         </span>
       </div>
