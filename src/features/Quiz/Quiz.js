@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useReducer, useEffect } from "react";
 import styles from "./Quiz.module.scss";
 import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton";
 import QuizHeader from "./QuizHeader/QuizHeader";
@@ -8,29 +8,92 @@ import QuizResult from "./QuizResult/QuizResult";
 import ValidAnswerPopup from "./ValidAnswerPopup/ValidAnswerPopup";
 import InvalidAnswerPopup from "./InvalidAnswerPopup/InvalidAnswerPopup";
 
+const quizActionTypes = {
+  quizIndex: "quizIndex",
+  isQuizComplete: "isQuizComplete",
+  validAnswerPopup: "validAnswerPopup",
+  inValidAnswerPopup: "inValidAnswerPopup",
+  isTimerRunning: "isTimerRunning",
+  timeLeft: "timeLeft",
+  selectedOption: "selectedOption",
+  incrementTriedQuestions: "incrementTriedQuestions",
+  incrementRetriedQuestions: "incrementRetriedQuestions",
+  addRetriedQuestionsIds: "addRetriedQuestionsIds",
+};
+
+const quizReducer = (state, action) => {
+  switch (action.type) {
+    case quizActionTypes.quizIndex:
+      return { ...state, quizIndex: action.payload };
+    case quizActionTypes.isQuizComplete:
+      return { ...state, isQuizComplete: action.payload };
+    case quizActionTypes.validAnswerPopup:
+      return { ...state, showValidAnswerPopup: action.payload };
+    case quizActionTypes.inValidAnswerPopup:
+      return { ...state, showInvalidAnswerPopup: action.payload };
+    case quizActionTypes.isTimerRunning:
+      return { ...state, isTimerRunning: action.payload };
+    case quizActionTypes.timeLeft:
+      return { ...state, timeLeft: action.payload };
+    case quizActionTypes.selectedOption:
+      return { ...state, selectedOption: action.payload };
+    case quizActionTypes.incrementTriedQuestions:
+      return { ...state, triedQuestions: state.triedQuestions + 1 };
+    case quizActionTypes.incrementRetriedQuestions:
+      return { ...state, retriedQuestions: state.retriedQuestions + 1 };
+    case quizActionTypes.addRetriedQuestionsIds:
+      return {
+        ...state,
+        retriedQuestionIds: [...state.retriedQuestionIds, action.payload],
+      };
+    default:
+      return state;
+  }
+};
+
+const initialQuizState = {
+  quizIndex: 0,
+  isQuizComplete: false,
+  showValidAnswerPopup: false,
+  showInvalidAnswerPopup: false,
+  isTimerRunning: true,
+  timeLeft: 45,
+  selectedOption: null,
+  triedQuestions: 0,
+  retriedQuestions: 0,
+  retriedQuestionIds: [],
+};
+
 function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
-  const [quizIndex, setQuizIndex] = useState(0);
-  const [isQuizComplete, setIsQuizComplete] = useState(false);
-  const [showValidAnswerPopup, setShowValidAnswerPopup] = useState(false);
-  const [showInvalidAnswerPopup, setShowInvalidAnswerPopup] = useState(false);
-  const [isTimerRunning, setIsTimerRunning] = useState(true);
-  const [timeLeft, setTimeLeft] = useState(45);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [triedQuestions, setTriedQuestions] = useState(0);
-  const [retriedQuestions, setRetriedQuestions] = useState(0);
-  const [retriedQuestionIds, setRetriedQuestionIds] = useState([]);
+  const [quizState, quizDispatchFn] = useReducer(quizReducer, initialQuizState);
+
+  const {
+    quizIndex,
+    isQuizComplete,
+    showValidAnswerPopup,
+    showInvalidAnswerPopup,
+    isTimerRunning,
+    timeLeft,
+    selectedOption,
+    triedQuestions,
+    retriedQuestions,
+    retriedQuestionIds,
+  } = quizState;
 
   const startTimer = () => {
-    setIsTimerRunning(true);
+    quizDispatchFn({ type: quizActionTypes.isTimerRunning, payload: true });
   };
 
   const pauseTimer = () => {
-    setIsTimerRunning(false);
+    quizDispatchFn({ type: quizActionTypes.isTimerRunning, payload: false });
   };
 
   const closePopups = () => {
-    setShowValidAnswerPopup(false);
-    setShowInvalidAnswerPopup(false);
+    quizDispatchFn({ type: quizActionTypes.validAnswerPopup, payload: false });
+    quizDispatchFn({
+      type: quizActionTypes.inValidAnswerPopup,
+      payload: false,
+    });
   };
 
   const answerCheckHandler = () => {
@@ -38,16 +101,23 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
     const correctAnswer = quizzes[quizIndex].correctAnswer;
 
     if (selectedOption === correctAnswer) {
-      setShowValidAnswerPopup(true);
+      quizDispatchFn({ type: quizActionTypes.validAnswerPopup, payload: true });
 
       if (!retriedQuestionIds.includes(quizzes[quizIndex].id)) {
-        setTriedQuestions((prevCount) => prevCount + 1);
+        quizDispatchFn({ type: quizActionTypes.incrementTriedQuestions });
       }
     } else {
-      setShowInvalidAnswerPopup(true);
+      quizDispatchFn({
+        type: quizActionTypes.inValidAnswerPopup,
+        payload: true,
+      });
+
       if (!retriedQuestionIds.includes(quizzes[quizIndex].id)) {
-        setRetriedQuestionIds((prevIds) => [...prevIds, quizzes[quizIndex].id]);
-        setRetriedQuestions((prevCount) => prevCount + 1);
+        quizDispatchFn({ type: quizActionTypes.incrementRetriedQuestions });
+        quizDispatchFn({
+          type: quizActionTypes.addRetriedQuestionsIds,
+          payload: quizzes[quizIndex].id,
+        });
       }
     }
   };
@@ -57,9 +127,12 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
     closePopups();
 
     if (quizIndex < quizzes.length - 1) {
-      setQuizIndex(quizIndex + 1);
+      quizDispatchFn({
+        type: quizActionTypes.quizIndex,
+        payload: quizIndex + 1,
+      });
     } else {
-      setIsQuizComplete(true);
+      quizDispatchFn({ type: quizActionTypes.isQuizComplete, payload: true });
     }
   };
 
@@ -70,7 +143,7 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
 
   const optionClickHandler = (option) => {
     if (isTimerRunning) {
-      setSelectedOption(option);
+      quizDispatchFn({ type: quizActionTypes.selectedOption, payload: option });
     }
   };
 
@@ -79,7 +152,10 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
 
     if (isTimerRunning && timeLeft > 0) {
       timerId = setInterval(() => {
-        setTimeLeft((prevTime) => prevTime - 1);
+        quizDispatchFn({
+          type: quizActionTypes.timeLeft,
+          payload: timeLeft - 1,
+        });
       }, 1000);
     } else if (timeLeft === 0) {
       clearInterval(timerId);
@@ -97,7 +173,6 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
           onQuizMinimize={onQuizMinimize}
           isQuizComplete={isQuizComplete}
           timeLeft={timeLeft}
-          setIsTimerRunning={setIsTimerRunning}
         />
 
         <QuizProgress

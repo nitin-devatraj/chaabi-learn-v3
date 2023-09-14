@@ -27,12 +27,14 @@ function QuizResult({
 
         <div className={styles.rightAnswers}>
           <span className={styles.rightAnswersNumber}>{triedQuestions}</span>
-          <span className={typography.t3Lite}>First Attempt Questions</span>
+          <span className={typography.t3Lite}>
+            Questions - Answered Correctly
+          </span>
         </div>
 
         <div className={styles.wrongAnswers}>
           <span className={styles.wrongAnswersNumber}>{retriedQuestions}</span>
-          <span className={typography.t3Lite}>Retried Questions</span>
+          <span className={typography.t3Lite}>Questions - Retried</span>
         </div>
       </section>
 

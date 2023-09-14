@@ -3,15 +3,9 @@ import styles from "./QuizHeader.module.scss";
 import { ReactComponent as ArrowDownIcon } from "../../../assets/icons/features/quiz/quiz-header/arrow-down.svg";
 import QuizTimer from "./QuizTimer/QuizTimer";
 
-function QuizHeader({
-  onQuizMinimize,
-  isQuizComplete,
-  timeLeft,
-  setIsTimerRunning,
-}) {
+function QuizHeader({ onQuizMinimize, isQuizComplete, timeLeft }) {
   const quizMinimizeHandler = () => {
     onQuizMinimize();
-    setIsTimerRunning(false);
   };
 
   return (
