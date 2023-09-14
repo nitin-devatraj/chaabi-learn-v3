@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ValidAnswerPopup.module.scss";
 import { ReactComponent as ValidEmoji } from "../../../assets/icons/features/quiz/valid-answer-popup/valid-answer-emoji.svg";
 
-function ValidAnswerPopup() {
+function ValidAnswerPopup({ onNextQuestion }) {
   return (
     <div className={styles.validAnswerPopupContainer}>
       <ValidEmoji />
@@ -13,9 +13,29 @@ function ValidAnswerPopup() {
         answer explanation text that
       </p>
       {/* <div className={styles.explanationVideo}></div> */}
-      <button className={styles.actionButton}>Next Question</button>
+      <button className={styles.actionButton} onClick={onNextQuestion}>
+        Next Question
+      </button>
     </div>
   );
 }
 
 export default ValidAnswerPopup;
+
+// import React from "react";
+// import styles from "./ValidAnswerPopup.module.scss";
+
+// function ValidAnswerPopup({ onNextQuestion }) {
+//   return (
+//     <div className={styles.validAnswerPopup}>
+//       <p className={styles.popupText}>
+//         Congratulations! Your answer is correct.
+//       </p>
+//       <button className={styles.nextQuestionBtn} onClick={onNextQuestion}>
+//         Next Question
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default ValidAnswerPopup;

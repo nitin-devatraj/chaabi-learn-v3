@@ -4,7 +4,7 @@ import typography from "../../../global-styles/global-styles.module.scss";
 import PrimaryButton from "../../../components/Buttons/PrimaryButton/PrimaryButton";
 import SemiCircleGauge from "./SemiCircleGauge/SemiCircleGauge";
 
-function QuizResult({ onNextLesson }) {
+function QuizResult() {
   return (
     <section className={styles.quizResultContainer}>
       <div className={styles.progressIndicatorContainer}>
@@ -31,7 +31,7 @@ function QuizResult({ onNextLesson }) {
         </div>
       </section>
 
-      <PrimaryButton onClick={onNextLesson}>Next Lesson</PrimaryButton>
+      <PrimaryButton>Next Lesson</PrimaryButton>
     </section>
   );
 }

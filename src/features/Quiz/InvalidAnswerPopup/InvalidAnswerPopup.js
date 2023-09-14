@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./InvalidAnswerPopup.module.scss";
 import { ReactComponent as InvalidEmoji } from "../../../assets/icons/features/quiz/invalid-answer-popup/invalid-answer-emoji.svg";
 
-function InvalidAnswerPopup() {
+function InvalidAnswerPopup({ onRetryQuestion }) {
   return (
     <div className={styles.invalidAnswerPopupContainer}>
       <InvalidEmoji />
@@ -13,7 +13,9 @@ function InvalidAnswerPopup() {
         answer explanation text that
       </p>
       <div className={styles.explanationVideo}></div>
-      <button className={styles.actionButton}>Retry Question</button>
+      <button className={styles.actionButton} onClick={onRetryQuestion}>
+        Retry Question
+      </button>
     </div>
   );
 }

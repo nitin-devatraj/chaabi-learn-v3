@@ -1,23 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./QuizTimer.module.scss";
 
-function QuizTimer() {
-  const [timeLeft, setTimeLeft] = useState(30);
-
-  useEffect(() => {
-    const timerInterval = setInterval(() => {
-      if (timeLeft >= 1) {
-        setTimeLeft(timeLeft - 1);
-      } else {
-        clearInterval(timerInterval);
-      }
-    }, 1000);
-
-    return () => {
-      clearInterval(timerInterval);
-    };
-  }, [timeLeft]);
-
+function QuizTimer({ timeLeft }) {
   const formatTime = (seconds) => {
     // const remainingSeconds = seconds % 60;
     const remainingSeconds = seconds;
