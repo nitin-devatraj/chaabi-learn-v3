@@ -166,6 +166,22 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
     };
   }, [isTimerRunning, timeLeft]);
 
+  // useEffect(() => {
+  //   if (!isQuizComplete) {
+  //     localStorage.setItem("timeLeft", timeLeft);
+  //   }
+  // }, [timeLeft, isQuizComplete]);
+
+  // useEffect(() => {
+  //   const savedTimeLeft = localStorage.getItem("timeLeft");
+  //   if (savedTimeLeft) {
+  //     quizDispatchFn({
+  //       type: quizActionTypes.timeLeft,
+  //       payload: +savedTimeLeft,
+  //     });
+  //   }
+  // }, []);
+
   return (
     <div className={styles.quizContainer}>
       <div className={styles.quizDetails}>
