@@ -3,7 +3,7 @@ import styles from "./LessonTitle.module.scss";
 import { ReactComponent as VideoIcon } from "../../../assets/icons/pages/lesson-card/lesson-title/video-lesson.svg";
 import { ReactComponent as QuizIcon } from "../../../assets/icons/pages/lesson-card/lesson-title/quiz-lesson.svg";
 import { ReactComponent as AudioIcon } from "../../../assets/icons/pages/lesson-card/lesson-title/audio-lesson.svg";
-import { ReactComponent as AssessmentIcon } from "../../../assets/icons/pages/lesson-card/lesson-title/audio-lesson.svg";
+import { ReactComponent as AssessmentIcon } from "../../../assets/icons/pages/lesson-card/lesson-title/assessment-lesson.svg";
 import { ReactComponent as DocumentIcon } from "../../../assets/icons/pages/lesson-card/lesson-title/document-lesson.svg";
 
 import typography from "../../../global-styles/global-styles.module.scss";

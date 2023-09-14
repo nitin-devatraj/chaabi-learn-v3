@@ -2,7 +2,7 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 import styles from "./SemiCircleGauge.module.scss";
 
-function SemiCircleGauge() {
+function SemiCircleGauge({ triedQuestions }) {
   const options = {
     chart: {
       type: "radialBar",
@@ -31,11 +31,10 @@ function SemiCircleGauge() {
         },
       },
     },
-    colors: ["#20E647"], // Color of the gauge
-    labels: ["Progress"], // Label for the gauge
+    colors: ["#20E647"],
   };
 
-  const series = [50]; // Value for the gauge
+  const series = [triedQuestions * 10];
 
   return (
     <div className={styles.semiCircleGauge}>

@@ -12,10 +12,12 @@ import DocumentLesson from "../../features/DocumentLesson/DocumentLesson";
 import AudioLesson from "../../features/AudioLesson/AudioLesson";
 import Quiz from "../../features/Quiz/Quiz";
 import MinimizedQuizPopup from "./MinimizedQuizPopup/MinimizedQuizPopup";
+import { ReactComponent as ValidEmoji } from "../../assets/icons/features/quiz/valid-answer-popup/valid-answer-emoji.svg";
+import { ReactComponent as InvalidEmoji } from "../../assets/icons/features/quiz/invalid-answer-popup/invalid-answer-emoji.svg";
 
 function LessonCard() {
-  const [isQuizStarted, setIsQuizStarted] = useState(false);
-  const [isQuizMinimized, setIsQuizMinimized] = useState(false);
+  const [isQuizCardup, setIsQuizCardup] = useState(false);
+  const [isMinimizedQuizCardUp, setIsMinimizedQuizCardUp] = useState(false);
   const navigate = useNavigate();
   const { lessonId, lessonName, lessonType, chapterId } = useParams();
 
@@ -361,6 +363,149 @@ function LessonCard() {
     },
   ];
 
+  const quizzes = [
+    {
+      id: 1,
+      name: "What is the color of the sky during the day",
+      options: ["Blue", "Red", "Green", "Yellow"],
+      correctAnswer: "Blue",
+      correctAnswerTitle: "Good Job, You're Right",
+      correctAnswerText:
+        "The sky appears blue during the day due to the scattering of sunlight by air molecules.",
+      incorrectAnswerTitle: "Sorry, Wrong Answer",
+      incorrectAnswerText:
+        "While the sky is blue during the day, the other options do not represent the typical sky color.",
+      correctAnswerEmoji: ValidEmoji,
+      incorrectAnswerEmoji: InvalidEmoji,
+    },
+    {
+      id: 2,
+      name: "How many fingers do most humans have on one hand",
+      options: ["Five", "Three", "Ten", "Two"],
+      correctAnswer: "Five",
+      correctAnswerTitle: "Good Job, You're Right",
+      correctAnswerText:
+        "Most humans have five fingers on one hand, including the thumb, index finger, middle finger, ring finger, and pinky finger.",
+      incorrectAnswerTitle: "Sorry, Wrong Answer",
+      incorrectAnswerText:
+        "The correct answer is 'Five.' Most humans have five fingers on one hand.",
+      correctAnswerEmoji: ValidEmoji,
+      incorrectAnswerEmoji: InvalidEmoji,
+    },
+    {
+      id: 3,
+      name: "What is the opposite of 'up'",
+      options: ["Down", "Left", "Right", "Front"],
+      correctAnswer: "Down",
+      correctAnswerTitle: "Good Job, You're Right",
+      correctAnswerText:
+        "The opposite of 'up' is 'down,' which refers to the direction toward the ground or lower position.",
+      incorrectAnswerTitle: "Sorry, Wrong Answer",
+      incorrectAnswerText:
+        "While the correct answer is 'Down,' the other options do not represent the opposite of 'up.'",
+      correctAnswerEmoji: ValidEmoji,
+      incorrectAnswerEmoji: InvalidEmoji,
+    },
+    {
+      id: 4,
+      name: "Which animal says 'meow'",
+      options: ["Cat", "Dog", "Elephant", "Lion"],
+      correctAnswer: "Cat",
+      correctAnswerTitle: "Good Job, You're Right",
+      correctAnswerText:
+        "Cats are known to make a 'meow' sound. It's a common vocalization for them.",
+      incorrectAnswerTitle: "Sorry, Wrong Answer",
+      incorrectAnswerText:
+        "The correct answer is 'Cat,' as they are the animals that typically say 'meow.'",
+      correctAnswerEmoji: ValidEmoji,
+      incorrectAnswerEmoji: InvalidEmoji,
+    },
+    {
+      id: 5,
+      name: "What do you use to write on paper",
+      options: ["Pencil", "Spoon", "Shoe", "Phone"],
+      correctAnswer: "Pencil",
+      correctAnswerTitle: "Good Job, You're Right",
+      correctAnswerText:
+        "A pencil is a writing tool used to create marks on paper. It usually uses graphite as the writing material.",
+      incorrectAnswerTitle: "Sorry, Wrong Answer",
+      incorrectAnswerText:
+        "While there are various tools, 'Pencil' is the common choice for writing on paper.",
+      correctAnswerEmoji: ValidEmoji,
+      incorrectAnswerEmoji: InvalidEmoji,
+    },
+    {
+      id: 6,
+      name: "What comes after Monday",
+      options: ["Tuesday", "Saturday", "Sunday", "Wednesday"],
+      correctAnswer: "Tuesday",
+      correctAnswerTitle: "Good Job, You're Right",
+      correctAnswerText:
+        "Tuesday follows Monday in the sequence of days of the week.",
+      incorrectAnswerTitle: "Sorry, Wrong Answer",
+      incorrectAnswerText:
+        "The correct answer is 'Tuesday,' as it comes right after 'Monday.'",
+      correctAnswerEmoji: ValidEmoji,
+      incorrectAnswerEmoji: InvalidEmoji,
+    },
+    {
+      id: 7,
+      name: "What is the shape of a soccer ball",
+      options: ["Round", "Square", "Triangle", "Oval"],
+      correctAnswer: "Round",
+      correctAnswerTitle: "Good Job, You're Right",
+      correctAnswerText:
+        "A soccer ball is typically spherical or 'round' in shape.",
+      incorrectAnswerTitle: "Sorry, Wrong Answer",
+      incorrectAnswerText:
+        "While there are various shapes, a 'Round' shape is common for soccer balls.",
+      correctAnswerEmoji: ValidEmoji,
+      incorrectAnswerEmoji: InvalidEmoji,
+    },
+    {
+      id: 8,
+      name: "Which season comes after winter",
+      options: ["Spring", "Summer", "Fall", "Autumn"],
+      correctAnswer: "Spring",
+      correctAnswerTitle: "Good Job, You're Right",
+      correctAnswerText:
+        "Spring follows the winter season in the seasonal sequence.",
+      incorrectAnswerTitle: "Sorry, Wrong Answer",
+      incorrectAnswerText:
+        "The correct answer is 'Spring,' as it is the season that comes after 'Winter.'",
+      correctAnswerEmoji: ValidEmoji,
+      incorrectAnswerEmoji: InvalidEmoji,
+    },
+    {
+      id: 9,
+      name: "What is the primary color of grass",
+      options: ["Green", "Red", "Blue", "Yellow"],
+      correctAnswer: "Green",
+      correctAnswerTitle: "Good Job, You're Right",
+      correctAnswerText:
+        "Grass is typically 'green' in color, owing to the presence of chlorophyll in its cells.",
+      incorrectAnswerTitle: "Sorry, Wrong Answer",
+      incorrectAnswerText:
+        "The correct answer is 'Green,' as it represents the primary color of grass.",
+      correctAnswerEmoji: ValidEmoji,
+      incorrectAnswerEmoji: InvalidEmoji,
+    },
+    {
+      id: 10,
+      name: "What do you use to protect your head from rain",
+      options: ["Umbrella", "Shovel", "Sunglasses", "Hat"],
+      correctAnswer: "Umbrella",
+      correctAnswerTitle: "Good Job, You're Right",
+      correctAnswerText:
+        "An 'Umbrella' is used to protect your head from rain by providing a waterproof cover.",
+      incorrectAnswerTitle: "Sorry, Wrong Answer",
+      incorrectAnswerText:
+        "While there are other items, an 'Umbrella' is commonly used for rain protection.",
+      correctAnswerEmoji: ValidEmoji,
+      incorrectAnswerEmoji: InvalidEmoji,
+    },
+  ];
+
   const currentLessonId = +lessonId;
   const currentChapterId = +chapterId;
 
@@ -393,20 +538,27 @@ function LessonCard() {
   const markCompleteHandler = () => {};
 
   const startQuizHandler = () => {
-    setIsQuizStarted(true);
+    setIsQuizCardup(true);
   };
 
   const quizMinimizeHandler = () => {
-    setIsQuizStarted(false);
-    setIsQuizMinimized(true);
+    setIsQuizCardup(false);
+    setIsMinimizedQuizCardUp(true);
   };
 
   const quizMaximizeHandler = () => {
-    setIsQuizStarted(true);
-    setIsQuizMinimized(false);
+    setIsQuizCardup(true);
+    setIsMinimizedQuizCardUp(false);
+  };
+
+  const closeQuizPopups = () => {
+    setIsQuizCardup(false);
+    setIsMinimizedQuizCardUp(false);
   };
 
   const handlePrevLessonClick = () => {
+    closeQuizPopups();
+
     if (prevLesson !== null) {
       navigate(
         `/lesson-id/${prevLesson.id}/lesson-name/${prevLesson.name}/lesson-type/${prevLesson.type}/chapter-id/${currentChapterId}`
@@ -422,6 +574,8 @@ function LessonCard() {
   };
 
   const handleNextLessonClick = () => {
+    closeQuizPopups();
+
     if (nextLesson !== null) {
       navigate(
         `/lesson-id/${nextLesson.id}/lesson-name/${nextLesson.name}/lesson-type/${nextLesson.type}/chapter-id/${currentChapterId}`
@@ -450,8 +604,12 @@ function LessonCard() {
           {lessonType === "document" && <DocumentLesson />}
           {lessonType === "audio" && <AudioLesson />}
           {lessonType === "quiz" && <QuizLesson />}
-          {isQuizStarted === true && (
-            <Quiz onQuizMinimize={quizMinimizeHandler} />
+          {isQuizCardup === true && (
+            <Quiz
+              quizzes={quizzes}
+              onQuizMinimize={quizMinimizeHandler}
+              onNextLessonClick={handleNextLessonClick}
+            />
           )}
         </div>
 
@@ -463,7 +621,7 @@ function LessonCard() {
           </PrimaryButton>
         )}
 
-        {isQuizMinimized === true && (
+        {isMinimizedQuizCardUp === true && (
           <MinimizedQuizPopup onQuizMaximizise={quizMaximizeHandler} />
         )}
       </div>

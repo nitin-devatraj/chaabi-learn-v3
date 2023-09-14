@@ -76,22 +76,28 @@ function IndividualQuiz({
 }) {
   return (
     <div className={styles.individualQuizContainer}>
-      <p className={typography.t2Reg}>Q. {quizName}</p>
+      <p className={typography.t2Reg}>Q. {quizName} ?</p>
 
-      {quizOptions.map((option, index) => {
+      {quizOptions.map((quizOption, index) => {
+        const quizOptionBtnStyles = `${styles.quizOptionBtn} ${
+          selectedOption === quizOption && styles.selectedOption
+        }`;
+
+        const optionHandler = () => {
+          optionClickHandler(quizOption);
+        };
+
         return (
           <button
             key={index}
-            className={`${styles.quizOptionBtn} ${
-              selectedOption === option ? styles.selectedOption : ""
-            }`}
-            onClick={() => optionClickHandler(option)}
+            className={quizOptionBtnStyles}
+            onClick={optionHandler}
           >
             <QuizCheckBox
-              isSelected={selectedOption === option}
-              onToggle={() => optionClickHandler(option)}
+              isSelected={selectedOption === quizOption}
+              onToggle={optionHandler}
             />
-            <span className={styles.quizOptionText}>{option}</span>
+            <span className={styles.quizOptionText}>{quizOption}</span>
           </button>
         );
       })}

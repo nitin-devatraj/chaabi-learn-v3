@@ -34,6 +34,8 @@
 
       .totalQuestionsNumber {
         @extend .h6Med;
+        height: 2.5rem;
+        width: 2.5rem;
         display: flex;
         padding: 0.25rem 0.5rem;
         align-items: center;
@@ -52,6 +54,8 @@
       .rightAnswersNumber {
         @extend .h6Med;
         display: flex;
+        height: 2.5rem;
+        width: 2.5rem;
         padding: 0.25rem 0.5rem;
         align-items: center;
         justify-content: center;
@@ -68,6 +72,8 @@
 
       .wrongAnswersNumber {
         @extend .h6Med;
+        height: 2.5rem;
+        width: 2.5rem;
         display: flex;
         padding: 0.25rem 0.5rem;
         align-items: center;

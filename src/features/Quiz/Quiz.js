@@ -8,70 +8,7 @@ import QuizResult from "./QuizResult/QuizResult";
 import ValidAnswerPopup from "./ValidAnswerPopup/ValidAnswerPopup";
 import InvalidAnswerPopup from "./InvalidAnswerPopup/InvalidAnswerPopup";
 
-const quizzes = [
-  {
-    id: 1,
-    name: "What is the color of the sky during the day?",
-    options: ["Blue", "Red", "Green", "Yellow"],
-    correctAnswer: "Blue",
-  },
-  {
-    id: 2,
-    name: "How many fingers do most humans have on one hand?",
-    options: ["Five", "Three", "Ten", "Two"],
-    correctAnswer: "Five",
-  },
-  {
-    id: 3,
-    name: "What is the opposite of 'up'?",
-    options: ["Down", "Left", "Right", "Front"],
-    correctAnswer: "Down",
-  },
-  {
-    id: 4,
-    name: "Which animal says 'meow'?",
-    options: ["Cat", "Dog", "Elephant", "Lion"],
-    correctAnswer: "Cat",
-  },
-  {
-    id: 5,
-    name: "What do you use to write on paper?",
-    options: ["Pencil", "Spoon", "Shoe", "Phone"],
-    correctAnswer: "Pencil",
-  },
-  {
-    id: 6,
-    name: "What comes after Monday?",
-    options: ["Tuesday", "Saturday", "Sunday", "Wednesday"],
-    correctAnswer: "Tuesday",
-  },
-  {
-    id: 7,
-    name: "What is the shape of a soccer ball?",
-    options: ["Round", "Square", "Triangle", "Oval"],
-    correctAnswer: "Round",
-  },
-  {
-    id: 8,
-    name: "Which season comes after winter?",
-    options: ["Spring", "Summer", "Fall", "Autumn"],
-    correctAnswer: "Spring",
-  },
-  {
-    id: 9,
-    name: "What is the primary color of grass?",
-    options: ["Green", "Red", "Blue", "Yellow"],
-    correctAnswer: "Green",
-  },
-  {
-    id: 10,
-    name: "What do you use to protect your head from rain?",
-    options: ["Umbrella", "Shovel", "Sunglasses", "Hat"],
-    correctAnswer: "Umbrella",
-  },
-];
-
-function Quiz({ onQuizMinimize }) {
+function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
   const [quizIndex, setQuizIndex] = useState(0);
   const [isQuizComplete, setIsQuizComplete] = useState(false);
   const [showValidAnswerPopup, setShowValidAnswerPopup] = useState(false);
@@ -79,24 +16,45 @@ function Quiz({ onQuizMinimize }) {
   const [isTimerRunning, setIsTimerRunning] = useState(true);
   const [timeLeft, setTimeLeft] = useState(45);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [triedQuestions, setTriedQuestions] = useState(0);
+  const [retriedQuestions, setRetriedQuestions] = useState(0);
+  const [retriedQuestionIds, setRetriedQuestionIds] = useState([]);
+
+  const startTimer = () => {
+    setIsTimerRunning(true);
+  };
+
+  const pauseTimer = () => {
+    setIsTimerRunning(false);
+  };
+
+  const closePopups = () => {
+    setShowValidAnswerPopup(false);
+    setShowInvalidAnswerPopup(false);
+  };
 
   const answerCheckHandler = () => {
-    setIsTimerRunning(false);
-    // pauseTimer();
+    pauseTimer();
     const correctAnswer = quizzes[quizIndex].correctAnswer;
 
     if (selectedOption === correctAnswer) {
       setShowValidAnswerPopup(true);
+
+      if (!retriedQuestionIds.includes(quizzes[quizIndex].id)) {
+        setTriedQuestions((prevCount) => prevCount + 1);
+      }
     } else {
       setShowInvalidAnswerPopup(true);
+      if (!retriedQuestionIds.includes(quizzes[quizIndex].id)) {
+        setRetriedQuestionIds((prevIds) => [...prevIds, quizzes[quizIndex].id]);
+        setRetriedQuestions((prevCount) => prevCount + 1);
+      }
     }
   };
 
   const nextQuestionHandler = () => {
-    // startTimer();
-    setIsTimerRunning(true);
-    setShowValidAnswerPopup(false);
-    setShowInvalidAnswerPopup(false);
+    startTimer();
+    closePopups();
 
     if (quizIndex < quizzes.length - 1) {
       setQuizIndex(quizIndex + 1);
@@ -106,10 +64,8 @@ function Quiz({ onQuizMinimize }) {
   };
 
   const retryQuestionHandler = () => {
-    // startTimer();
-    setIsTimerRunning(true);
-    setShowValidAnswerPopup(false);
-    setShowInvalidAnswerPopup(false);
+    startTimer();
+    closePopups();
   };
 
   const optionClickHandler = (option) => {
@@ -119,20 +75,18 @@ function Quiz({ onQuizMinimize }) {
   };
 
   useEffect(() => {
-    let timer;
+    let timerId;
 
     if (isTimerRunning && timeLeft > 0) {
-      timer = setInterval(() => {
+      timerId = setInterval(() => {
         setTimeLeft((prevTime) => prevTime - 1);
       }, 1000);
     } else if (timeLeft === 0) {
-      clearInterval(timer);
+      clearInterval(timerId);
     }
 
     return () => {
-      clearInterval(timer);
-      // setIsTimerRunning(false);
-      // pauseTimer();
+      clearInterval(timerId);
     };
   }, [isTimerRunning, timeLeft]);
 
@@ -158,17 +112,34 @@ function Quiz({ onQuizMinimize }) {
           selectedOption={selectedOption}
         />
 
-        {isQuizComplete === true && <QuizResult />}
+        {isQuizComplete === true && (
+          <QuizResult
+            totalQuestions={quizzes.length}
+            triedQuestions={triedQuestions}
+            retriedQuestions={retriedQuestions}
+            onNextLessonClick={onNextLessonClick}
+          />
+        )}
       </div>
 
       <PrimaryButton onClick={answerCheckHandler}>Check Answer</PrimaryButton>
 
       {showValidAnswerPopup && (
-        <ValidAnswerPopup onNextQuestion={nextQuestionHandler} />
+        <ValidAnswerPopup
+          onNextQuestion={nextQuestionHandler}
+          explanationTitle={quizzes[quizIndex].correctAnswerTitle}
+          explanationText={quizzes[quizIndex].correctAnswerText}
+          emoji={quizzes[quizIndex].correctAnswerEmoji}
+        />
       )}
 
       {showInvalidAnswerPopup && (
-        <InvalidAnswerPopup onRetryQuestion={retryQuestionHandler} />
+        <InvalidAnswerPopup
+          onRetryQuestion={retryQuestionHandler}
+          explanationTitle={quizzes[quizIndex].incorrectAnswerTitle}
+          explanationText={quizzes[quizIndex].incorrectAnswerText}
+          emoji={quizzes[quizIndex].incorrectAnswerEmoji}
+        />
       )}
     </div>
   );
