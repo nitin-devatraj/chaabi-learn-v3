@@ -177,12 +177,20 @@ function Quiz({ onQuizMinimize }) {
   const [isQuizComplete, setIsQuizComplete] = useState(false);
   const [showValidAnswerPopup, setShowValidAnswerPopup] = useState(false);
   const [showInvalidAnswerPopup, setShowInvalidAnswerPopup] = useState(false);
-  const [isTimerRunning, setIsTimerRunning] = useState(true);
+  const [isTimerRunning, setIsTimerRunning] = useState(false);
   const [timeLeft, setTimeLeft] = useState(45);
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const answerCheckHandler = () => {
+  const startTimer = () => {
+    setIsTimerRunning(true);
+  };
+
+  const pauseTimer = () => {
     setIsTimerRunning(false);
+  };
+
+  const answerCheckHandler = () => {
+    pauseTimer();
     const correctAnswer = quizzes[quizIndex].correctAnswer;
 
     if (selectedOption === correctAnswer) {
@@ -193,7 +201,7 @@ function Quiz({ onQuizMinimize }) {
   };
 
   const nextQuestionHandler = () => {
-    setIsTimerRunning(true);
+    startTimer();
     setShowValidAnswerPopup(false);
     setShowInvalidAnswerPopup(false);
 
@@ -205,7 +213,7 @@ function Quiz({ onQuizMinimize }) {
   };
 
   const retryQuestionHandler = () => {
-    setIsTimerRunning(true);
+    startTimer();
     setShowValidAnswerPopup(false);
     setShowInvalidAnswerPopup(false);
   };
@@ -229,8 +237,13 @@ function Quiz({ onQuizMinimize }) {
 
     return () => {
       clearInterval(timer);
+      pauseTimer();
     };
   }, [isTimerRunning, timeLeft]);
+
+  useEffect(() => {
+    startTimer();
+  }, []);
 
   return (
     <div className={styles.quizContainer}>
