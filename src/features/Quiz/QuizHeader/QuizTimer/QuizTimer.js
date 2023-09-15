@@ -2,15 +2,17 @@ import React from "react";
 import styles from "./QuizTimer.module.scss";
 
 function QuizTimer({ timeLeft }) {
-  const formatTime = (seconds) => {
-    // const remainingSeconds = seconds % 60;
-    const remainingSeconds = seconds;
-    return `00:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
-  };
+  const quizTimerStyles =
+    timeLeft > 0 ? styles.quizTimerActive : styles.quizTimerExpired;
+
+  const quizTimerTextStyles =
+    timeLeft > 0 ? styles.quizTimerTextActive : styles.quizTimerTextExpired;
 
   return (
-    <div className={styles.quizTimer}>
-      <h6 className={styles.quizTimerText}>{formatTime(timeLeft)}</h6>
+    <div className={quizTimerStyles}>
+      <h6 className={quizTimerTextStyles}>
+        00:{timeLeft < 10 ? `0 + ${timeLeft}` : timeLeft}
+      </h6>
     </div>
   );
 }

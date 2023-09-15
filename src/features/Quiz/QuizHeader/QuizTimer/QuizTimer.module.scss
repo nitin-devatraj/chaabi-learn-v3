@@ -1,6 +1,6 @@
 @import "../../../../global-styles/global-styles.module.scss";
 
-.quizTimer {
+.quizTimerActive {
   display: flex;
   padding: 0.25rem 0.5rem;
   justify-content: center;
@@ -8,9 +8,24 @@
   border-radius: 0.25rem;
   background: $badgeColorMain6;
 
-  .quizTimerText {
+  .quizTimerTextActive {
     @extend .h6Med;
     color: $badgeColorBack6;
+    text-align: center;
+  }
+}
+
+.quizTimerExpired {
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  background: $badgeColorMain2;
+
+  .quizTimerTextExpired {
+    @extend .h6Med;
+    color: $badgeColorBack2;
     text-align: center;
   }
 }

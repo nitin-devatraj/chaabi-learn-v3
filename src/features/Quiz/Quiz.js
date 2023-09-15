@@ -115,10 +115,17 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
     });
   };
 
-  const timeoutHandler = () => {
+  const showTimeoutPopupHandler = () => {
     quizDispatchFn({
       type: quizActionTypes.timeoutPopup,
       payload: true,
+    });
+  };
+
+  const hideTimeoutPopupHandler = () => {
+    quizDispatchFn({
+      type: quizActionTypes.timeoutPopup,
+      payload: false,
     });
   };
 
@@ -198,29 +205,17 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
       }, 1000);
     } else if (timeLeft === 0) {
       clearInterval(timerId);
-      timeoutHandler();
+      showTimeoutPopupHandler();
+    }
+
+    if (isQuizComplete) {
+      hideTimeoutPopupHandler();
     }
 
     return () => {
       clearInterval(timerId);
     };
-  }, [isTimerRunning, timeLeft]);
-
-  // useEffect(() => {
-  //   if (!isQuizComplete) {
-  //     localStorage.setItem("timeLeft", timeLeft);
-  //   }
-  // }, [timeLeft, isQuizComplete]);
-
-  // useEffect(() => {
-  //   const savedTimeLeft = localStorage.getItem("timeLeft");
-  //   if (savedTimeLeft) {
-  //     quizDispatchFn({
-  //       type: quizActionTypes.timeLeft,
-  //       payload: +savedTimeLeft,
-  //     });
-  //   }
-  // }, []);
+  }, [isTimerRunning, timeLeft, isQuizComplete]);
 
   return (
     <div className={styles.quizContainer}>
