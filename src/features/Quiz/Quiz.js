@@ -67,7 +67,7 @@ const initialQuizState = {
   showInvalidAnswerPopup: false,
   showTimeoutPopup: false,
   isTimerRunning: true,
-  timeLeft: 45,
+  timeLeft: 5,
   selectedOption: null,
   isSelectedAnswerCorrect: false,
   triedQuestions: 0,
