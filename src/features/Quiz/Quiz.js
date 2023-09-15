@@ -11,7 +11,6 @@ import TimeoutPopup from "./QuizPopups/TimeoutPopup/TimeoutPopup";
 import { ReactComponent as TimeoutEmoji } from "../../assets/icons/features/quiz/timeout-popup/timeout-emoji.svg";
 
 const quizActionTypes = {
-  quizIndex: "quizIndex",
   isQuizComplete: "isQuizComplete",
   validAnswerPopup: "validAnswerPopup",
   inValidAnswerPopup: "inValidAnswerPopup",
@@ -25,8 +24,6 @@ const quizActionTypes = {
 
 const quizReducer = (state, action) => {
   switch (action.type) {
-    case quizActionTypes.quizIndex:
-      return { ...state, quizIndex: action.payload };
     case quizActionTypes.isQuizComplete:
       return { ...state, isQuizComplete: action.payload };
     case quizActionTypes.validAnswerPopup:
@@ -43,7 +40,6 @@ const quizReducer = (state, action) => {
       return { ...state, triedQuestions: state.triedQuestions + 1 };
     case quizActionTypes.incrementRetriedQuestions:
       return { ...state, retriedQuestions: state.retriedQuestions + 1 };
-
     case quizActionTypes.addRetriedQuestionsIds:
       return {
         ...state,
@@ -55,7 +51,6 @@ const quizReducer = (state, action) => {
 };
 
 const initialQuizState = {
-  quizIndex: 0,
   isQuizComplete: false,
   showValidAnswerPopup: false,
   showInvalidAnswerPopup: false,
@@ -75,6 +70,8 @@ function Quiz({
   setIsTimerRunning,
   timeLeft,
   setTimeLeft,
+  quizIndex,
+  setQuizIndex,
 }) {
   const [quizState, quizDispatchFn] = useReducer(quizReducer, initialQuizState);
 
@@ -85,7 +82,6 @@ function Quiz({
   };
 
   const {
-    quizIndex,
     isQuizComplete,
     showValidAnswerPopup,
     showInvalidAnswerPopup,
@@ -163,10 +159,7 @@ function Quiz({
     closePopups();
 
     if (quizIndex < quizzes.length - 1) {
-      quizDispatchFn({
-        type: quizActionTypes.quizIndex,
-        payload: quizIndex + 1,
-      });
+      setQuizIndex((prevIndex) => prevIndex + 1);
     } else {
       quizDispatchFn({ type: quizActionTypes.isQuizComplete, payload: true });
     }

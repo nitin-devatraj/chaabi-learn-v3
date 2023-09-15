@@ -11,7 +11,7 @@
     align-items: center;
     align-self: stretch;
     border-radius: 0.25rem;
-    border: 0.0625rem solid $neutral90;
+    border: 0.1563rem solid $neutral90;
     background: $neutral100;
     gap: 1.125rem;
     border: 0.1563rem solid $neutral100;
@@ -24,7 +24,7 @@
 
   .quizOptionBtn:hover,
   .quizOptionBtn:active {
-    border: 0.1563rem solid $neutral70;
+    border: 0.1563rem solid $neutral80;
   }
 
   .validOption {

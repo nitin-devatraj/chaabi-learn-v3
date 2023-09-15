@@ -22,6 +22,7 @@ function LessonCard() {
   const { lessonId, lessonName, lessonType, chapterId } = useParams();
   const [isTimerRunning, setIsTimerRunning] = useState(false);
   const [timeLeft, setTimeLeft] = useState(0);
+  const [quizIndex, setQuizIndex] = useState(0);
 
   const chapterList = [
     {
@@ -569,6 +570,7 @@ function LessonCard() {
 
   const handlePrevLessonClick = () => {
     closeQuizPopups();
+    setQuizIndex(0);
 
     if (prevLesson !== null) {
       navigate(
@@ -586,6 +588,7 @@ function LessonCard() {
 
   const handleNextLessonClick = () => {
     closeQuizPopups();
+    setQuizIndex(0);
 
     if (nextLesson !== null) {
       navigate(
@@ -632,6 +635,8 @@ function LessonCard() {
               setIsTimerRunning={setIsTimerRunning}
               timeLeft={timeLeft}
               setTimeLeft={setTimeLeft}
+              quizIndex={quizIndex}
+              setQuizIndex={setQuizIndex}
             />
           )}
         </div>
@@ -645,7 +650,10 @@ function LessonCard() {
         )}
 
         {isMinimizedQuizCardUp === true && (
-          <MinimizedQuizPopup onQuizMaximizise={quizMaximizeHandler} />
+          <MinimizedQuizPopup
+            onQuizMaximizise={quizMaximizeHandler}
+            lessonName={lessonName}
+          />
         )}
       </div>
     </div>

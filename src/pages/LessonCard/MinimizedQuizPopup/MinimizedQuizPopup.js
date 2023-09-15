@@ -4,7 +4,7 @@ import typography from "../../../global-styles/global-styles.module.scss";
 import { ReactComponent as QuizIcon } from "../../../assets/icons/pages/lesson-card/lesson-title/quiz-lesson.svg";
 import { ReactComponent as UpIcon } from "../../../assets/icons/arrow-up.svg";
 
-function MinimizedQuizPopup({ onQuizMaximizise }) {
+function MinimizedQuizPopup({ onQuizMaximizise, lessonName }) {
   return (
     <div
       className={styles.minimizedQuizPopupContainer}
@@ -18,9 +18,7 @@ function MinimizedQuizPopup({ onQuizMaximizise }) {
       </div>
       <div className={styles.quizInfo}>
         <QuizIcon />
-        <p className={typography.t3Lite}>
-          Lesson Name Text Lorem Ipsum Text Extender Lineasfadsfasf
-        </p>
+        <p className={typography.t3Lite}>{lessonName}</p>
       </div>
     </div>
   );

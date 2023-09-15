@@ -16,7 +16,7 @@ function QuizResult({
         <div className={styles.progressChartContainer}>
           <QuizResultChart triedQuestions={triedQuestions} />
         </div>
-        <h3 className={typography.h4Semi}>
+        <h3 className={typography.h3Semi}>
           {triedQuestions >= 4 ? "You Passed" : "You Failed"}
         </h3>
       </div>
