@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./QuizResult.module.scss";
 import typography from "../../../global-styles/global-styles.module.scss";
 import PrimaryButton from "../../../components/Buttons/PrimaryButton/PrimaryButton";
-import SemiCircleGauge from "./SemiCircleGauge/SemiCircleGauge";
+import QuizResultChart from "./QuizResultChart/QuizResultChart";
 
 function QuizResult({
   totalQuestions,
@@ -14,7 +14,7 @@ function QuizResult({
     <section className={styles.quizResultContainer}>
       <div className={styles.progressIndicatorContainer}>
         <div className={styles.progressChartContainer}>
-          <SemiCircleGauge triedQuestions={triedQuestions} />
+          <QuizResultChart triedQuestions={triedQuestions} />
         </div>
         <h3 className={typography.h3Semi}>
           {triedQuestions >= 4 ? "You Passed" : "You Failed"}

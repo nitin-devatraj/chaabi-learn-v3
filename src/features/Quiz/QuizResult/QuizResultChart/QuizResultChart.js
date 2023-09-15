@@ -1,8 +1,7 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
-import styles from "./SemiCircleGauge.module.scss";
 
-function SemiCircleGauge({ triedQuestions }) {
+function QuizResultChart({ triedQuestions }) {
   const options = {
     chart: {
       type: "radialBar",
@@ -37,15 +36,13 @@ function SemiCircleGauge({ triedQuestions }) {
   const series = [triedQuestions * 10];
 
   return (
-    <div className={styles.semiCircleGauge}>
-      <ReactApexChart
-        options={options}
-        series={series}
-        type="radialBar"
-        height={380}
-      />
-    </div>
+    <ReactApexChart
+      options={options}
+      series={series}
+      type="radialBar"
+      height={380}
+    />
   );
 }
 
-export default SemiCircleGauge;
+export default QuizResultChart;

@@ -11,7 +11,7 @@ function QuizTimer({ timeLeft }) {
   return (
     <div className={quizTimerStyles}>
       <h6 className={quizTimerTextStyles}>
-        00:{timeLeft < 10 ? `0 + ${timeLeft}` : timeLeft}
+        {timeLeft < 10 ? ` 00:0${timeLeft}` : `00: ${timeLeft}`}
       </h6>
     </div>
   );
