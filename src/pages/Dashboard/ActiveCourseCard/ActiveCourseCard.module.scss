@@ -19,12 +19,13 @@
       background-color: $neutral95;
       width: 100%;
       height: 22dvh;
+      border-radius: 0.25rem 0.25rem 0rem 0rem;
+      overflow: hidden;
 
       .activeCourseImg {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 0.25rem 0.25rem 0rem 0rem;
       }
     }
 
