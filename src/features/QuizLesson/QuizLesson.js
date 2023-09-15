@@ -21,7 +21,7 @@ function QuizLesson({
           <span className={styles.timePerQuestionNumber}>
             {timeInSec} seconds
           </span>
-          <span className={typography.t3Lite}>Time per question</span>
+          <span className={typography.t3Lite}>Time duration</span>
         </div>
 
         <div className={styles.attemptsAllowed}>
