@@ -14,7 +14,7 @@
     border: 0.0625rem solid $neutral90;
     background: $neutral100;
     gap: 1.125rem;
-    border: none;
+    border: 0.1563rem solid $neutral100;
 
     .quizOptionText {
       @extend .t3Reg;

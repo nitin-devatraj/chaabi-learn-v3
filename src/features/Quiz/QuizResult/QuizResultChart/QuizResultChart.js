@@ -40,7 +40,7 @@ function QuizResultChart({ triedQuestions }) {
       options={options}
       series={series}
       type="radialBar"
-      height={380}
+      height={340}
     />
   );
 }
