@@ -14,7 +14,9 @@ function CourseCard({
 }) {
   return (
     <div className={styles.courseCardContainer} onClick={onClick}>
-      <img src={courseImg} alt="#" className={styles.courseImg} />
+      <div className={styles.courseImgContainer}>
+        <img src={courseImg} alt="#" className={styles.courseImg} />
+      </div>
 
       <ProgressBar progress={progress} />
 
