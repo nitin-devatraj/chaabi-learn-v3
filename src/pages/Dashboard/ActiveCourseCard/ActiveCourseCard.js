@@ -13,13 +13,8 @@ function ActiveCourseCard({ activeCourseDetails }) {
         className={styles.activeCourseCard}
         onClick={activeCourseDetails.onClick}
       >
-        <div className={styles.activeCourseImgContainer}>
-          <img
-            src={activeCourseImg}
-            alt="#"
-            className={styles.activeCourseImg}
-          />
-        </div>
+        <img src={activeCourseImg} alt="#" className={styles.activeCourseImg} />
+
         <ProgressBar progress={activeCourseDetails.progress} />
 
         <div className={styles.activeCourseDetails}>
