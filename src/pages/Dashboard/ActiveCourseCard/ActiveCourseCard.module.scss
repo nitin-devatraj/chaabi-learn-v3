@@ -17,6 +17,7 @@
 
     .activeCourseImgContainer {
       height: 56.25%;
+      @extend .lightThemeRegular;
 
       .activeCourseImg {
         width: 100%;
