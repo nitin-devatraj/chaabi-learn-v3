@@ -16,8 +16,6 @@ const quizActionTypes = {
   validAnswerPopup: "validAnswerPopup",
   inValidAnswerPopup: "inValidAnswerPopup",
   timeoutPopup: "timeoutPopup",
-  isTimerRunning: "isTimerRunning",
-  timeLeft: "timeLeft",
   selectedOption: "selectedOption",
   isSelectedAnswerCorrect: "isSelectedAnswerCorrect",
   incrementTriedQuestions: "incrementTriedQuestions",
@@ -37,10 +35,6 @@ const quizReducer = (state, action) => {
       return { ...state, showInvalidAnswerPopup: action.payload };
     case quizActionTypes.timeoutPopup:
       return { ...state, showTimeoutPopup: action.payload };
-    case quizActionTypes.isTimerRunning:
-      return { ...state, isTimerRunning: action.payload };
-    case quizActionTypes.timeLeft:
-      return { ...state, timeLeft: action.payload };
     case quizActionTypes.selectedOption:
       return { ...state, selectedOption: action.payload };
     case quizActionTypes.isSelectedAnswerCorrect:
@@ -66,8 +60,6 @@ const initialQuizState = {
   showValidAnswerPopup: false,
   showInvalidAnswerPopup: false,
   showTimeoutPopup: false,
-  isTimerRunning: true,
-  timeLeft: 45,
   selectedOption: null,
   isSelectedAnswerCorrect: false,
   triedQuestions: 0,
@@ -75,7 +67,15 @@ const initialQuizState = {
   retriedQuestionIds: [],
 };
 
-function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
+function Quiz({
+  quizzes,
+  onQuizMinimize,
+  onNextLessonClick,
+  isTimerRunning,
+  setIsTimerRunning,
+  timeLeft,
+  setTimeLeft,
+}) {
   const [quizState, quizDispatchFn] = useReducer(quizReducer, initialQuizState);
 
   const quizTimeoutData = {
@@ -90,22 +90,12 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
     showValidAnswerPopup,
     showInvalidAnswerPopup,
     showTimeoutPopup,
-    isTimerRunning,
-    timeLeft,
     selectedOption,
     isSelectedAnswerCorrect,
     triedQuestions,
     retriedQuestions,
     retriedQuestionIds,
   } = quizState;
-
-  const startTimer = () => {
-    quizDispatchFn({ type: quizActionTypes.isTimerRunning, payload: true });
-  };
-
-  const pauseTimer = () => {
-    quizDispatchFn({ type: quizActionTypes.isTimerRunning, payload: false });
-  };
 
   const closePopups = () => {
     quizDispatchFn({ type: quizActionTypes.validAnswerPopup, payload: false });
@@ -138,7 +128,7 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
   };
 
   const answerCheckHandler = () => {
-    pauseTimer();
+    setIsTimerRunning(false);
     const correctAnswer = quizzes[quizIndex].correctAnswer;
     const isCorrect = selectedOption === correctAnswer;
     quizDispatchFn({
@@ -169,7 +159,7 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
   };
 
   const nextQuestionHandler = () => {
-    startTimer();
+    setIsTimerRunning(true);
     closePopups();
 
     if (quizIndex < quizzes.length - 1) {
@@ -183,7 +173,7 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
   };
 
   const retryQuestionHandler = () => {
-    startTimer();
+    setIsTimerRunning(true);
     closePopups();
   };
 
@@ -198,10 +188,7 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
 
     if (isTimerRunning && timeLeft > 0) {
       timerId = setInterval(() => {
-        quizDispatchFn({
-          type: quizActionTypes.timeLeft,
-          payload: timeLeft - 1,
-        });
+        setTimeLeft((prevTime) => prevTime - 1);
       }, 1000);
     } else if (timeLeft === 0) {
       clearInterval(timerId);
@@ -215,7 +202,7 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
     return () => {
       clearInterval(timerId);
     };
-  }, [isTimerRunning, timeLeft, isQuizComplete]);
+  }, [isTimerRunning, timeLeft, isQuizComplete, setTimeLeft]);
 
   return (
     <div className={styles.quizContainer}>

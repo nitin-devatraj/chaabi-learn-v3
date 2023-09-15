@@ -20,6 +20,8 @@ function LessonCard() {
   const [isMinimizedQuizCardUp, setIsMinimizedQuizCardUp] = useState(false);
   const navigate = useNavigate();
   const { lessonId, lessonName, lessonType, chapterId } = useParams();
+  const [isTimerRunning, setIsTimerRunning] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(0);
 
   const chapterList = [
     {
@@ -542,18 +544,20 @@ function LessonCard() {
       ? currentChapter.lessonsList[nextLessonIndex]
       : null;
 
-  const markCompleteHandler = () => {};
-
   const startQuizHandler = () => {
+    setIsTimerRunning(true);
+    setTimeLeft(45);
     setIsQuizCardup(true);
   };
 
   const quizMinimizeHandler = () => {
+    setIsTimerRunning(false);
     setIsQuizCardup(false);
     setIsMinimizedQuizCardUp(true);
   };
 
   const quizMaximizeHandler = () => {
+    setIsTimerRunning(true);
     setIsQuizCardup(true);
     setIsMinimizedQuizCardUp(false);
   };
@@ -624,6 +628,10 @@ function LessonCard() {
               quizzes={quizzes}
               onQuizMinimize={quizMinimizeHandler}
               onNextLessonClick={handleNextLessonClick}
+              isTimerRunning={isTimerRunning}
+              setIsTimerRunning={setIsTimerRunning}
+              timeLeft={timeLeft}
+              setTimeLeft={setTimeLeft}
             />
           )}
         </div>
@@ -631,7 +639,7 @@ function LessonCard() {
         {lessonType === "quiz" ? (
           <PrimaryButton onClick={startQuizHandler}>Start Quiz</PrimaryButton>
         ) : (
-          <PrimaryButton onClick={markCompleteHandler}>
+          <PrimaryButton onClick={handleNextLessonClick}>
             Mark as Done
           </PrimaryButton>
         )}
