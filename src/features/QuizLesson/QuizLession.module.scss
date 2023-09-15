@@ -22,6 +22,8 @@
 
       .totalQuestionsNumber {
         @extend .h6Med;
+        min-height: 2.5rem;
+        min-width: 2.5rem;
         display: flex;
         padding: 0.25rem 0.5rem;
         align-items: center;
@@ -39,6 +41,8 @@
 
       .timePerQuestionNumber {
         @extend .h6Med;
+        min-height: 2.5rem;
+        min-width: 2.5rem;
         display: flex;
         padding: 0.25rem 0.5rem;
         align-items: center;
@@ -56,6 +60,8 @@
 
       .attemptsAllowedNumber {
         @extend .h6Med;
+        min-height: 2.5rem;
+        min-width: 2.5rem;
         display: flex;
         padding: 0.25rem 0.5rem;
         align-items: center;
@@ -73,6 +79,8 @@
 
       .passingScoreNumber {
         @extend .h6Med;
+        min-height: 2.5rem;
+        min-width: 2.5rem;
         display: flex;
         padding: 0.25rem 0.5rem;
         align-items: center;

@@ -5,9 +5,8 @@ function InvalidAnswerPopup({
   onRetryQuestion,
   explanationTitle,
   explanationText,
-  emoji,
+  emoji: Emoji,
 }) {
-  const Emoji = emoji;
   return (
     <div className={styles.invalidAnswerPopupContainer}>
       <Emoji />

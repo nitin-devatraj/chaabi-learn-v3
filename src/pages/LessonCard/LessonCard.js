@@ -506,6 +506,13 @@ function LessonCard() {
     },
   ];
 
+  const quizStartingPageData = {
+    totalQuestions: 10,
+    timeInSec: 45,
+    attemptsAllowed: 3,
+    passingScore: 40,
+  };
+
   const currentLessonId = +lessonId;
   const currentChapterId = +chapterId;
 
@@ -603,7 +610,15 @@ function LessonCard() {
           {lessonType === "assessment" && <AssessmentLesson />}
           {lessonType === "document" && <DocumentLesson />}
           {lessonType === "audio" && <AudioLesson />}
-          {lessonType === "quiz" && <QuizLesson />}
+          {lessonType === "quiz" && (
+            <QuizLesson
+              totalQuestions={quizStartingPageData.totalQuestions}
+              timeInSec={quizStartingPageData.timeInSec}
+              attemptsAllowed={quizStartingPageData.attemptsAllowed}
+              passingScore={quizStartingPageData.passingScore}
+            />
+          )}
+
           {isQuizCardup === true && (
             <Quiz
               quizzes={quizzes}

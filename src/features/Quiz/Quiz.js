@@ -5,14 +5,17 @@ import QuizHeader from "./QuizHeader/QuizHeader";
 import QuizProgress from "./QuizProgress/QuizProgress";
 import IndividualQuiz from "./IndividualQuiz/IndividualQuiz";
 import QuizResult from "./QuizResult/QuizResult";
-import ValidAnswerPopup from "./ValidAnswerPopup/ValidAnswerPopup";
-import InvalidAnswerPopup from "./InvalidAnswerPopup/InvalidAnswerPopup";
+import ValidAnswerPopup from "./QuizPopups/ValidAnswerPopup/ValidAnswerPopup";
+import InvalidAnswerPopup from "./QuizPopups/InvalidAnswerPopup/InvalidAnswerPopup";
+import TimeoutPopup from "./QuizPopups/TimeoutPopup/TimeoutPopup";
+import { ReactComponent as TimeoutEmoji } from "../../assets/icons/features/quiz/timeout-popup/timeout-emoji.svg";
 
 const quizActionTypes = {
   quizIndex: "quizIndex",
   isQuizComplete: "isQuizComplete",
   validAnswerPopup: "validAnswerPopup",
   inValidAnswerPopup: "inValidAnswerPopup",
+  timeoutPopup: "timeoutPopup",
   isTimerRunning: "isTimerRunning",
   timeLeft: "timeLeft",
   selectedOption: "selectedOption",
@@ -31,6 +34,8 @@ const quizReducer = (state, action) => {
       return { ...state, showValidAnswerPopup: action.payload };
     case quizActionTypes.inValidAnswerPopup:
       return { ...state, showInvalidAnswerPopup: action.payload };
+    case quizActionTypes.timeoutPopup:
+      return { ...state, showTimeoutPopup: action.payload };
     case quizActionTypes.isTimerRunning:
       return { ...state, isTimerRunning: action.payload };
     case quizActionTypes.timeLeft:
@@ -41,6 +46,7 @@ const quizReducer = (state, action) => {
       return { ...state, triedQuestions: state.triedQuestions + 1 };
     case quizActionTypes.incrementRetriedQuestions:
       return { ...state, retriedQuestions: state.retriedQuestions + 1 };
+
     case quizActionTypes.addRetriedQuestionsIds:
       return {
         ...state,
@@ -56,8 +62,9 @@ const initialQuizState = {
   isQuizComplete: false,
   showValidAnswerPopup: false,
   showInvalidAnswerPopup: false,
+  showTimeoutPopup: false,
   isTimerRunning: true,
-  timeLeft: 45,
+  timeLeft: 15,
   selectedOption: null,
   triedQuestions: 0,
   retriedQuestions: 0,
@@ -67,11 +74,18 @@ const initialQuizState = {
 function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
   const [quizState, quizDispatchFn] = useReducer(quizReducer, initialQuizState);
 
+  const quizTimeoutData = {
+    title: "Time Expired",
+    text: "Your time is up for this Quiz. Continue to the result page to review your performance",
+    emoji: TimeoutEmoji,
+  };
+
   const {
     quizIndex,
     isQuizComplete,
     showValidAnswerPopup,
     showInvalidAnswerPopup,
+    showTimeoutPopup,
     isTimerRunning,
     timeLeft,
     selectedOption,
@@ -94,6 +108,21 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
       type: quizActionTypes.inValidAnswerPopup,
       payload: false,
     });
+  };
+
+  const timeoutHandler = () => {
+    quizDispatchFn({
+      type: quizActionTypes.timeoutPopup,
+      payload: true,
+    });
+  };
+
+  const quizCompleteHandler = () => {
+    quizDispatchFn({
+      type: quizActionTypes.timeoutPopup,
+      payload: false,
+    });
+    quizDispatchFn({ type: quizActionTypes.isQuizComplete, payload: true });
   };
 
   const answerCheckHandler = () => {
@@ -159,6 +188,7 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
       }, 1000);
     } else if (timeLeft === 0) {
       clearInterval(timerId);
+      timeoutHandler();
     }
 
     return () => {
@@ -215,7 +245,7 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
 
       <PrimaryButton onClick={answerCheckHandler}>Check Answer</PrimaryButton>
 
-      {showValidAnswerPopup && (
+      {showValidAnswerPopup === true && (
         <ValidAnswerPopup
           onNextQuestion={nextQuestionHandler}
           explanationTitle={quizzes[quizIndex].correctAnswerTitle}
@@ -224,12 +254,21 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
         />
       )}
 
-      {showInvalidAnswerPopup && (
+      {showInvalidAnswerPopup === true && (
         <InvalidAnswerPopup
           onRetryQuestion={retryQuestionHandler}
           explanationTitle={quizzes[quizIndex].incorrectAnswerTitle}
           explanationText={quizzes[quizIndex].incorrectAnswerText}
           emoji={quizzes[quizIndex].incorrectAnswerEmoji}
+        />
+      )}
+
+      {showTimeoutPopup === true && (
+        <TimeoutPopup
+          timeoutTitle={quizTimeoutData.title}
+          timeoutText={quizTimeoutData.text}
+          onGoToResults={quizCompleteHandler}
+          emoji={quizTimeoutData.emoji}
         />
       )}
     </div>

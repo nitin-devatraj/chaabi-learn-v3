@@ -5,9 +5,8 @@ function ValidAnswerPopup({
   explanationTitle,
   explanationText,
   onNextQuestion,
-  emoji,
+  emoji: Emoji,
 }) {
-  const Emoji = emoji;
   return (
     <div className={styles.validAnswerPopupContainer}>
       <Emoji />
