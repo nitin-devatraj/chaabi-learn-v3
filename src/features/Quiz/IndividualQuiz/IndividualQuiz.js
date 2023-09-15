@@ -73,6 +73,7 @@ function IndividualQuiz({
   quizOptions,
   optionClickHandler,
   selectedOption,
+  isCorrect,
 }) {
   return (
     <div className={styles.individualQuizContainer}>
@@ -81,6 +82,12 @@ function IndividualQuiz({
       {quizOptions.map((quizOption, index) => {
         const quizOptionBtnStyles = `${styles.quizOptionBtn} ${
           selectedOption === quizOption && styles.selectedOption
+        } ${
+          isCorrect === true && selectedOption === quizOption
+            ? styles.validOption
+            : isCorrect === false && selectedOption === quizOption
+            ? styles.invalidOption
+            : ""
         }`;
 
         const optionHandler = () => {

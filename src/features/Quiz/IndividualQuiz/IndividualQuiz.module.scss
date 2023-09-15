@@ -24,15 +24,16 @@
 
   .quizOptionBtn:hover,
   .quizOptionBtn:active {
-    background: $neutral95;
+    // background: $neutral95;
+    border: 0.1563rem solid $neutral70;
     // box-shadow: 0rem 0rem 0rem 0.25rem $primary90;
   }
 
   .validOption {
-    border: 0.0625rem solid $success50;
+    border: 0.1563rem solid $success50;
   }
 
   .invalidOption {
-    border: 0.0625rem solid $alert50;
+    border: 0.1563rem solid $alert50;
   }
 }

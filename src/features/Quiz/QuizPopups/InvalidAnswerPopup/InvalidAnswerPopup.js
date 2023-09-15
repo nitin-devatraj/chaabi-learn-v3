@@ -12,7 +12,7 @@ function InvalidAnswerPopup({
       <Emoji />
       <h6 className={styles.popupTitle}>{explanationTitle}</h6>
       <p className={styles.popupText}>{explanationText}</p>
-      <div className={styles.explanationVideo}></div>
+      {/* <div className={styles.explanationVideo}></div> */}
       <button className={styles.actionButton} onClick={onRetryQuestion}>
         Retry Question
       </button>

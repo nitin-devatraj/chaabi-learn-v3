@@ -19,6 +19,7 @@ const quizActionTypes = {
   isTimerRunning: "isTimerRunning",
   timeLeft: "timeLeft",
   selectedOption: "selectedOption",
+  isSelectedAnswerCorrect: "isSelectedAnswerCorrect",
   incrementTriedQuestions: "incrementTriedQuestions",
   incrementRetriedQuestions: "incrementRetriedQuestions",
   addRetriedQuestionsIds: "addRetriedQuestionsIds",
@@ -42,6 +43,8 @@ const quizReducer = (state, action) => {
       return { ...state, timeLeft: action.payload };
     case quizActionTypes.selectedOption:
       return { ...state, selectedOption: action.payload };
+    case quizActionTypes.isSelectedAnswerCorrect:
+      return { ...state, isSelectedAnswerCorrect: action.payload };
     case quizActionTypes.incrementTriedQuestions:
       return { ...state, triedQuestions: state.triedQuestions + 1 };
     case quizActionTypes.incrementRetriedQuestions:
@@ -66,6 +69,7 @@ const initialQuizState = {
   isTimerRunning: true,
   timeLeft: 15,
   selectedOption: null,
+  isSelectedAnswerCorrect: false,
   triedQuestions: 0,
   retriedQuestions: 0,
   retriedQuestionIds: [],
@@ -89,6 +93,7 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
     isTimerRunning,
     timeLeft,
     selectedOption,
+    isSelectedAnswerCorrect,
     triedQuestions,
     retriedQuestions,
     retriedQuestionIds,
@@ -128,8 +133,13 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
   const answerCheckHandler = () => {
     pauseTimer();
     const correctAnswer = quizzes[quizIndex].correctAnswer;
+    const isCorrect = selectedOption === correctAnswer;
+    quizDispatchFn({
+      type: quizActionTypes.isSelectedAnswerCorrect,
+      payload: isCorrect,
+    });
 
-    if (selectedOption === correctAnswer) {
+    if (isCorrect) {
       quizDispatchFn({ type: quizActionTypes.validAnswerPopup, payload: true });
 
       if (!retriedQuestionIds.includes(quizzes[quizIndex].id)) {
@@ -231,6 +241,7 @@ function Quiz({ quizzes, onQuizMinimize, onNextLessonClick }) {
           quizOptions={quizzes[quizIndex].options}
           optionClickHandler={optionClickHandler}
           selectedOption={selectedOption}
+          isCorrect={isSelectedAnswerCorrect}
         />
 
         {isQuizComplete === true && (
