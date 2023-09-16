@@ -1,61 +1,54 @@
 @import "../../../global-styles/global-styles.module.scss";
 
 .secondaryBtnLightTheme {
-  @extend .t3Med;
+  width: 100%;
   display: inline-flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   border-radius: 0.25rem;
   padding: 0.75rem 1.5rem;
-  background-color: transparent;
-  text-align: center;
-  border: 0.0625rem solid $neutral90;
+  background: transparent;
+  border: 0.0625rem solid $neutral80;
   cursor: pointer;
+  @extend .t3Med;
 
   &:not(:disabled):hover {
-    border: 0.0625rem solid $primary50;
+    border: 0.0625rem solid $primary40;
   }
 
   &:not(:disabled):active {
-    border: 0.0625rem solid $primary50;
-    background: $neutral99;
-    box-shadow: 0rem 0rem 0rem 0.25rem $primary90;
+    box-shadow: 0 0 0 0.25rem $primary90;
   }
 
   &:disabled {
-    color: $neutral100;
-    border: 0.0625rem solid $neutral90;
+    color: $neutral70;
     background: $neutral90;
+    border: 0.0625rem solid $neutral90;
+    cursor: not-allowed;
   }
 }
 
-//dark mode classes
 .secondaryBtnDarkTheme {
-  @extend .t3Med;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.25rem;
-  padding: 0.75rem 1.5rem;
-  background-color: transparent;
-  text-align: center;
-  border: 0.0625rem solid $neutral90;
-  cursor: pointer;
+  border: 0.0625rem solid $primary80;
+  color: $primary80;
 
   &:not(:disabled):hover {
-    border: 0.0625rem solid $primary50;
+    border: 0.0625rem solid $primary60;
+    color: $primary60;
   }
 
   &:not(:disabled):active {
     color: $neutral20;
-    border: 0.0625rem solid $primary50;
-    background: $neutral99;
-    box-shadow: 0rem 0rem 0rem 0.25rem $primary80;
+    box-shadow: initial;
+    background: $primary70;
+    border: 0.0625rem solid $primary70;
   }
 
   &:disabled {
-    color: $neutral100;
-    border: 0.0625rem solid $neutral20;
-    background: $neutral20;
+    color: $neutral60;
+    background: $neutral30;
+    border: 0.0625rem solid $neutral80;
+    cursor: not-allowed;
   }
 }
