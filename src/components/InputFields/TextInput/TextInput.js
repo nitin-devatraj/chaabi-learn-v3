@@ -12,41 +12,40 @@ function TextInput({
   showHelperText,
   onChange,
   value,
-  isValid,
+  invalid,
 }) {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
 
-  const labelStyles = isDarkMode
-    ? styles.labelDarkTheme
-    : styles.labelLightTheme;
+  const labelStyles = `${styles.labelLightTheme} ${
+    isDarkMode && styles.labelDarkTheme
+  } ${disabled && styles.disabledLabel}`;
 
-  const inputStyles = isDarkMode
-    ? styles.inputDarkTheme
-    : styles.inputLightTheme;
+  const inputStyles = `${styles.inputLightTheme} ${
+    isDarkMode && styles.inputDarkTheme
+  } ${invalid && styles.inputInvalid}`;
 
-  const helperTextStyles = isDarkMode
-    ? `${styles.helperTextDarkTheme} ${
-        isValid === false && styles.helperTextInvalid
-      }`
-    : `${styles.helperTextLightTheme} ${
-        isValid === false && styles.helperTextInvalid
-      }`;
+  const helperTextStyles = `${styles.helperText} ${
+    disabled && styles.disabledHelperText
+  } ${invalid && styles.helperTextInvalid}`;
+
+  const randomId = Math.random().toFixed(3);
 
   return (
     <div className={styles.textInputContainer}>
-      <label htmlFor={Math.random().toFixed(3)} className={labelStyles}>
+      <label htmlFor={randomId} className={labelStyles}>
         {label}
       </label>
       <input
         className={inputStyles}
         type={type}
-        id={Math.random().toFixed(3)}
+        id={randomId}
         disabled={disabled}
         required={required}
         placeholder={placeholder}
         onChange={onChange}
         value={value}
       />
+      {invalid && <InvalidIcon className={styles.invalidIcon} />}
       {showHelperText === true && (
         <p className={helperTextStyles}>{helperText}</p>
       )}
