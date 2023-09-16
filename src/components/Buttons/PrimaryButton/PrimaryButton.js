@@ -5,18 +5,18 @@ import { useSelector } from "react-redux";
 function PrimaryButton({ disabled, onClick, className, children, type }) {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
 
-  const primaryBtnColorTheme = isDarkMode
-    ? styles.primaryBtnDarkTheme
-    : styles.primaryBtnLightTheme;
+  const primaryBtnStyles = `${styles.primaryBtnLightTheme} ${
+    isDarkMode && styles.primaryBtnDarkTheme
+  } ${className}`;
 
   return (
     <button
-      className={`${primaryBtnColorTheme} ${className}`}
+      className={primaryBtnStyles}
       disabled={disabled}
       onClick={onClick}
       type={type ?? "button"}
     >
-      <p className={styles.text}>{children}</p>
+      {children}
     </button>
   );
 }
