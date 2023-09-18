@@ -3,27 +3,14 @@ import styles from "./SelectInput.module.scss";
 import { ReactComponent as ArrowRightIcon } from "../../../assets/icons/arrow-right.svg";
 import { ReactComponent as ArrowDownIcon } from "../../../assets/icons/arrow-down.svg";
 import { ReactComponent as CheckIcon } from "../../../assets/icons/check-icon.svg";
+
 import { useSelector } from "react-redux";
 
-function SelectInput({ options }) {
+function SelectInput({ label, showLabel, options, showBorder }) {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const dropDownRef = useRef();
-
-  //   useEffect(() => {
-  //     const handleOutsideClick = (event) => {
-  //       if (dropDownRef.current && !dropDownRef.current.contains(event.target)) {
-  //         setIsDropDownOpen(false);
-  //       }
-  //     };
-
-  //     document.addEventListener("mousedown", handleOutsideClick);
-
-  //     return () => {
-  //       document.removeEventListener("mousedown", handleOutsideClick);
-  //     };
-  //   }, []);
 
   const inputClickHandler = () => {
     setIsDropDownOpen((isDropDownOpen) => !isDropDownOpen);
@@ -34,19 +21,35 @@ function SelectInput({ options }) {
     setIsDropDownOpen(false);
   };
 
-  const labelStyles = isDarkMode
-    ? styles.labelDarkTheme
-    : styles.labelLightTheme;
+  const labelStyles = `${styles.labelLightTheme} ${
+    isDarkMode && styles.labelDarkTheme
+  }`;
+
+  const inputStyles = `${styles.inputLightTheme} ${
+    isDarkMode && styles.inputDarkTheme
+  } ${showBorder && styles.inputBorder}`;
+
+  const dropDownContainerStyles = `${styles.dropDownContainerLightTheme} ${
+    isDarkMode && styles.dropDownContainerDarkTheme
+  }`;
+
+  const dropDownItemStyles = `${styles.dropDownItemLightTheme} ${
+    isDarkMode && styles.dropDownItemDarkTheme
+  }`;
+
+  const randomKey = Math.random().toFixed("3");
 
   return (
     <div className={styles.selectInputContainer}>
       <div className={styles.inputContainer}>
-        <label htmlFor="select-input" className={labelStyles}>
-          city
-        </label>
+        {showLabel && (
+          <label htmlFor="select-input" className={labelStyles}>
+            {label}
+          </label>
+        )}
         <div
           id="select-input"
-          className={styles.input}
+          className={inputStyles}
           onClick={inputClickHandler}
         >
           {selectedOption ?? "select an option"}
@@ -54,11 +57,11 @@ function SelectInput({ options }) {
         </div>
       </div>
       {isDropDownOpen && (
-        <div className={styles.dropDownContainer} ref={dropDownRef}>
+        <div className={dropDownContainerStyles} ref={dropDownRef}>
           {options.map((item) => (
             <div
-              className={styles.dropDownItem}
-              key={Math.random().toFixed("3")}
+              className={dropDownItemStyles}
+              key={randomKey}
               onClick={() => handleOptionClick(item)}
             >
               {item}{" "}

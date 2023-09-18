@@ -1,41 +1,39 @@
 @import "../../../global-styles/global-styles.module.scss";
 
 .numberInputContainer {
+  width: 100%;
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 0.25rem;
-  align-self: stretch;
-  width: 100%;
+  position: relative;
 
   .labelLightTheme {
-    @extend .t4Lite;
-    color: $neutral50;
-    cursor: pointer;
-  }
-
-  .labelDarkTheme {
-    @extend .t4Lite;
-    color: $neutral95;
+    @extend .t3Med;
+    color: $neutral30;
     cursor: pointer;
   }
 
   .inputContainerLightTheme {
+    @extend .lightThemeLowest;
     display: inline-flex;
-    align-items: flex-start;
     align-self: stretch;
     border-radius: 0.25rem;
-    border: 0.0625rem solid $neutral90;
-    background: $neutral100;
+    border: 0.0625rem solid $neutral70;
 
     &:focus-within {
-      box-shadow: 0rem 0rem 0rem 0.25rem $neutral95;
+      border: 0.0625rem solid $neutral20;
+    }
+
+    &:not(:focus-within):hover {
+      box-shadow: 0 0 0 0.25rem $primary90;
     }
 
     .dropdownLightTheme {
       @extend .t3Lite;
+      color: $neutral40;
       display: flex;
       padding: 0.625rem 0.75rem 0.625rem 1rem;
+      justify-content: center;
       align-items: center;
       gap: 0.25rem;
       align-self: stretch;
@@ -44,85 +42,116 @@
 
     .inputLightTheme {
       @extend .t3Reg;
-      display: inline-flex;
-      padding: 0.75rem 1rem 0.75rem 0rem;
+      flex: 1;
+      color: $neutral60;
+      display: flex;
+      padding: 0.75rem 0;
       align-items: center;
       gap: 0.5rem;
-      flex: 1 0 0;
-      border: none;
+      align-self: stretch;
       border-radius: 0.25rem;
+      border: none;
+
+      cursor: pointer;
+
+      &::placeholder {
+        color: $neutral60;
+      }
 
       &:focus {
         outline: none;
+        color: $neutral40;
       }
 
       &:disabled {
-        border: 0.0625rem solid $neutral90;
         background: $neutral90;
-        color: $neutral70;
       }
     }
-  }
-
-  .inputContainerInvalid {
-    border: 1px solid $alert60;
   }
 
   // dark theme mode
+  .labelDarkTheme {
+    color: $neutral95;
+  }
+
   .inputContainerDarkTheme {
-    display: inline-flex;
-    align-items: flex-start;
-    align-self: stretch;
-    border-radius: 0.25rem;
-    border: 0.0625rem solid $neutral70;
-    background: $neutral100;
+    border: 0.0625rem solid $neutral60;
+    background-color: $neutral20;
+
+    &:focus-within {
+      background-color: $neutral10;
+      border: 0.0625rem solid $neutral95;
+      color: $neutral95;
+    }
+
+    &:not(:focus-within):hover {
+      box-shadow: 0 0 0 0.25rem $primary90;
+    }
 
     .dropdownDarkTheme {
-      @extend .t3Lite;
-      display: flex;
-      padding: 0.625rem 0.75rem 0.625rem 1rem;
-      align-items: center;
-      gap: 0.25rem;
-      align-self: stretch;
-      cursor: pointer;
+      color: $neutral95;
     }
 
     .inputDarkTheme {
-      @extend .t3Reg;
-      display: inline-flex;
-      padding: 0.75rem 1rem 0.75rem 0rem;
-      align-items: center;
-      gap: 0.5rem;
-      flex: 1 0 0;
+      color: $neutral70;
+      border: 0.0625rem solid $neutral60;
+      background-color: $neutral20;
       border: none;
-      border-radius: 0.25rem;
+
+      &::placeholder {
+        color: $neutral70;
+      }
 
       &:focus {
         outline: none;
+        color: $neutral95;
+        background-color: $neutral10;
       }
 
       &:disabled {
-        border: 0.0625rem solid $neutral40;
         background: $neutral40;
         color: $neutral80;
       }
     }
   }
-}
 
-.inputContainerInvalid {
-  border: 1px solid $alert60;
-}
+  .invalidIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+    pointer-events: none;
+  }
 
-.helperTextLightTheme {
-  @extend .t4Lite;
-}
+  .inputInvalid {
+    border: 0.0625rem solid $alert40;
+  }
 
-.helperTextDarkTheme {
-  @extend .t4Lite;
-  color: $neutral95;
-}
+  .helperText {
+    @extend .t4Reg;
+    color: $neutral50;
+    cursor: pointer;
+  }
 
-.helperTextInvalid {
-  color: $alert60;
+  .helperTextInvalid {
+    color: $alert40;
+  }
+
+  .disabledHelperText {
+    color: $neutral60;
+  }
+
+  .disabledLabel {
+    color: $neutral60;
+  }
+
+  .disabledInputContainerDarkTheme {
+    border: 0.0625rem solid $neutral90;
+    background: $neutral40;
+  }
+
+  .disabledInputContainerLightTheme {
+    border: 0.0625rem solid $neutral90;
+    background: $neutral90;
+  }
 }

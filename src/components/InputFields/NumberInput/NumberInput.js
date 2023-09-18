@@ -1,84 +1,95 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import styles from "./NumberInput.module.scss";
-import { ReactComponent as DownArrow } from "../../../assets/icons/components/input-field/number-input/chevron-down.svg";
+import { ReactComponent as InvalidIcon } from "../../../assets/icons/invalid-input-icon.svg";
+import SelectInput from "../SelectInput/SelectInput";
 import { useSelector } from "react-redux";
 
 function NumberInput({
+  type,
   label,
   disabled,
   required,
   placeholder,
   value,
-  setValue,
-  isValid,
+  onChange,
+  invalid,
   helperText,
   showHelperText,
+  inputRef,
 }) {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
-  const inputRef = useRef(null);
 
-  const labelStyles = isDarkMode
-    ? styles.labelDarkTheme
-    : styles.labelLightTheme;
+  const labelStyles = `${styles.labelLightTheme} ${
+    isDarkMode && styles.labelDarkTheme
+  } ${disabled && styles.disabledLabel}`;
 
-  const inputContainerStyles = isDarkMode
-    ? `${styles.inputContainerDarkTheme} ${
-        isValid === false && styles.inputContainerInvalid
-      }`
-    : `${styles.inputContainerLightTheme} ${
-        isValid === false && styles.inputContainerInvalid
-      }`;
+  const inputStyles = `${styles.inputLightTheme} ${
+    isDarkMode && styles.inputDarkTheme
+  } ${invalid && styles.inputInvalid}`;
 
-  const dropDownStyles = isDarkMode
-    ? styles.dropdownDarkTheme
-    : styles.dropdownLightTheme;
+  const helperTextStyles = `${styles.helperText} ${
+    disabled && styles.disabledHelperText
+  } ${invalid && styles.helperTextInvalid}`;
 
-  const inputStyles = isDarkMode
-    ? styles.inputDarkTheme
-    : styles.inputLightTheme;
+  const inputContainerStyles = `${styles.inputContainerLightTheme} ${
+    isDarkMode && styles.inputContainerDarkTheme
+  } ${invalid && styles.inputInvalid} ${
+    disabled && !isDarkMode && styles.disabledInputContainerLightTheme
+  } ${disabled && isDarkMode && styles.disabledInputContainerDarkTheme}
+  `;
 
-  const helperTextStyles = isDarkMode
-    ? `${styles.helperTextDarkTheme} ${
-        isValid === false && styles.helperTextInvalid
-      }`
-    : `${styles.helperTextLightTheme} ${
-        isValid === false && styles.helperTextInvalid
-      }`;
+  // const dropDownStyles = `${styles.dropdownLightTheme} ${
+  //   isDarkMode && styles.dropdownDarkTheme
+  // }  ${disabled && !isDarkMode && styles.disabledDropdownLightTheme}
+  // ${disabled && isDarkMode && styles.disabledDropdownDarkTheme}}`;
 
-  const inputChangeHandler = (event) => {
-    setValue(event.target.value);
-  };
+  const randomId = Math.random().toFixed(3);
 
-  useEffect(() => {
-    inputRef.current.focus();
-  }, []);
+  const countryCodes = [
+    "US",
+    "CA",
+    "UK",
+    "FR",
+    "DE",
+    "AU",
+    "JP",
+    "IN",
+    "BR",
+    "CN",
+    "RU",
+    "ZA",
+    "MX",
+    "AR",
+    "ES",
+    "IT",
+    "NL",
+    "SE",
+    "NO",
+    "FI",
+  ];
 
   return (
-    <div className={styles.numberInputContainer} tabIndex="0">
-      <label htmlFor="phone-input" className={labelStyles}>
+    <div className={styles.numberInputContainer}>
+      <label htmlFor={randomId} className={labelStyles}>
         {label}
       </label>
-
       <div className={inputContainerStyles}>
-        <div className={dropDownStyles}>
-          IN <DownArrow />
-        </div>
+        <SelectInput options={countryCodes} showBorder={false} />
+
         <input
           className={inputStyles}
-          type="number"
-          ref={inputRef}
-          name="phone-input"
-          id="phone-input"
+          type={type}
+          id={randomId}
           disabled={disabled}
           required={required}
-          value={value}
-          onChange={inputChangeHandler}
           placeholder={placeholder}
+          onChange={onChange}
+          value={value}
+          ref={inputRef}
         />
       </div>
-      {showHelperText === true && (
-        <p className={helperTextStyles}>{helperText}</p>
-      )}
+      {invalid && <InvalidIcon className={styles.invalidIcon} />}
+      {showHelperText && <p className={helperTextStyles}>{helperText}</p>}
     </div>
   );
 }

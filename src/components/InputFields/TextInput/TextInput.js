@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./TextInput.module.scss";
+import { ReactComponent as InvalidIcon } from "../../../assets/icons/invalid-input-icon.svg";
 import { useSelector } from "react-redux";
 
 function TextInput({
@@ -46,9 +47,7 @@ function TextInput({
         value={value}
       />
       {invalid && <InvalidIcon className={styles.invalidIcon} />}
-      {showHelperText === true && (
-        <p className={helperTextStyles}>{helperText}</p>
-      )}
+      {showHelperText && <p className={helperTextStyles}>{helperText}</p>}
     </div>
   );
 }
